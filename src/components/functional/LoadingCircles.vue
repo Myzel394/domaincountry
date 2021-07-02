@@ -58,4 +58,10 @@ $size: 3em;
 .dot:nth-of-type(3) {
     animation-delay: .4s;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .dot {
+        animation: none;
+    }
+}
 </style>

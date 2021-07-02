@@ -33,6 +33,15 @@ export default {
 <style module lang="scss">
 @import "src/assets/variables.scss";
 
+@keyframes flagMoveIn {
+    0% {
+        transform: translateY(-1em);
+    }
+    100% {
+        transform: none;
+    }
+}
+
 .container {
     position: absolute;
     left: 0;
@@ -40,6 +49,8 @@ export default {
 
     pointer-events: none;
     z-index: -1;
+
+    animation: flagMoveIn 1s ease-out;
 }
 
 .wrapper {
@@ -72,4 +83,11 @@ export default {
         rgba($backgroundColor, 1) 100%
     );
 }
+
+@media (prefers-reduced-motion: reduce) {
+    .container {
+        animation: none;
+    }
+}
+
 </style>

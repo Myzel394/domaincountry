@@ -1,5 +1,6 @@
 import { MutationTree } from "vuex";
 import { Store } from "./types";
+import Tab = browser.tabs.Tab;
 
 const mutations: MutationTree<Store> = {
     SET_API_IS_LOADING: (
@@ -45,6 +46,27 @@ const mutations: MutationTree<Store> = {
         base: string,
     ) => {
         state.currencyBase = base;
+    },
+
+    SET_CURRENT_TAB_LOADING: (
+        state,
+        isLoading: boolean,
+    ) => {
+        state.currentTab.isLoading = isLoading;
+    },
+
+    SET_CURRENT_TAB_ERROR: (
+        state,
+        isError: boolean,
+    ) => {
+        state.currentTab.isError = isError;
+    },
+
+    SET_CURRENT_TAB: (
+        state,
+        tab: Tab,
+    ) => {
+        state.currentTab.tab = tab;
     },
 }
 

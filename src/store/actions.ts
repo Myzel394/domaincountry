@@ -3,6 +3,7 @@ import subDays from "date-fns/subDays"
 import { fetchDomainInformation, fetchExchangeHistory } from "@/apis";
 import { api } from "@/constants";
 import { Store } from "./types";
+import { getCurrentTab } from "@/utils";
 
 const actions: ActionTree<Store, Store> = {
     setCurrencyBase: (
@@ -88,6 +89,22 @@ const actions: ActionTree<Store, Store> = {
 
         if (!context.getters.isCurrencySame) {
             await context.dispatch("fetchExchangeHistory", targetedCurrency);
+        }
+    },
+
+    getCurrentTab: async (
+        context,
+    ) => {
+        context.commit("SET_CURRENT_TAB_LOADING", true);
+        context.commit("SET_CURRENT_TAB_ERROR", false);
+
+        try {
+            const tab = await getCurrentTab();
+            context.commit("SET_CURRENT_TAB", tab);
+        } catch {
+            context.commit("SET_CURRENT_TAB_ERROR", true);
+        } finally {
+            context.commit("SET_CURRENT_TAB_LOADING", false);
         }
     },
 }

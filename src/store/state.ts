@@ -1,4 +1,4 @@
-import { BaseAPI } from "./types";
+import { BaseAPI, Store } from "./types";
 
 
 export const INITIAL_API_STATE: BaseAPI<any> = {
@@ -9,12 +9,17 @@ export const INITIAL_API_STATE: BaseAPI<any> = {
 
 const cloneObject = (obj: any) => JSON.parse(JSON.stringify(obj));
 
-const initialState = {
+const initialState: Store = {
     api: {
         domain: cloneObject(INITIAL_API_STATE),
         currency: cloneObject(INITIAL_API_STATE),
     },
     currencyBase: "EUR",
+    currentTab: {
+        isLoading: false,
+        isError: false,
+        tab: undefined,
+    },
 }
 
 export default initialState;

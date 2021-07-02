@@ -15,9 +15,8 @@ export default {
     },
     computed: {
         domain() {
-            const url = new URL(this.url);
-
-            return url.host;
+            console.log(this.url);
+            return (new URL(this.url)).host;
         },
     },
 }

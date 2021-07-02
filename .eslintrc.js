@@ -4,7 +4,10 @@ module.exports = {
         node: true,
         webextensions: true,
     },
-    "extends": [
+    plugins: [
+        "unused-imports",
+    ],
+    extends: [
         "plugin:vue/vue3-essential",
         "eslint:recommended",
         "@vue/typescript",
@@ -38,5 +41,13 @@ module.exports = {
             "singleline": "never",
             "multiline": "always",
         }],
+
+        "@typescript-eslint/no-unused-vars": "off",
+        "no-unused-vars": "off",
+        "unused-imports/no-unused-imports": "error",
+        "unused-imports/no-unused-vars": [
+            "warn",
+            { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" },
+        ],
     },
 }

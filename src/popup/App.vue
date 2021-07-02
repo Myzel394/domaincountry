@@ -1,20 +1,25 @@
 <template>
     <CountryFlag
-        name="Germany"
+        v-if="$store.state.api.domain.data.country.code"
+        :code="$store.state.api.domain.data.country.code"
     />
+    <h1>
+        {{ $store.state }}
+    </h1>
 </template>
 
 <script>
-import { findFlagUrlByIso2Code } from "country-flags-svg";
 import CountryFlag from "@/components/CountryFlag";
 
 export default {
     name: "App",
     components: { CountryFlag },
-    data() {
-        return {
-            svgUrl: findFlagUrlByIso2Code("de"),
-        }
+    watch: {
+        currentTab(newTab) {
+            const domain = (new URL(newTab.url)).host;
+
+            this.$store.dispatch("fetchDomain", domain);
+        },
     },
 }
 </script>

@@ -2,6 +2,7 @@
     <Container>
         <LocationInfo />
         <InformationBoxes />
+        <Times />
     </Container>
 </template>
 
@@ -9,9 +10,10 @@
 import LocationInfo from "@/components/LocationInfo";
 import InformationBoxes from "@/components/InformationBoxes";
 import Container from "@/components/functional/Container";
+import Times from "@/components/Times";
 export default {
     name: "InformationPage",
-    components: { Container, InformationBoxes, LocationInfo },
+    components: { Times, Container, InformationBoxes, LocationInfo },
 }
 </script>
 

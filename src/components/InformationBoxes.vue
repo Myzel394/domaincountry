@@ -58,7 +58,7 @@ export default {
 
 <style scoped lang="scss">
 .wrapper {
-    margin: 4em 0;
+    margin: 4em 0 2em 0;
 
     .element {
         margin-bottom: .4em;

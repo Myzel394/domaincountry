@@ -1,17 +1,19 @@
 <template>
-    <ErrorPage v-if="$store.getters.isError" />
-    <LoadingPage v-else-if="!$store.getters.isReady" />
-    <InformationPage v-else />
+    <div>
+        <ErrorPage v-if="$store.getters.isError" />
+        <LoadingPage v-else-if="!$store.getters.isReady" />
+        <InformationPage v-else />
+    </div>
 </template>
 
 <script>
+import ErrorPage from "@/components/pages/ErrorPage";
 import LoadingPage from "@/components/pages/LoadingPage";
 import InformationPage from "@/components/pages/InformationPage";
-import ErrorPage from "@/components/pages/ErrorPage";
 
 export default {
     name: "App",
-    components: { ErrorPage, InformationPage, LoadingPage },
+    components: { ErrorPage, LoadingPage, InformationPage },
     created() {
         this.$store.dispatch("fetchInitialData");
     },

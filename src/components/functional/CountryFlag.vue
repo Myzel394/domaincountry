@@ -4,7 +4,7 @@
             <img
                 class="image"
                 :src="svgUrl"
-                :alt="name"
+                :alt="`Flag of country with code ${code}`"
             />
             <div class="gradient" />
         </div>
@@ -49,8 +49,9 @@ export default {
 
         .image {
             object-fit: cover;
-            width: 100%;
+            width: 450px;
             height: 100%;
+            max-height: 18em;
         }
 
         .gradient {

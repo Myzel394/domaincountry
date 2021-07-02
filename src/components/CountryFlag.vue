@@ -37,6 +37,7 @@ export default {
     position: absolute;
     left: 0;
     top: 0;
+    pointer-events: none;
 
     .wrapper {
         position: relative;

@@ -3,17 +3,19 @@
         v-if="$store.state.api.domain.data.country.code"
         :code="$store.state.api.domain.data.country.code"
     />
-    <h1>
-        {{ $store.state }}
-    </h1>
+    <DomainCaption
+        v-if="currentTab?.url"
+        :url="currentTab.url"
+    />
 </template>
 
 <script>
 import CountryFlag from "@/components/CountryFlag";
+import DomainCaption from "@/components/DomainCaption";
 
 export default {
     name: "App",
-    components: { CountryFlag },
+    components: { DomainCaption, CountryFlag },
     watch: {
         currentTab(newTab) {
             const domain = (new URL(newTab.url)).host;
@@ -41,5 +43,10 @@ body {
     margin: 0;
     height: 0;
     border-radius: 2em;
+}
+
+* {
+    font-family: "Roboto", Roboto, Helvetica Neue, Helvetica, Google Sans, Arial, sans-serif;
+    box-sizing: border-box;
 }
 </style>

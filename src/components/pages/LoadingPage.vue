@@ -1,20 +1,14 @@
 <template>
-    <div class="wrapper">
+    <FocusedPage sub-text="Loading">
         <LoadingCircles />
-    </div>
+    </FocusedPage>
 </template>
 
 <script>
 import LoadingCircles from "@/components/functional/LoadingCircles";
+import FocusedPage from "@/components/functional/FocusedPage";
 export default {
     name: "LoadingPage",
-    components: { LoadingCircles },
+    components: { FocusedPage, LoadingCircles },
 }
 </script>
-
-<style scoped>
-.wrapper {
-    width: 100%;
-    height: 100vh;
-}
-</style>

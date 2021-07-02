@@ -1,22 +1,19 @@
 <template>
-    <InformationPage v-if="$store.state.api.domain.data && !$store.state.currentTab.isLoading" />
-    <LoadingPage v-else />
+    <ErrorPage v-if="$store.getters.isError" />
+    <LoadingPage v-else-if="!$store.getters.isReady" />
+    <InformationPage v-else />
 </template>
 
 <script>
 import LoadingPage from "@/components/pages/LoadingPage";
 import InformationPage from "@/components/pages/InformationPage";
+import ErrorPage from "@/components/pages/ErrorPage";
 
 export default {
     name: "App",
-    components: { InformationPage, LoadingPage },
-    watch: {
-        currentTab(newTab) {
-            const domain = (new URL(newTab.url)).host;
-
-            this.$store.dispatch("getCurrentTab");
-            this.$store.dispatch("fetchDomain", domain);
-        },
+    components: { ErrorPage, InformationPage, LoadingPage },
+    created() {
+        this.$store.dispatch("fetchInitialData");
     },
 }
 </script>

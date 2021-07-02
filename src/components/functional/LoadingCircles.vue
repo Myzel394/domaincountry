@@ -1,13 +1,10 @@
 <template>
-    <div class="center">
-        <div class="wrapper">
-            <div
-                v-for="index of Array(3).fill(null)"
-                class="dot"
-                :key="index"
-            />
-        </div>
-        <p>Loading</p>
+    <div class="wrapper">
+        <div
+            v-for="index of Array(3).fill(null)"
+            class="dot"
+            :key="index"
+        />
     </div>
 </template>
 
@@ -30,24 +27,6 @@ $size: 3em;
     25% {
         transform: scale(1.5);
         opacity: 1;
-    }
-}
-
-.center {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-
-    width: 100%;
-    height: 100%;
-
-    p {
-        margin-bottom: 2em;
-
-        font-size: 1.3rem;
-        text-align: center;
-        color: $secondaryColor;
     }
 }
 

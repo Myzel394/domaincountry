@@ -107,6 +107,16 @@ const actions: ActionTree<Store, Store> = {
             context.commit("SET_CURRENT_TAB_LOADING", false);
         }
     },
+
+    fetchInitialData: async (
+        context,
+    ) => {
+        await context.dispatch("getCurrentTab");
+
+        const domain = (new URL(context.state.currentTab.tab!.url as string)).host;
+
+        await context.dispatch("fetchDomain", domain)
+    },
 }
 
 export default actions;

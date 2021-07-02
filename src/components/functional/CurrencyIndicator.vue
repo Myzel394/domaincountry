@@ -1,6 +1,6 @@
 <template>
     <font-awesome-icon
-        :class="$classNames([className, $style.indicator])"
+        :class="$classNames([$style.icon, className])"
         :icon="iconName"
         :style="{transform: `scale(value)`}"
         :title="formattedDate"
@@ -16,10 +16,10 @@ enum Status {
     MINUS = "MINUS"
 }
 
-const CLASS_STATUS_MAP: Record<Status, string> = {
+const ICON_MAP: Record<Status, string> = {
     [Status.MINUS]: "minus",
     [Status.PLUS]: "plus",
-    [Status.NEUTRAL]: "neutral",
+    [Status.NEUTRAL]: "square",
 }
 
 export default {
@@ -58,11 +58,11 @@ export default {
         },
         className(): string {
             // @ts-ignore
-            return CLASS_STATUS_MAP[this.status]
+            return this.classStatusMap[this.status] + " " + this.$style.indicator;
         },
         iconName(): string {
             // @ts-ignore
-            return this.classStatusMap[this.status];
+            return ICON_MAP[this.status];
         },
         formattedDate(): string {
             // @ts-ignore
@@ -81,8 +81,8 @@ $opacity: .2;
 
 $size: 1.4em;
 
-.indicator {
-    width: $size;
+.icon {
+    width: $size !important;
     height: $size;
     padding: .3em;
     border-radius: .5em;

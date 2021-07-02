@@ -1,11 +1,12 @@
 <template>
     <div class="wrapper">
         <progress-circle
-            :completed-steps="calculatedOffset"
             total-steps="12"
+            circle-width="5"
             circle-color="transparent"
             start-color="#fff"
             stop-color="#fff"
+            :completed-steps="calculatedOffset"
             :inner-color="fillColor"
         >
             <p

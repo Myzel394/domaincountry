@@ -14,14 +14,39 @@
                 </template>
             </BoxInformation>
         </li>
+        <li class="element">
+            <BoxInformation
+                title="Currency"
+                :value="$store.state.api.domain.data.currency"
+            >
+                <template v-slot:icon>
+                    <font-awesome-icon icon="exchange-alt" />
+                </template>
+                <template v-slot:extra>
+                    <CurrencyChart />
+                </template>
+            </BoxInformation>
+        </li>
     </ul>
 </template>
 
 <script>
 import BoxInformation from "@/components/functional/BoxInformation";
+import CurrencyChart from "@/components/CurrencyChart";
+
 export default {
     name: "InformationBoxes",
-    components: { BoxInformation },
+    components: { CurrencyChart, BoxInformation },
+    data() {
+        return {
+            names: [ "MS", "Apple", "Google" ],
+            values: [
+                [ 10, 5, 5, 5 ],
+                [ 40, 10, 10, 10 ],
+                [ 30, 30, 30, 30 ],
+            ],
+        }
+    },
     computed: {
         boxes() {
             return [
@@ -44,11 +69,6 @@ export default {
                     title: "Timezone",
                     value: this.$store.state.api.domain.data.timezone.name,
                     icon: "clock",
-                },
-                {
-                    title: "Currency",
-                    value: this.$store.state.api.domain.data.currency,
-                    icon: "exchange-alt",
                 },
             ]
         },

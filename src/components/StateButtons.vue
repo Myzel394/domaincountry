@@ -1,6 +1,6 @@
 <template>
-    <div class="wrapper">
-        <div
+    <ul class="wrapper">
+        <li
             v-for="({name, active}) of buttons"
             :key="name"
             class="inner"
@@ -9,8 +9,8 @@
                 :name="name"
                 :active="active"
             />
-        </div>
-    </div>
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -44,8 +44,10 @@ export default {
 .wrapper {
     display: flex;
     align-items: center;
+    padding-left: 0;
 
     .inner {
+        list-style: none;
         padding: 0 .6em;
     }
 }

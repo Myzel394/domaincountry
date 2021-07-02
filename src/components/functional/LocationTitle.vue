@@ -28,7 +28,7 @@ h1 {
     font-weight: 900;
     text-align: center;
     color: $primaryColor;
-    letter-spacing: .04em;
+    letter-spacing: .02em;
     white-space: break-spaces;
 
     margin-top: .3em;

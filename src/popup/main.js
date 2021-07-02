@@ -1,6 +1,5 @@
 import { createApp } from "vue";
 import VueClassNames from "vue-classnames";
-import VueApexCharts from "vue3-apexcharts";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import { library } from "@fortawesome/fontawesome-svg-core"
 import {
@@ -21,7 +20,6 @@ library.add(faSquare);
 
 createApp(App)
     .use(VueClassNames)
-    .use(VueApexCharts)
     .use(store)
     .component("font-awesome-icon", FontAwesomeIcon)
     .mount("#app")

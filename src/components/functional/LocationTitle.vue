@@ -1,5 +1,5 @@
 <template>
-    <h1>
+    <h1 :class="$style.title">
         {{ country }}, {{ city }}
     </h1>
 </template>
@@ -20,10 +20,10 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import "src/assets/variables.scss";
 
-h1 {
+.title {
     font-size: 3rem;
     font-weight: 900;
     text-align: center;

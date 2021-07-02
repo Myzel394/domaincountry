@@ -1,5 +1,5 @@
 <template>
-    <ul class="chart">
+    <ul :class="$style.chart">
         <li
             v-for="({date, rate}) of series"
             :key="rate"
@@ -12,7 +12,7 @@
     </ul>
 </template>
 
-<script lang="ts">
+<script>
 import parseISO from "date-fns/parseISO";
 import CurrencyIndicator from "@/components/functional/CurrencyIndicator.vue";
 
@@ -39,7 +39,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 .chart {
     padding-left: 0;
     display: flex;

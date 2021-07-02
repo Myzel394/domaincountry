@@ -19,7 +19,3 @@ export default {
     components: { CountryFlag, DomainCaption, LocationTitle, StateButtons },
 }
 </script>
-
-<style scoped>
-
-</style>

@@ -1,6 +1,6 @@
 <template>
     <font-awesome-icon
-        :class="$classNames([className, 'indicator'])"
+        :class="$classNames([className, $style.indicator])"
         :icon="iconName"
         :style="{transform: `scale(value)`}"
         :title="formattedDate"
@@ -22,12 +22,6 @@ const CLASS_STATUS_MAP: Record<Status, string> = {
     [Status.NEUTRAL]: "neutral",
 }
 
-const ICON_STATUS_MAP: Record<Status, string> = {
-    [Status.MINUS]: "minus",
-    [Status.PLUS]: "plus",
-    [Status.NEUTRAL]: "square",
-}
-
 export default {
     name: "CurrencyIndicator",
     props: {
@@ -41,29 +35,44 @@ export default {
         },
     },
     computed: {
-        status() {
+        classStatusMap(): Record<Status, string> {
+            return {
+                // @ts-ignore
+                [Status.MINUS]: this.$style.minus,
+                // @ts-ignore
+                [Status.PLUS]: this.$style.plus,
+                // @ts-ignore
+                [Status.NEUTRAL]: this.$style.neutral,
+            }
+        },
+        status(): Status {
+            // @ts-ignore
             if (this.value === 1) {
                 return Status.NEUTRAL;
+                // @ts-ignore
             } else if (this.value > 1) {
                 return Status.PLUS;
             } else {
                 return Status.MINUS;
             }
         },
-        className() {
+        className(): string {
+            // @ts-ignore
             return CLASS_STATUS_MAP[this.status]
         },
-        iconName() {
-            return ICON_STATUS_MAP[this.status];
+        iconName(): string {
+            // @ts-ignore
+            return this.classStatusMap[this.status];
         },
-        formattedDate() {
+        formattedDate(): string {
+            // @ts-ignore
             return format(this.date, "yyyy.MM.dd");
         },
     },
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 $plusColor: #1dea8a;
 $minusColor: #d71632;
 $neutralColor: #ccc;

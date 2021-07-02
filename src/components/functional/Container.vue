@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div :class="$style.container">
         <slot />
     </div>
 </template>
@@ -10,8 +10,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.wrapper {
+<style module>
+.container {
     max-width: 400px;
     margin: 0 auto;
 }

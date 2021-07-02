@@ -1,10 +1,9 @@
 <template>
     <aside>
-        <ul class="wrapper">
+        <ul :class="$style.wrapper">
             <li
                 v-for="({name, active}) of buttons"
                 :key="name"
-                class="inner"
             >
                 <ButtonState
                     :name="name"
@@ -42,13 +41,13 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 .wrapper {
     display: flex;
     align-items: center;
     padding-left: 0;
 
-    .inner {
+    > li {
         list-style: none;
         padding: 0 .6em;
     }

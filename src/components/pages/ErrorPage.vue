@@ -1,7 +1,7 @@
 <template>
     <FocusedPage sub-text="There was an error. We are sorry.">
         <font-awesome-icon
-            class="icon"
+            :class="$style.icon"
             icon="sad-tear"
         />
     </FocusedPage>
@@ -15,14 +15,14 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import "src/assets/variables";
 
 $size: 8em;
 
 .icon {
     color: $primaryColor;
-    width: $size;
+    width: $size !important;
     height: $size;
     margin: 0 auto;
 }

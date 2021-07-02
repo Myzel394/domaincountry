@@ -1,6 +1,6 @@
 <template>
     <span
-        :class="$classNames(['button', active ? 'on' : 'off'])"
+        :class="$classNames([$style.button, active ? $style.on : $style.off])"
     >
         {{ name }}
     </span>
@@ -23,7 +23,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import "src/assets/variables.scss";
 
 .button {
@@ -34,16 +34,15 @@ export default {
 
     font-size: 1rem;
     font-weight: 700;
-
-    &.on {
-        background-color: rgba($primaryColor, .2);
-    }
-
-    &.off {
-        opacity: .5;
-
-        border: .1em $primaryColor solid;
-    }
 }
 
+.on {
+    background-color: rgba($primaryColor, .2);
+}
+
+.off {
+    opacity: .5;
+
+    border: .1em $primaryColor solid;
+}
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div
-        class="wrapper"
+        :class="$style.wrapper"
         v-if="timersRequired"
     >
         <Clock
@@ -33,7 +33,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style module>
 .wrapper {
     display: flex;
     align-items: center;

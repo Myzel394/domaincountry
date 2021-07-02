@@ -16,7 +16,3 @@ export default {
     components: { Times, Container, InformationBoxes, LocationInfo },
 }
 </script>
-
-<style scoped>
-
-</style>

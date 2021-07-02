@@ -1,6 +1,6 @@
 <template>
     <section
-        class="box"
+        :class="$style.box"
         ref="wrapper"
     >
         <h2>
@@ -45,7 +45,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import "src/assets/variables";
 
 .box {
@@ -69,6 +69,7 @@ export default {
         font-size: 1rem;
         font-weight: 300;
         color: $secondaryColor;
+        text-align: left;
 
         margin: 0 0 .5em 1.5em;
     }

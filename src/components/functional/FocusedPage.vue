@@ -1,7 +1,7 @@
 <template>
-    <div class="wrapper">
+    <div :class="$style.wrapper">
         <slot />
-        <p>
+        <p :class="$style.subText">
             {{ subText }}
         </p>
     </div>
@@ -19,7 +19,7 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import "src/assets/variables";
 
 .wrapper {
@@ -30,13 +30,13 @@ export default {
     align-content: center;
     justify-content: center;
     flex-direction: column;
+}
 
-    p {
-        margin-bottom: 2em;
+p {
+    margin-bottom: 2em;
 
-        font-size: 1.3rem;
-        text-align: center;
-        color: $secondaryColor;
-    }
+    font-size: 1.3rem;
+    text-align: center;
+    color: $secondaryColor;
 }
 </style>

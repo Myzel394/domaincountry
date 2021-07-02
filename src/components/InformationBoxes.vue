@@ -1,7 +1,6 @@
 <template>
-    <ul class="wrapper">
+    <ul :class="$style.list">
         <li
-            class="element"
             v-for="({ title, value, icon }) of boxes"
             :key="title"
         >
@@ -14,7 +13,7 @@
                 </template>
             </BoxInformation>
         </li>
-        <li class="element">
+        <li v-if="!$store.getters.isCurrencySame">
             <BoxInformation
                 title="Currency"
                 :value="$store.state.api.domain.data.currency"
@@ -76,12 +75,12 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
-.wrapper {
+<style module lang="scss">
+.list {
     padding-left: 0;
     margin: 4em 0 2em 0;
 
-    .element {
+    > li {
         list-style: none;
         margin-bottom: .4em;
     }

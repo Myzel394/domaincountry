@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div :class="$style.wrapper">
         <progress-circle
             total-steps="12"
             circle-width="5"
@@ -11,12 +11,12 @@
         >
             <p
                 :key="keyHack"
-                class="time"
+                :class="$style.time"
             >
                 {{ formatTime() }}
             </p>
         </progress-circle>
-        <p class="description">
+        <p :class="$style.description">
             {{ description }}
         </p>
     </div>
@@ -93,21 +93,23 @@ export default {
 }
 </script>
 
-<style scoped lang="scss">
+<style module lang="scss">
 @import "src/assets/variables";
 
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
 
-    .time {
-        font-size: 1rem;
-        color: $primaryColor;
-    }
+.time {
+    font-size: 1.5rem;
+    color: $primaryColor;
 
-    .description {
-        color: $secondaryColor;
-    }
+    margin: 0;
+}
+
+.description {
+    color: $secondaryColor;
 }
 </style>

@@ -27,8 +27,11 @@ export default {
 @import "src/assets/variables.scss";
 
 h2 {
-    color: $secondaryColor;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
     text-align: center;
+    color: $secondaryColor;
+
+    margin-bottom: 0;
 }
 </style>

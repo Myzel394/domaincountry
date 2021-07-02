@@ -7,15 +7,25 @@
         v-if="currentTab?.url"
         :url="currentTab.url"
     />
+    <LocationTitle
+        v-if="$store.state.api.domain.data.country.name"
+        :country="$store.state.api.domain.data.country.name"
+        :city="$store.state.api.domain.data.cityName"
+    />
+    <StateButtons
+        v-if="$store.state.api.domain.data.country.name"
+    />
 </template>
 
 <script>
-import CountryFlag from "@/components/CountryFlag";
-import DomainCaption from "@/components/DomainCaption";
+import CountryFlag from "@/components/functional/CountryFlag";
+import DomainCaption from "@/components/functional/DomainCaption";
+import LocationTitle from "@/components/functional/LocationTitle";
+import StateButtons from "@/components/StateButtons";
 
 export default {
     name: "App",
-    components: { DomainCaption, CountryFlag },
+    components: { LocationTitle, DomainCaption, CountryFlag, StateButtons },
     watch: {
         currentTab(newTab) {
             const domain = (new URL(newTab.url)).host;
@@ -27,26 +37,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import "src/assets/variables.scss";
-
-html {
-    margin: 0;
-    padding: 0;
-    width: 450px;
-    height: 600px;
-
-    background: $backgroundColor;
-    border-radius: 2em;
-}
-
-body {
-    margin: 0;
-    height: 0;
-    border-radius: 2em;
-}
-
-* {
-    font-family: "Roboto", Roboto, Helvetica Neue, Helvetica, Google Sans, Arial, sans-serif;
-    box-sizing: border-box;
-}
+@import "src/assets/global";
 </style>

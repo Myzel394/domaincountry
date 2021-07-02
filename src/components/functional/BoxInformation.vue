@@ -1,19 +1,19 @@
 <template>
-    <div
+    <section
         class="box"
         ref="wrapper"
     >
-        <h3>
+        <h2>
             <slot name="icon" />
             <span ref="title">
                 {{ title }}
             </span>
-        </h3>
+        </h2>
         <p :style="`margin-left: ${valueSpacing}px`">
             {{ value }}
         </p>
         <slot name="extra" />
-    </div>
+    </section>
 </template>
 
 <script>
@@ -53,7 +53,7 @@ export default {
     border-radius: .6em;
     background-color: rgba($primaryColor, .1);
 
-    h3 {
+    h2 {
         font-size: 1.4rem;
         font-weight: 700;
         color: $primaryColor;

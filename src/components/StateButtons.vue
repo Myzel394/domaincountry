@@ -1,16 +1,18 @@
 <template>
-    <ul class="wrapper">
-        <li
-            v-for="({name, active}) of buttons"
-            :key="name"
-            class="inner"
-        >
-            <ButtonState
-                :name="name"
-                :active="active"
-            />
-        </li>
-    </ul>
+    <aside>
+        <ul class="wrapper">
+            <li
+                v-for="({name, active}) of buttons"
+                :key="name"
+                class="inner"
+            >
+                <ButtonState
+                    :name="name"
+                    :active="active"
+                />
+            </li>
+        </ul>
+    </aside>
 </template>
 
 <script>

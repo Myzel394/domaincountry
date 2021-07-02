@@ -31,6 +31,6 @@ h1 {
     letter-spacing: .02em;
     white-space: break-spaces;
 
-    margin-top: .3em;
+    margin-top: .2em;
 }
 </style>

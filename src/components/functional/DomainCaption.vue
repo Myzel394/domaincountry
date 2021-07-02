@@ -30,6 +30,7 @@ h2 {
     text-align: center;
     color: $secondaryColor;
 
+    margin-top: 2em;
     margin-bottom: 0;
 }
 </style>

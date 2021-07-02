@@ -1,6 +1,6 @@
 <template>
-    <div class="wrapper">
-        <div
+    <ul class="wrapper">
+        <li
             class="element"
             v-for="({ title, value, icon }) of boxes"
             :key="title"
@@ -13,8 +13,8 @@
                     <font-awesome-icon :icon="icon" />
                 </template>
             </BoxInformation>
-        </div>
-    </div>
+        </li>
+    </ul>
 </template>
 
 <script>
@@ -58,9 +58,11 @@ export default {
 
 <style scoped lang="scss">
 .wrapper {
+    padding-left: 0;
     margin: 4em 0 2em 0;
 
     .element {
+        list-style: none;
         margin-bottom: .4em;
     }
 }

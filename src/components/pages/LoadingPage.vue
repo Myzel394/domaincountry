@@ -5,10 +5,11 @@
 </template>
 
 <script>
-import LoadingCircles from "@/components/functional/LoadingCircles";
 import FocusedPage from "@/components/functional/FocusedPage";
+import LoadingCircles from "@/components/functional/LoadingCircles";
+
 export default {
     name: "LoadingPage",
-    components: { FocusedPage, LoadingCircles },
+    components: { LoadingCircles, FocusedPage },
 }
 </script>

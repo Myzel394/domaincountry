@@ -1,14 +1,14 @@
 <template>
     <FocusedPage
-        sub-text="There was an error. We are sorry."
-        icon="sad-tear"
+        sub-text="This is 127.0.0.1. Welcome home."
+        icon="home"
     />
 </template>
 
 <script>
 import FocusedPage from "@/components/functional/FocusedPage";
 export default {
-    name: "ErrorPage",
+    name: "LocalHostPage",
     components: { FocusedPage },
 }
 </script>

@@ -1,19 +1,21 @@
 <template>
-    <div>
-        <ErrorPage v-if="$store.getters.isError" />
-        <LoadingPage v-else-if="!$store.getters.isReady" />
-        <InformationPage v-else />
-    </div>
+    <LocalHostPage v-if="$store.getters.isLocalHost" />
+    <OnionPage v-else-if="$store.getters.isOnionAddress" />
+    <ErrorPage v-else-if="$store.getters.isError" />
+    <LoadingPage v-else-if="!$store.getters.isReady" />
+    <InformationPage v-else />
 </template>
 
 <script>
+import LocalHostPage from "@/components/pages/LocalHostPage";
+import OnionPage from "@/components/pages/OnionPage";
 import ErrorPage from "@/components/pages/ErrorPage";
-import LoadingPage from "@/components/pages/LoadingPage";
 import InformationPage from "@/components/pages/InformationPage";
+import LoadingPage from "@/components/pages/LoadingPage";
 
 export default {
     name: "App",
-    components: { ErrorPage, LoadingPage, InformationPage },
+    components: { LoadingPage, InformationPage, ErrorPage, OnionPage, LocalHostPage },
     created() {
         this.$store.dispatch("fetchInitialData");
     },

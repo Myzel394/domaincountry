@@ -1,6 +1,5 @@
-import { buildUrl } from "@/utils";
+import { buildUrl, instance } from "@/utils";
 import formatISO from "date-fns/formatISO"
-import axios from "axios";
 
 export interface FetchExchangeHistoryData {
     startDate: Date;
@@ -34,7 +33,7 @@ const fetchExchangeHistory = async ({
         }),
     });
 
-    const { data } = await axios.get(url);
+    const { data } = await instance.get(url);
 
     const rates = Object.entries(data.rates)
         .reduce((acc, [dateString, rate]: [string, any]) => {

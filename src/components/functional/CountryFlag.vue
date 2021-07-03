@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import { findFlagUrlByIso2Code } from "country-flags-svg";
+import { getFlagPath } from "@/utils";
 
 export default {
     name: "CountryFlag",
@@ -24,7 +24,7 @@ export default {
     },
     computed: {
         svgUrl: function() {
-            return findFlagUrlByIso2Code(this.$props.code)
+            return getFlagPath(this.code, { format: "SVG" })
         },
     },
 }

@@ -1,7 +1,7 @@
-import axios from "axios";
 import * as yup from "yup";
 import { buildUrl } from "@/utils";
 import { ValidateOptions } from "yup/lib/types";
+import { instance } from "@/utils";
 
 export interface FetchDomainInformationResult {
     country: {
@@ -62,7 +62,10 @@ const fetchDomainInformation = async (domain: string): Promise<FetchDomainInform
         fields: FIELDS,
     });
 
-    const { data } = await axios.get(url);
+    const { data } = await instance({
+        url,
+        method: "GET",
+    });
 
     const validatedData = await SCHEMA.validate(data, SCHEMA_OPTION);
     const cleanedData: FetchDomainInformationResult = {

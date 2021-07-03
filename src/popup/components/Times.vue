@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import Clock from "@/components/functional/Clock";
+import Clock from "@/popup/components/functional/Clock";
 import { getOffsetDifference } from "@/utils";
 export default {
     name: "Times",

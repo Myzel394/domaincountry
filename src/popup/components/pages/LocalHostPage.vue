@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import FocusedPage from "@/components/functional/FocusedPage";
+import FocusedPage from "@/popup/components/functional/FocusedPage";
 export default {
     name: "LocalHostPage",
     components: { FocusedPage },

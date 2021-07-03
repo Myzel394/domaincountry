@@ -5,7 +5,7 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import {
     faGlobe, faExchangeAlt, faWifi, faBroadcastTower, faClock, faSadTear, faPlus, faMinus, faSquare, faHome, faMask,
 } from "@fortawesome/free-solid-svg-icons"
-import store from "@/store";
+import store from "./store";
 import App from "./App.vue";
 
 library.add(faGlobe);

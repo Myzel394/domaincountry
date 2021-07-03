@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import ButtonState from "@/components/functional/ButtonState";
+import ButtonState from "@/popup/components/functional/ButtonState";
 
 export default {
     name: "Buttons",

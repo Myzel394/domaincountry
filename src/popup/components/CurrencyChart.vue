@@ -14,7 +14,7 @@
 
 <script>
 import parseISO from "date-fns/parseISO";
-import CurrencyIndicator from "@/components/functional/CurrencyIndicator.vue";
+import CurrencyIndicator from "@/popup/components/functional/CurrencyIndicator.vue";
 
 export default {
     name: "CurrencyChart",

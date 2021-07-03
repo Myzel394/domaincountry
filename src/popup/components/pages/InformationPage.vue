@@ -7,10 +7,10 @@
 </template>
 
 <script>
-import LocationInfo from "@/components/LocationInfo";
-import InformationBoxes from "@/components/InformationBoxes";
-import Container from "@/components/functional/Container";
-import Times from "@/components/Times";
+import LocationInfo from "@/popup/components/LocationInfo";
+import InformationBoxes from "@/popup/components/InformationBoxes";
+import Container from "@/popup/components/functional/Container";
+import Times from "@/popup/components/Times";
 export default {
     name: "InformationPage",
     components: { Times, Container, InformationBoxes, LocationInfo },

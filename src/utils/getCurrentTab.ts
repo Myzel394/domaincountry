@@ -1,18 +1,22 @@
 import Tab = browser.tabs.Tab;
 
 const getCurrentTab = async (): Promise<Tab> => {
-    const tabs = await browser.tabs.query({
-        active: true,
-        windowId: browser.windows.WINDOW_ID_CURRENT,
-    });
+    let currentTab: Tab;
 
-    if (!tabs[0].id) {
+    try {
+        currentTab = (await browser.tabs.query({
+            active: true,
+            windowId: browser.windows.WINDOW_ID_CURRENT,
+        }))[0];
+    } catch {
+        currentTab = await browser.tabs.getCurrent();
+    }
+
+    if (!currentTab) {
         throw new Error("Tab undefined");
     }
 
-    const tab = await browser.tabs.get(tabs[0].id);
-
-    return tab;
+    return currentTab;
 }
 
 export default getCurrentTab;

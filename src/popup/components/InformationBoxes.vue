@@ -30,8 +30,8 @@
 </template>
 
 <script>
-import BoxInformation from "@/components/functional/BoxInformation";
-import CurrencyChart from "@/components/CurrencyChart";
+import BoxInformation from "@/popup/components/functional/BoxInformation";
+import CurrencyChart from "@/popup/components/CurrencyChart";
 
 export default {
     name: "InformationBoxes",

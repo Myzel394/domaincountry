@@ -5,8 +5,8 @@
 </template>
 
 <script>
-import FocusedPage from "@/components/functional/FocusedPage";
-import LoadingCircles from "@/components/functional/LoadingCircles";
+import FocusedPage from "@/popup/components/functional/FocusedPage";
+import LoadingCircles from "@/popup/components/functional/LoadingCircles";
 
 export default {
     name: "LoadingPage",

@@ -7,11 +7,11 @@
 </template>
 
 <script>
-import LocalHostPage from "@/components/pages/LocalHostPage";
-import OnionPage from "@/components/pages/OnionPage";
-import ErrorPage from "@/components/pages/ErrorPage";
-import InformationPage from "@/components/pages/InformationPage";
-import LoadingPage from "@/components/pages/LoadingPage";
+import LocalHostPage from "./components/pages/LocalHostPage";
+import OnionPage from "./components/pages/OnionPage";
+import ErrorPage from "./components/pages/ErrorPage";
+import InformationPage from "./components/pages/InformationPage";
+import LoadingPage from "./components/pages/LoadingPage";
 
 export default {
     name: "App",

@@ -8,8 +8,6 @@ import {
 } from "@/utils";
 import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
 
-console.log("background instance");
-
 const showLocalHostIcon = () =>
     setIconsForAllSizes(size => getSpecialIconPath("home", size));
 

@@ -101,7 +101,8 @@ const actions: ActionTree<Store, Store> = {
         try {
             const tab = await getCurrentTab();
             context.commit("SET_CURRENT_TAB", tab);
-        } catch {
+        } catch (error) {
+            console.log(error)
             context.commit("SET_CURRENT_TAB_ERROR", true);
         } finally {
             context.commit("SET_CURRENT_TAB_LOADING", false);

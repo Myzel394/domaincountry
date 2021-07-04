@@ -20,6 +20,10 @@ const actions: ActionTree<Store, Store> = {
                 apiName: "domain",
                 data,
             });
+            context.commit("SET_API_IS_ERROR", {
+                apiName: "domain",
+                isError: false,
+            });
         } catch {
             context.commit("SET_API_IS_ERROR", {
                 apiName: "domain",
@@ -42,6 +46,7 @@ const actions: ActionTree<Store, Store> = {
         try {
             const tab = await getCurrentTab();
             context.commit("SET_CURRENT_TAB", tab);
+            context.commit("SET_CURRENT_TAB_ERROR", false);
         } catch (error) {
             context.commit("SET_CURRENT_TAB_ERROR", true);
         } finally {

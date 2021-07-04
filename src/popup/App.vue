@@ -17,7 +17,7 @@ export default {
     name: "App",
     components: { LoadingPage, InformationPage, ErrorPage, OnionPage, LocalHostPage },
     created() {
-        this.$store.dispatch("fetchInitialData")
+        this.$store.dispatch("fetchInitialData");
     },
 }
 </script>

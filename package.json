@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service build --mode development --watch",
-    "build": "vue-cli-service build",
+    "build:download-flags": "./downloadFlags.mjs",
+    "build:extension": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit --runInBand",
     "lint": "vue-cli-service lint"
   },

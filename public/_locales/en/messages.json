@@ -8,6 +8,19 @@
     "description": "Description of this extension"
   },
 
+  "errorText": {
+    "message": "There was an error. We are sorry.",
+    "description": "Error text when data couldn't be loaded."
+  },
+  "loadingText": {
+    "message": "Loading...",
+    "description": "Text when data is being loaded."
+  },
+  "saveText": {
+    "message": "Save",
+    "description": "Text when a form can be saved."
+  },
+
   "popup_hoverTitle_onionService": {
     "message": "Onion service. Location unavailable",
     "description": "User hovers over icon on an onion service."
@@ -20,14 +33,6 @@
   "popup_onionPage_text": {
     "message": "This is an onion service. You can't find out it's location.",
     "description": "User is on an Onion service. These are server, whose location can't be determined."
-  },
-  "popup_errorPage_text": {
-    "message": "There was an error. We are sorry.",
-    "description": "Error text when data couldn't be loaded."
-  },
-  "popup_loadingPage_text": {
-    "message": "Loading...",
-    "description": "Text when data is being loaded."
   },
 
   "popup_countryFlag_image_alt": {
@@ -82,5 +87,24 @@
   "popup_information_currency": {
     "message": "Currency",
     "description": "Title of information box of the server's country currency."
+  },
+
+
+  "options_settingsTitle": {
+    "message": "Settings",
+    "description": "Title of settings page."
+  },
+  "options_storageNotAllowed": {
+    "message": "You didn't grant the <storage> permisssion. Please enable it to use settings.",
+    "description": ""
+  },
+
+  "options_form_allowBadge": {
+    "message": "Allow Badge",
+    "description": "Form label of badge allow."
+  },
+  "options_form_badgeColor": {
+    "message": "Badge Color",
+    "description": "Form label of badge color."
   }
 }

@@ -1,10 +1,11 @@
 import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
-import { getSpecialIconPath, translate } from "@/utils";
+import { getSpecialIconPath, removeBadge, translate } from "@/utils";
 
 const showOnionAddressIcon = () => {
     browser.browserAction.setTitle({
         title: translate("popup_hoverTitle_onionService"),
     });
+    removeBadge();
 
     return setIconsForAllSizes(size => getSpecialIconPath("onion", size));
 }

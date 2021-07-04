@@ -1,10 +1,11 @@
-import { getExtensionIconPath, translate } from "@/utils";
-import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
+import { getExtensionIconPath, removeBadge, translate, setIconsForAllSizes } from "@/utils";
 
 const showExtensionIcon = () => {
     browser.browserAction.setTitle({
         title: translate("popup_extName"),
     });
+    removeBadge();
+
     return setIconsForAllSizes(size => getExtensionIconPath(size));
 }
 

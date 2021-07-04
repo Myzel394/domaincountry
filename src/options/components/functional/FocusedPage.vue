@@ -1,13 +1,12 @@
 <template>
     <div :class="$style.wrapper">
-        <slot />
         <font-awesome-icon
             v-if="icon"
-            :class="$style.icon"
             :icon="icon"
+            :class="$style.icon"
         />
-        <p :class="$style.subText">
-            {{ subText }}
+        <p :class="$style.text">
+            {{ text }}
         </p>
     </div>
 </template>
@@ -16,9 +15,9 @@
 export default {
     name: "FocusedPage",
     props: {
-        subText: {
+        text: {
             type: String,
-            required: false,
+            required: true,
         },
         icon: {
             type: String,
@@ -33,21 +32,15 @@ export default {
 $iconSize: 8rem;
 
 .wrapper {
-    width: 100%;
-    height: 100vh;
-
     display: flex;
-    align-content: center;
+    flex-direction: column;;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
 }
 
-.subText {
-    margin-bottom: 2em;
-
-    font-size: 1.3rem;
-    text-align: center;
+.text {
     color: $secondaryColor;
+    font-size: 1rem;
 }
 
 .icon {

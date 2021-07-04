@@ -1,12 +1,11 @@
 <template>
     <FocusedPage
-        :sub-text="translate('errorText')"
-        icon="sad-tear"
+        :text="translate('loadingText')"
     />
 </template>
 
 <script>
-import FocusedPage from "@/popup/components/functional/FocusedPage";
+import FocusedPage from "@/options/components/functional/FocusedPage";
 export default {
     name: "ErrorPage",
     components: { FocusedPage },

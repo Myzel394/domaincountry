@@ -15,3 +15,7 @@ export { default as instance } from "./instance";
 export { default as getBrowserLanguageCode } from "./getBrowserLanguageCode";
 export { default as getExtensionIconPath } from "./getExtensionIconPath";
 export { default as translate } from "./translate";
+export { default as showBadgeIfAllowed } from "./showBadgeIfAllowed";
+export { default as removeBadge } from "./removeBadge";
+export { default as setIconsForAllSizes } from "./setIconsForAllSizes";
+export * as options from "./options";

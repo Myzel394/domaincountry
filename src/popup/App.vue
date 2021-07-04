@@ -24,4 +24,9 @@ export default {
 
 <style lang="scss">
 @import "src/assets/global";
+
+html, body, #app {
+    min-width: 450px;
+    min-height: 450px;
+}
 </style>

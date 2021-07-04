@@ -12,7 +12,7 @@ export default {
 
 <style module>
 .container {
-    max-width: 400px;
+    max-width: 90%;
     margin: 0 auto;
 }
 </style>

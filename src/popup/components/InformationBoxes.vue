@@ -111,5 +111,4 @@ export default {
         animation: none;
     }
 }
-
 </style>

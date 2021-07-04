@@ -8,6 +8,17 @@ import {
 } from "@/utils";
 import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
 
+/*
+    @todo Add title
+    @body Add a title to the icon using `browser.browserAction.setTitle`
+
+    @todo Add Badge
+
+    @todo Add settings
+
+    @todo Add icon
+*/
+
 const showLocalHostIcon = () =>
     setIconsForAllSizes(size => getSpecialIconPath("home", size));
 
@@ -39,5 +50,5 @@ onUrlChange(async url => {
         return;
     }
 
-    await showCountryFlagIcon(url);
+    showCountryFlagIcon(url);
 });

@@ -1,7 +1,11 @@
 {
   "extName": {
-    "message": "domaincountry",
+    "message": "Domain Country",
     "description": ""
+  },
+  "extDescription": {
+    "message": "Find out about the location, ip address, timezone, currency and other information about the websites you visit!",
+    "description": "Description of this extension"
   },
   "localHostPage_text": {
     "message": "This is your PC. Welcome home.",

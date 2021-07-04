@@ -3,7 +3,7 @@ import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
 
 const showExtensionIcon = () => {
     browser.browserAction.setTitle({
-        title: translate("extName"),
+        title: translate("popup_extName"),
     });
     return setIconsForAllSizes(size => getExtensionIconPath(size));
 }

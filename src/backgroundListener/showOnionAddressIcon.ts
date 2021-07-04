@@ -3,7 +3,7 @@ import { getSpecialIconPath, translate } from "@/utils";
 
 const showOnionAddressIcon = () => {
     browser.browserAction.setTitle({
-        title: translate("hoverTitle_onionService"),
+        title: translate("popup_hoverTitle_onionService"),
     });
 
     return setIconsForAllSizes(size => getSpecialIconPath("onion", size));

@@ -1,4 +1,5 @@
 import { createApp } from "vue";
+// @ts-ignore
 import VueClassNames from "vue-classnames";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import i18nPlugin from "@/plugins/i18nPlugin";

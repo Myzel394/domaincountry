@@ -8,29 +8,29 @@
     "description": "Description of this extension"
   },
 
-  "hoverTitle_onionService": {
+  "popup_hoverTitle_onionService": {
     "message": "Onion service. Location unavailable",
     "description": "User hovers over icon on an onion service."
   },
 
-  "localHostPage_text": {
+  "popup_localHostPage_text": {
     "message": "This is your PC. Welcome home.",
     "description": "User is on an offline-browser site."
   },
-  "onionPage_text": {
+  "popup_onionPage_text": {
     "message": "This is an onion service. You can't find out it's location.",
     "description": "User is on an Onion service. These are server, whose location can't be determined."
   },
-  "errorPage_text": {
+  "popup_errorPage_text": {
     "message": "There was an error. We are sorry.",
     "description": "Error text when data couldn't be loaded."
   },
-  "loadingPage_text": {
+  "popup_loadingPage_text": {
     "message": "Loading...",
     "description": "Text when data is being loaded."
   },
 
-  "countryFlag_image_alt": {
+  "popup_countryFlag_image_alt": {
     "message": "Flag of country with code \"$code$\"",
     "description": "Alternative image description text for country flag",
     "placeholders": {
@@ -41,45 +41,45 @@
     }
   },
 
-  "clock_yourTime": {
+  "popup_clock_yourTime": {
     "message": "Your time",
     "description": "Text of clock of user's time"
   },
-  "clock_serverTime": {
+  "popup_clock_serverTime": {
     "message": "Server's time",
     "description": "Text of clock of server's time"
   },
 
-  "state_isProxy": {
+  "popup_state_isProxy": {
     "message": "Proxy",
     "description": ""
   },
-  "state_isHosting": {
+  "popup_state_isHosting": {
     "message": "Hosting",
     "description": ""
   },
-  "state_isMobile": {
+  "popup_state_isMobile": {
     "message": "Mobile",
     "description": ""
   },
 
-  "information_ipAddress": {
+  "popup_information_ipAddress": {
     "message": "IP Address",
     "description": "Title of information box of server's ip address."
   },
-  "information_organisation": {
+  "popup_information_organisation": {
     "message": "Organisation",
     "description": "Title of information box of the server's internet organisation."
   },
-  "information_isp": {
+  "popup_information_isp": {
     "message": "Internet Service Provider",
     "description": "Title of information box of the server's internet service provider."
   },
-  "information_timezone": {
+  "popup_information_timezone": {
     "message": "Timezone",
     "description": "Title of information box of the server's country timezone."
   },
-  "information_currency": {
+  "popup_information_currency": {
     "message": "Currency",
     "description": "Title of information box of the server's country currency."
   }

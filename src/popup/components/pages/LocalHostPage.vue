@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        :sub-text="translate('localHostPage_text')"
+        :sub-text="translate('popup_localHostPage_text')"
         icon="home"
     />
 </template>

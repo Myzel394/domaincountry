@@ -4,7 +4,7 @@
             <img
                 :class="$style.image"
                 :src="svgUrl"
-                :alt="translate('countryFlag_image_alt', code)"
+                :alt="translate('popup_countryFlag_image_alt', code)"
             />
             <div :class="$style.gradient" />
         </div>

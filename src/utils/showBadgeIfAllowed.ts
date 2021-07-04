@@ -1,4 +1,4 @@
-const KEY = "options";
+import { loadOptions } from "./options";
 
 const showBadgeIfAllowed = async (
     text: string,
@@ -9,17 +9,10 @@ const showBadgeIfAllowed = async (
         return;
     }
 
-    const givenData = (await storage.get([KEY]))[KEY] as any;
     const {
         allowBadge,
         badgeColor,
-    } = Object.assign(
-        {
-            allowBadge: false,
-            badgeColor: "#fff",
-        },
-        givenData || {},
-    );
+    } = await loadOptions();
 
     if (!allowBadge) {
         return;

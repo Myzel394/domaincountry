@@ -1,20 +1,25 @@
 module.exports = {
     root: true,
+
     env: {
         node: true,
         webextensions: true,
     },
+
     plugins: [
         "unused-imports",
     ],
+
     extends: [
         "plugin:vue/vue3-essential",
         "eslint:recommended",
         "@vue/typescript",
     ],
+
     parserOptions: {
         parser: "@typescript-eslint/parser",
     },
+
     rules: {
         "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
         "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
@@ -50,4 +55,16 @@ module.exports = {
             { "vars": "all", "varsIgnorePattern": "^_", "args": "after-used", "argsIgnorePattern": "^_" },
         ],
     },
+
+    overrides: [
+        {
+            files: [
+                "**/__tests__/*.{j,t}s?(x)",
+                "**/tests/unit/**/*.spec.{j,t}s?(x)",
+            ],
+            env: {
+                jest: true,
+            },
+        },
+    ],
 }

@@ -22,16 +22,6 @@ import BoxInformation from "@/popup/components/functional/BoxInformation";
 export default {
     name: "InformationBoxes",
     components: { BoxInformation },
-    data() {
-        return {
-            names: [ "MS", "Apple", "Google" ],
-            values: [
-                [ 10, 5, 5, 5 ],
-                [ 40, 10, 10, 10 ],
-                [ 30, 30, 30, 30 ],
-            ],
-        }
-    },
     computed: {
         boxes() {
             return [

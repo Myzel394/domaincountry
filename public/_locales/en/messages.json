@@ -7,6 +7,12 @@
     "message": "Find out about the location, ip address, timezone, currency and other information about the websites you visit!",
     "description": "Description of this extension"
   },
+
+  "hoverTitle_onionService": {
+    "message": "Onion service. Location unavailable",
+    "description": "User hovers over icon on an onion service."
+  },
+
   "localHostPage_text": {
     "message": "This is your PC. Welcome home.",
     "description": "User is on an offline-browser site."

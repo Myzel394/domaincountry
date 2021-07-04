@@ -1,18 +1,9 @@
 import { ActionTree } from "vuex";
-import subDays from "date-fns/subDays"
-import { fetchDomainInformation, fetchExchangeHistory } from "@/apis";
-import { api } from "@/constants";
+import { fetchDomainInformation } from "@/apis";
 import { Store } from "./types";
 import { getCurrentTab } from "@/utils";
 
 const actions: ActionTree<Store, Store> = {
-    setCurrencyBase: (
-        context,
-        base: string,
-    ) => {
-        context.commit("SET_CURRENCY_BASE", base);
-    },
-
     fetchDomainInformation: async (
         context,
         domain: string,
@@ -42,56 +33,6 @@ const actions: ActionTree<Store, Store> = {
         }
     },
 
-    fetchExchangeHistory: async (
-        context,
-        targetedCurrency: string,
-    ) => {
-        context.commit("SET_API_IS_LOADING", {
-            apiName: "currency",
-            isLoading: true,
-        });
-
-        try {
-            const endDate = new Date();
-            const startDate = subDays(endDate, api.EXCHANGE_HISTORY_AMOUNT);
-
-            const data = await fetchExchangeHistory({
-                base: context.state.currencyBase,
-                targetedCurrency,
-                startDate,
-                endDate,
-            });
-
-            context.commit("SET_API_DATA", {
-                apiName: "currency",
-                data,
-            });
-        } catch {
-            context.commit("SET_API_IS_ERROR", {
-                apiName: "currency",
-                isError: true,
-            });
-        } finally {
-            context.commit("SET_API_IS_LOADING", {
-                apiName: "currency",
-                isLoading: false,
-            });
-        }
-    },
-
-    fetchDomain: async (
-        context,
-        domain: string,
-    ) => {
-        await context.dispatch("fetchDomainInformation", domain);
-
-        const targetedCurrency = context.state.api.domain.data!.currency;
-
-        if (!context.getters.isCurrencySame) {
-            await context.dispatch("fetchExchangeHistory", targetedCurrency);
-        }
-    },
-
     getCurrentTab: async (
         context,
     ) => {
@@ -116,7 +57,7 @@ const actions: ActionTree<Store, Store> = {
 
         const domain = (new URL(context.state.currentTab.tab!.url as string)).host;
 
-        await context.dispatch("fetchDomain", domain)
+        await context.dispatch("fetchDomainInformation", domain)
     },
 }
 

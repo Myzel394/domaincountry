@@ -13,29 +13,15 @@
                 </template>
             </BoxInformation>
         </li>
-        <li v-if="!$store.getters.isCurrencySame">
-            <BoxInformation
-                title="Currency"
-                :value="$store.state.api.domain.data.currency"
-            >
-                <template v-slot:icon>
-                    <font-awesome-icon icon="exchange-alt" />
-                </template>
-                <template v-slot:extra>
-                    <CurrencyChart />
-                </template>
-            </BoxInformation>
-        </li>
     </ul>
 </template>
 
 <script>
 import BoxInformation from "@/popup/components/functional/BoxInformation";
-import CurrencyChart from "@/popup/components/CurrencyChart";
 
 export default {
     name: "InformationBoxes",
-    components: { CurrencyChart, BoxInformation },
+    components: { BoxInformation },
     data() {
         return {
             names: [ "MS", "Apple", "Google" ],
@@ -68,6 +54,11 @@ export default {
                     title: "Timezone",
                     value: this.$store.state.api.domain.data.timezone.name,
                     icon: "clock",
+                },
+                {
+                    title: "Currency",
+                    value: this.$store.state.api.domain.data.currency,
+                    icon: "exchange-alt",
                 },
             ]
         },

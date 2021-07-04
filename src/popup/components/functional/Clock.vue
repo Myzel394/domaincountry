@@ -6,6 +6,7 @@
             circle-color="transparent"
             start-color="#fff"
             stop-color="#fff"
+            animation-duration=".5s"
             :completed-steps="calculatedOffset"
             :inner-color="fillColor"
         >

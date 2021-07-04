@@ -25,7 +25,7 @@ export interface FetchDomainInformationResult {
     isHosting: boolean;
 }
 
-const BASE_DOMAIN = "http://ip-api.com";
+const URL = "http://ip-api.com/json";
 
 const FIELDS = [
     "country", "city", "timezone", "offset", "currency", "isp", "org", "mobile", "proxy", "hosting", "query",
@@ -58,7 +58,7 @@ const SCHEMA_OPTION: ValidateOptions = {
 }
 
 const fetchDomainInformation = async (domain: string): Promise<FetchDomainInformationResult> => {
-    const url = buildUrl(`${BASE_DOMAIN}/json/${domain}`, {
+    const url = buildUrl(`${URL}/${domain}`, {
         fields: FIELDS,
     });
 

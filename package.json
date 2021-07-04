@@ -24,6 +24,8 @@
     "vue-progress-circle": "^1.1.2",
     "vue-router": "^4.0.0-alpha.6",
     "vuex": "^4.0.0-alpha.1",
+    "vuex-persist": "^3.1.3",
+    "vuex-webextensions": "^1.3.0",
     "yup": "^0.32.9"
   },
   "devDependencies": {

@@ -12,9 +12,7 @@ const cloneObject = (obj: any) => JSON.parse(JSON.stringify(obj));
 const initialState: Store = {
     api: {
         domain: cloneObject(INITIAL_API_STATE),
-        currency: cloneObject(INITIAL_API_STATE),
     },
-    currencyBase: "EUR",
     currentTab: {
         isLoading: false,
         isError: false,

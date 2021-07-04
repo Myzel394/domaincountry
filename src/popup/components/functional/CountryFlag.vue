@@ -79,7 +79,7 @@ export default {
     background-image: linear-gradient(
         180deg,
         rgba($backgroundColor, 0) 0%,
-        rgba($backgroundColor, 0) 90%,
+        rgba($backgroundColor, 0) 70%,
         rgba($backgroundColor, 1) 100%
     );
 }

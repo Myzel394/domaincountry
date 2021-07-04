@@ -23,17 +23,10 @@ type CurrentTab = {
 
 export type DomainAPI = BaseAPI<FetchDomainInformationResult>
 
-export type CurrencyAPI = BaseAPI<{
-    rates: Record<string, number>;
-}>
-
 export interface Store {
     api: {
         domain: DomainAPI,
-        currency: CurrencyAPI;
     },
-
-    currencyBase: string;
 
     currentTab: CurrentTab;
 }

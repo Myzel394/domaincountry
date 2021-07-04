@@ -41,13 +41,6 @@ const mutations: MutationTree<Store> = {
         state.api[apiName].data = data;
     },
 
-    SET_CURRENCY_BASE: (
-        state,
-        base: string,
-    ) => {
-        state.currencyBase = base;
-    },
-
     SET_CURRENT_TAB_LOADING: (
         state,
         isLoading: boolean,

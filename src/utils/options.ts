@@ -10,6 +10,11 @@ export interface Options {
 
 const KEY = "options";
 
+const DEFAULT_VALUE: Options = {
+    allowBadge: false,
+    badgeColor: variables.backgroundColor,
+}
+
 const SCHEMA = yup.object().shape({
     allowBadge: yup.boolean()
         .required(),
@@ -20,10 +25,10 @@ const SCHEMA = yup.object().shape({
 
 const SCHEMA_WITH_DEFAULT = yup.object().shape({
     allowBadge: yup.boolean()
-        .default(false),
+        .default(DEFAULT_VALUE.allowBadge),
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
-        .default(variables.backgroundColor as string),
+        .default(DEFAULT_VALUE.badgeColor),
 });
 
 export const getStorage = (): StorageArea => {
@@ -40,7 +45,12 @@ export const loadOptions = async (): Promise<Options> => {
     const storage = getStorage();
 
     const rawData = (await storage.get([KEY]))[KEY];
-    return SCHEMA_WITH_DEFAULT.validate(rawData);
+    try {
+        const cleanedData = await SCHEMA_WITH_DEFAULT.validate(rawData);
+        return Object.assign(DEFAULT_VALUE, cleanedData);
+    } catch {
+        return DEFAULT_VALUE;
+    }
 }
 
 export const saveOptions = async (options: Options): Promise<void> => {

@@ -4,7 +4,6 @@ export * from "./getPreferredColorScheme";
 
 export { default as buildUrl } from "./buildUrl";
 export { default as getCurrentTab } from "./getCurrentTab";
-export { default as getOffsetDifference } from "./getOffsetDifference";
 export { default as getFlagPath } from "./getFlagPath";
 export { default as getPreferredColorScheme } from "./getPreferredColorScheme";
 export { default as getSpecialIconPath } from "./getSpecialIconPath";

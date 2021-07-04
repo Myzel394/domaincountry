@@ -4,11 +4,11 @@
     >
         <Clock
             :offset-hours="0"
-            description="Your time"
+            :description="translate('clock_yourTime')"
         />
         <Clock
             :offset-hours="offsetHours"
-            description="Server's time"
+            :description="translate('clock_serverTime')"
         />
     </div>
 </template>

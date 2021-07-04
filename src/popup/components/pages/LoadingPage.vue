@@ -1,5 +1,7 @@
 <template>
-    <FocusedPage sub-text="Loading">
+    <FocusedPage
+        :sub-text="translate('loadingPage_text')"
+    >
         <LoadingCircles />
     </FocusedPage>
 </template>

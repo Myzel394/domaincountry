@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        sub-text="This is an onion service. You can't find out it's location."
+        :sub-text="translate('onionPage_text')"
         icon="mask"
     />
 </template>

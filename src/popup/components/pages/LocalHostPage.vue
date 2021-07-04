@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        sub-text="This is your pc. Welcome home."
+        :sub-text="translate('localHostPage_text')"
         icon="home"
     />
 </template>

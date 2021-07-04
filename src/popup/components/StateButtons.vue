@@ -24,15 +24,15 @@ export default {
         buttons() {
             return [
                 {
-                    name: "Proxy",
+                    name: this.translate("state_isProxy"),
                     active: this.$store.state.api.domain.data.isProxy,
                 },
                 {
-                    name: "Hosting",
+                    name: this.translate("state_isHosting"),
                     active: this.$store.state.api.domain.data.isHosting,
                 },
                 {
-                    name: "Mobile",
+                    name: this.translate("state_isMobile"),
                     active: this.$store.state.api.domain.data.isMobile,
                 },
             ]

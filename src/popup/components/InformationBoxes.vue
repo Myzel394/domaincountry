@@ -36,27 +36,27 @@ export default {
         boxes() {
             return [
                 {
-                    title: "IP address",
+                    title: this.translate("information_ipAddress"),
                     value: this.$store.state.api.domain.data.ipAddress,
                     icon: "globe",
                 },
                 {
-                    title: "Organisation",
+                    title: this.translate("information_organisation"),
                     value: this.$store.state.api.domain.data.organisationName,
                     icon: "wifi",
                 },
                 {
-                    title: "Internet Service Provider",
+                    title: this.translate("information_isp"),
                     value: this.$store.state.api.domain.data.ispName,
                     icon: "broadcast-tower",
                 },
                 {
-                    title: "Timezone",
+                    title: this.translate("information_timezone"),
                     value: this.$store.state.api.domain.data.timezone.name,
                     icon: "clock",
                 },
                 {
-                    title: "Currency",
+                    title: this.translate("information_currency"),
                     value: this.$store.state.api.domain.data.currency,
                     icon: "exchange-alt",
                 },

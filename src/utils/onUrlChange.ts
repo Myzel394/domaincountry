@@ -20,6 +20,17 @@ const onUrlChange = (callback: (newUrl: string) => any) => {
             callback(tab.url);
         }
     }));
+
+
+    // Initial load
+    browser.tabs.query({
+        active: true,
+        windowId: browser.windows.WINDOW_ID_CURRENT,
+    }).then(([tab]) => {
+        if (tab.url) {
+            callback(tab.url);
+        }
+    })
 }
 
 export default onUrlChange;

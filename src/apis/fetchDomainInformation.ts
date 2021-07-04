@@ -1,5 +1,5 @@
 import * as yup from "yup";
-import { buildUrl } from "@/utils";
+import { buildUrl, getBrowserLanguageCode } from "@/utils";
 import { ValidateOptions } from "yup/lib/types";
 import { instance } from "@/utils";
 
@@ -58,8 +58,10 @@ const SCHEMA_OPTION: ValidateOptions = {
 }
 
 const fetchDomainInformation = async (domain: string): Promise<FetchDomainInformationResult> => {
+    const language = getBrowserLanguageCode();
     const url = buildUrl(`${URL}/${domain}`, {
         fields: FIELDS,
+        lang: language,
     });
 
     const { data } = await instance({

@@ -2,5 +2,75 @@
   "extName": {
     "message": "domaincountry",
     "description": ""
+  },
+  "localHostPage_text": {
+    "message": "This is your PC. Welcome home.",
+    "description": "User is on an offline-browser site."
+  },
+  "onionPage_text": {
+    "message": "This is an onion service. You can't find out it's location.",
+    "description": "User is on an Onion service. These are server, whose location can't be determined."
+  },
+  "errorPage_text": {
+    "message": "There was an error. We are sorry.",
+    "description": "Error text when data couldn't be loaded."
+  },
+  "loadingPage_text": {
+    "message": "Loading...",
+    "description": "Text when data is being loaded."
+  },
+
+  "countryFlag_image_alt": {
+    "message": "Flag of country with code \"$code$\"",
+    "description": "Alternative image description text for country flag",
+    "placeholders": {
+      "code": {
+        "content": "$1",
+        "example": "USA"
+      }
+    }
+  },
+
+  "clock_yourTime": {
+    "message": "Your time",
+    "description": "Text of clock of user's time"
+  },
+  "clock_serverTime": {
+    "message": "Server's time",
+    "description": "Text of clock of server's time"
+  },
+
+  "state_isProxy": {
+    "message": "Proxy",
+    "description": ""
+  },
+  "state_isHosting": {
+    "message": "Hosting",
+    "description": ""
+  },
+  "state_isMobile": {
+    "message": "Mobile",
+    "description": ""
+  },
+
+  "information_ipAddress": {
+    "message": "IP Address",
+    "description": "Title of information box of server's ip address."
+  },
+  "information_organisation": {
+    "message": "Organisation",
+    "description": "Title of information box of the server's internet organisation."
+  },
+  "information_isp": {
+    "message": "Internet Service Provider",
+    "description": "Title of information box of the server's internet service provider."
+  },
+  "information_timezone": {
+    "message": "Timezone",
+    "description": "Title of information box of the server's country timezone."
+  },
+  "information_currency": {
+    "message": "Currency",
+    "description": "Title of information box of the server's country currency."
   }
 }

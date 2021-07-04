@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        sub-text="There was an error. We are sorry."
+        :sub-text="translate('errorPage_text')"
         icon="sad-tear"
     />
 </template>

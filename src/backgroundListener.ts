@@ -1,5 +1,6 @@
 import { fetchDomainInformation } from "@/apis";
 import {
+    getExtensionIconPath,
     getFlagPath,
     getSpecialIconPath,
     isLocalHostAddress,
@@ -15,12 +16,10 @@ import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
     @todo Add Badge
 
     @todo Add settings
-
-    @todo Add icon
 */
 
-const showLocalHostIcon = () =>
-    setIconsForAllSizes(size => getSpecialIconPath("home", size));
+const showExtensionIcon = () =>
+    setIconsForAllSizes(size => getExtensionIconPath(size));
 
 const showOnionAddressIcon = () =>
     setIconsForAllSizes(size => getSpecialIconPath("onion", size));
@@ -41,7 +40,7 @@ const showCountryFlagIcon = async (url: string) => {
 
 onUrlChange(async url => {
     if (isLocalHostAddress(url)) {
-        await showLocalHostIcon();
+        await showExtensionIcon();
         return;
     }
 

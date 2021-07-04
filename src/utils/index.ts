@@ -13,3 +13,4 @@ export { default as isLocalHostAddress } from "./isLocalHostAddress";
 export { default as onUrlChange } from "./onUrlChange";
 export { default as instance } from "./instance";
 export { default as getBrowserLanguageCode } from "./getBrowserLanguageCode";
+export { default as getExtensionIconPath } from "./getExtensionIconPath";

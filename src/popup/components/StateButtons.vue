@@ -75,12 +75,16 @@ export default {
     animation: buttonIn .2s ease-out forwards;
 }
 
+.buttonAnimation:nth-of-type(1) {
+    animation-delay: .2s;
+}
+
 .buttonAnimation:nth-of-type(2) {
-    animation-delay: .1s;
+    animation-delay: .3s;
 }
 
 .buttonAnimation:nth-of-type(3) {
-    animation-delay: .2s;
+    animation-delay: .4s;
 }
 
 @media (prefers-reduced-motion: reduce) {

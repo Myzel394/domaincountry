@@ -1,8 +1,8 @@
 <template>
     <LocalHostPage v-if="$store.getters.isLocalHost" />
     <OnionPage v-else-if="$store.getters.isOnionAddress" />
-    <ErrorPage v-else-if="$store.getters.isError" />
     <LoadingPage v-else-if="!$store.getters.isReady" />
+    <ErrorPage v-else-if="$store.getters.isError" />
     <InformationPage v-else />
 </template>
 

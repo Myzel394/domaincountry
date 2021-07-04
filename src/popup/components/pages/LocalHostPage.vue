@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        sub-text="This is 127.0.0.1. Welcome home."
+        sub-text="This is your pc. Welcome home."
         icon="home"
     />
 </template>

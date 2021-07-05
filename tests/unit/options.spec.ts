@@ -5,14 +5,7 @@ const KEY = "options";
 
 describe("loadOptions", () => {
     it("returns defaults when data is none", async () => {
-        // @ts-ignore
-        global.browser = {
-            storage: {
-                sync: {
-                    get: async () => ({}),
-                },
-            },
-        };
+        global.browser.storage.sync.get = async () => ({});
 
         const actual = await loadOptions();
         const expected = {
@@ -24,18 +17,11 @@ describe("loadOptions", () => {
     });
 
     it("returns correct values when data is partly given", async () => {
-        // @ts-ignore
-        global.browser = {
-            storage: {
-                sync: {
-                    get: async () => ({
-                        [KEY]: {
-                            allowBadge: true,
-                        },
-                    }),
-                },
+        global.browser.storage.sync.get =  async () => ({
+            [KEY]: {
+                allowBadge: true,
             },
-        };
+        });
 
         const actual = await loadOptions();
         const expected = {
@@ -47,19 +33,12 @@ describe("loadOptions", () => {
     });
 
     it("returns defaults when data is partly wrong", async () => {
-        // @ts-ignore
-        global.browser = {
-            storage: {
-                sync: {
-                    get: jest.fn(async () => ({
-                        [KEY]: {
-                            badgeColor: "red",
-                            allowBadge: false,
-                        },
-                    })),
-                },
+        global.browser.storage.sync.get =  jest.fn(async () => ({
+            [KEY]: {
+                badgeColor: "red",
+                allowBadge: false,
             },
-        };
+        }));
 
         const actual = await loadOptions();
         const expected = {

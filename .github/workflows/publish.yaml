@@ -3,7 +3,7 @@ name: Publish extension
 on:
   create:
     tags:
-      - "v*"
+      - v*
 
 permissions:
   contents: write

@@ -8,7 +8,12 @@ interface Data {
     data: null | Options;
 }
 
-const storageSetup = () => {
+export interface Result {
+    storage: Data;
+    saveData: (options: Options) => Promise<void>;
+}
+
+const storageSetup = (): Result => {
     const storage = getStorage();
 
     const data = reactive({
@@ -46,7 +51,7 @@ const storageSetup = () => {
     }
 
     // Initial fetch
-    getData();
+    getData(); // skipcq: JS-0328
 
     return {
         storage: data,

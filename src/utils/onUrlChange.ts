@@ -1,4 +1,6 @@
-const onUrlChange = (callback: (newUrl: string) => any) => {
+const onUrlChange = (
+    callback: (newUrl: string) => any,
+): void => {
     // Listen for new tabs
     browser.tabs.onActivated.addListener(async ({ tabId }) => {
         const tab = await browser.tabs.get(tabId);

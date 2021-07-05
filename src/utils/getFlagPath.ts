@@ -24,7 +24,7 @@ const getFlagPath = (
         case "SVG":
             return `${countryName.toLowerCase()}.svg`;
         case "PNG":
-            return `${size}.png`;
+            return `${size.toString()}.png`;
         }
     })();
 

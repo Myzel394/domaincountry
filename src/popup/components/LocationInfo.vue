@@ -1,5 +1,8 @@
 <template>
-    <CountryFlag :code="$store.state.api.domain.data.country.code" />
+    <CountryFlag
+        v-bind="$attrs"
+        :code="$store.state.api.domain.data.country.code"
+    />
     <DomainCaption :url="$store.state.currentTab.tab.url" />
     <LocationTitle
         :country="$store.state.api.domain.data.country.name"

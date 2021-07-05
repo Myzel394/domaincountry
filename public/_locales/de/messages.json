@@ -1,0 +1,110 @@
+{
+  "extName": {
+    "message": "Domain Country",
+    "description": ""
+  },
+  "extDescription": {
+    "message": "Standort, IP-Adresse, Zeitzone, Währung und andere Informationen mit einem Klick über all die Webseiten erfahren, die du besuchst!",
+    "description": "Description of this extension"
+  },
+
+  "errorText": {
+    "message": "Es gab einen Fehler. Das tut uns Leid.",
+    "description": "Error text when data couldn't be loaded."
+  },
+  "loadingText": {
+    "message": "Laden...",
+    "description": "Text when data is being loaded."
+  },
+  "saveText": {
+    "message": "Speichern",
+    "description": "Text when a form can be saved."
+  },
+
+  "popup_hoverTitle_onionService": {
+    "message": "Onion-Service. Standort nicht verfügbar.",
+    "description": "User hovers over icon on an onion service."
+  },
+
+  "popup_localHostPage_text": {
+    "message": "Das ist dein Computer. Willkommen Zuhause.",
+    "description": "User is on an offline-browser site."
+  },
+  "popup_onionPage_text": {
+    "message": "Das ist ein Onion-Serivce. Du kannst den Standort nicht herausfinden.",
+    "description": "User is on an Onion service. These are server, whose location can't be determined."
+  },
+
+  "popup_countryFlag_image_alt": {
+    "message": "Flagge des Landes mit Code \"$code$\"",
+    "description": "Alternative image description text for country flag",
+    "placeholders": {
+      "code": {
+        "content": "$1",
+        "example": "USA"
+      }
+    }
+  },
+
+  "popup_clock_yourTime": {
+    "message": "Deine Zeit",
+    "description": "Text of clock of user's time"
+  },
+  "popup_clock_serverTime": {
+    "message": "Zeit des Servers",
+    "description": "Text of clock of server's time"
+  },
+
+  "popup_state_isProxy": {
+    "message": "Proxy",
+    "description": ""
+  },
+  "popup_state_isHosting": {
+    "message": "Host",
+    "description": ""
+  },
+  "popup_state_isMobile": {
+    "message": "Mobil",
+    "description": ""
+  },
+
+  "popup_information_ipAddress": {
+    "message": "IP-Adresse",
+    "description": "Title of information box of server's ip address."
+  },
+  "popup_information_organisation": {
+    "message": "Organisation",
+    "description": "Title of information box of the server's internet organisation."
+  },
+  "popup_information_isp": {
+    "message": "Internet Service Provider",
+    "description": "Title of information box of the server's internet service provider."
+  },
+  "popup_information_timezone": {
+    "message": "Zeitzone",
+    "description": "Title of information box of the server's country timezone."
+  },
+  "popup_information_currency": {
+    "message": "Währung",
+    "description": "Title of information box of the server's country currency."
+  },
+
+
+  "options_settingsTitle": {
+    "message": "Einstellungen",
+    "description": "Title of settings page."
+  },
+  "options_storageNotAllowed": {
+    "message": "Du hast die <storage>-Berechtigung nicht erteilt. Bitte erteile sie, um Einstellungen vorzunehmen.",
+    "description": ""
+  },
+
+  "options_form_allowBadge": {
+    "message": "Badge erlauben",
+    "description": "Form label of badge allow."
+  },
+  "options_form_badgeColor": {
+    "message": "Badge-Farbe",
+    "description": "Form label of badge color."
+  }
+}

@@ -2,6 +2,7 @@ name: Test Workflow
 
 on:
   - push
+  - pull_request
 
 jobs:
   healt-check-job:

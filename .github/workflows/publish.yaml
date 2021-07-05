@@ -1,0 +1,81 @@
+name: Publish extension
+
+on:
+  - release
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install zx
+        run: yarn global add zx
+
+      - name: Download flags
+        run: yarn run build:download-flags
+
+      - name: Build extension
+        run: yarn run build:extension
+
+      - name: Build Extension for Firefox
+        id: web-ext-build
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: build
+
+      - name: "Create Release"
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.SECRET_GITHUB_TOKEN }}
+        with:
+          files: ${{ steps.web-ext-sign.outputs.target }}
+
+  firefox:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [ 14.x ]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Install zx
+        run: yarn global add zx
+
+      - name: Download flags
+        run: yarn run build:download-flags
+
+      - name: Build extension
+        run: yarn run build:extension
+
+      - name: Build Extension for Firefox
+        id: web-ext-build
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: build
+
+      - name: 'Sign & publish'
+        id: web-ext-sign
+        uses: kewisch/action-web-ext@v1
+        with:
+          cmd: sign
+          channel: listed
+          source: ${{ steps.web-ext-build.outputs.target }}
+          apiKey: ${{ secrets.FIREFOX_API_KEY }}
+          apiSecret: ${{ secrets.FIREFOX_CLIENT_SECRET }}
+
+      - name: Drop artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'Firefox Artefacts'
+          path: ${{ steps.web-ext-sign.outputs.target }}

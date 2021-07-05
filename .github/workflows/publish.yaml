@@ -1,11 +1,9 @@
 name: Publish extension
 
 on:
-  push:
-    branches:
-      - master
+  create:
     tags:
-      - '*'
+      - "v*"
 
 permissions:
   contents: write

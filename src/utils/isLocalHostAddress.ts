@@ -1,5 +1,5 @@
 const isLocalHostAddress = (url: string): boolean => {
-    const host = (new URL(url)).host;
+    const host = (new URL(url)).hostname;
 
     return !host.includes(".");
 }

@@ -3,7 +3,7 @@ import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
 import { getFlagPath, showBadgeIfAllowed } from "@/utils";
 
 const showCountryFlagIcon = async (url: string) => {
-    const domain = new URL(url).host;
+    const domain = (new URL(url)).hostname;
 
     const {
         country: {

@@ -58,7 +58,7 @@ const actions: ActionTree<Store, Store> = {
     ) => {
         await context.dispatch("getCurrentTab");
 
-        const domain = (new URL(context.state.currentTab.tab!.url as string)).host;
+        const domain = (new URL(context.state.currentTab.tab!.url as string)).hostname;
 
         await context.dispatch("fetchDomainInformation", domain)
     },

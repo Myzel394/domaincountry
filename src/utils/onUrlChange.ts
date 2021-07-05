@@ -23,7 +23,6 @@ const onUrlChange = (
         }
     }));
 
-
     // Initial load
     browser.tabs.query({
         active: true,

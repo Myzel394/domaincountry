@@ -43,11 +43,13 @@ $iconSize: 8rem;
 }
 
 .subText {
-    margin-bottom: 2em;
+    margin: 0 auto 2em auto;
 
     font-size: 1.3rem;
     text-align: center;
     color: $secondaryColor;
+
+    max-width: 80%;
 }
 
 .icon {

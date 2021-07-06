@@ -19,8 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install zx
-        run: yarn global add zx
+      - name: Install global requirements
+        run: yarn global add zx svgexport
 
       - name: Download flags
         run: yarn run build:download-flags
@@ -51,8 +51,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Install zx
-        run: yarn global add zx
+      - name: Install global requirements
+        run: yarn global add zx svgexport
 
       - name: Download flags
         run: yarn run build:download-flags

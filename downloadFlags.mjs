@@ -14,22 +14,26 @@ files.pop()
 
 await $`mkdir ${PATH} -p`;
 
-// Convert
-await Promise.all(files.map(async file => {
+// Create images
+for (const file of files) {
     const stem = getStem(file);
     const svgFolder = `${PATH}/${stem}`
     const svgPath = `${svgFolder}/${file}`;
 
+
     await $`mkdir ${svgFolder} -p`
+    // Move svg
     await $`mv repository/svg/${file} ${svgPath}`;
 
-    await Promise.all(SIZES.map(async size => {
+    for (const size of SIZES) {
         const outputPath = `${svgFolder}/${size}.png`;
 
+        // Create image
         await $`svgexport ${svgPath} ${outputPath} ${size}:`
+        // Fix image
         await $`magick ${outputPath} -background transparent -gravity center -extent ${size}x${size} ${outputPath}`;
-    }))
-}));
+    }
+}
 
 // Clean
 await $`rm repository -r`;

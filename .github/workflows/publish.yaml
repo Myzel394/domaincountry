@@ -29,6 +29,9 @@ jobs:
       - name: Build extension
         run: yarn run build:extension
 
+      - name: Move to extension folder
+        run: cd dist
+
       - name: Build Extension for Firefox
         id: web-ext-build
         uses: kewisch/action-web-ext@v1
@@ -63,6 +66,9 @@ jobs:
 
       - name: Build extension
         run: yarn run build:extension
+
+      - name: Move to extension folder
+        run: cd dist
 
       - name: Build Extension for Firefox
         id: web-ext-build

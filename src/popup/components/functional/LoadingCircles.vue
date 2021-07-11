@@ -2,8 +2,8 @@
     <div :class="$style.wrapper">
         <div
             v-for="index of Array(3).fill(null)"
-            :class="$style.dot"
             :key="index"
+            :class="$style.dot"
         />
     </div>
 </template>

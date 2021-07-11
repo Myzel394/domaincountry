@@ -1,7 +1,7 @@
 <template>
     <section
-        :class="$style.box"
         ref="wrapper"
+        :class="$style.box"
     >
         <h2>
             <slot name="icon" />

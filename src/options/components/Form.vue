@@ -11,10 +11,10 @@
                 {{ translate("options_form_allowBadge") }}
             </label>
             <input
+                id="allowBadge"
                 v-model="formAllowBadge"
                 type="checkbox"
                 name="allowBadge"
-                id="allowBadge"
             />
         </div>
         <div :class="$classNames(['panel-formElements-item', $style.item, !formAllowBadge && $style.disabledItem])">
@@ -25,10 +25,10 @@
                 {{ translate("options_form_badgeColor") }}
             </label>
             <input
+                id="badgeColor"
                 v-model="formBadgeColor"
                 type="color"
                 name="badgeColor"
-                id="badgeColor"
             />
         </div>
         <button

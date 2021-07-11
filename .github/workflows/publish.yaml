@@ -1,9 +1,7 @@
 name: Publish extension
 
 on:
-  release:
-    types:
-      - created
+  - release
 
 permissions:
   contents: write

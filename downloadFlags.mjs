@@ -31,7 +31,7 @@ for (const file of files) {
         // Create image
         await $`svgexport ${svgPath} ${outputPath} ${size}:`
         // Fix image
-        await $`magick ${outputPath} -background transparent -gravity center -extent ${size}x${size} ${outputPath}`;
+        await $`convert ${outputPath} -background transparent -gravity center -extent ${size}x${size} ${outputPath}`;
     }
 }
 

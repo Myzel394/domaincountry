@@ -20,6 +20,9 @@ jobs:
       - name: Install global requirements
         run: yarn global add zx svgexport
 
+      - name: Install requirements
+        run: yarn
+
       - name: Download flags
         run: yarn run build:download-flags
 
@@ -51,6 +54,9 @@ jobs:
 
       - name: Install global requirements
         run: yarn global add zx svgexport
+
+      - name: Install requirements
+        run: yarn
 
       - name: Download flags
         run: yarn run build:download-flags

@@ -1,8 +1,8 @@
 <template>
     <LocalHostPage v-if="$store.getters.isLocalHost" />
     <OnionPage v-else-if="$store.getters.isOnionAddress" />
-    <LoadingPage v-else-if="!$store.getters.isReady" />
     <ErrorPage v-else-if="$store.getters.isError" />
+    <LoadingPage v-else-if="$store.getters.isLoading" />
     <InformationPage v-else />
 </template>
 
@@ -26,7 +26,12 @@ export default {
 @import "src/assets/global";
 
 html, body, #app {
-    min-width: 450px;
     min-height: 450px;
+}
+
+@media (min-device-width: $desktopExtensionWidth) {
+    html, body, #app {
+        min-width: 450px;
+    }
 }
 </style>

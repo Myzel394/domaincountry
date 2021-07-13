@@ -1,3 +1,5 @@
+import { getCurrentTab } from "@/utils";
+
 const onUrlChange = (
     callback: (newUrl: string) => any,
 ): void => {
@@ -24,14 +26,11 @@ const onUrlChange = (
     }));
 
     // Initial load
-    browser.tabs.query({
-        active: true,
-        windowId: browser.windows.WINDOW_ID_CURRENT,
-    }).then(([tab]) => {
+    getCurrentTab().then(tab => {
         if (tab.url) {
             callback(tab.url);
         }
-    })
+    });
 }
 
 export default onUrlChange;

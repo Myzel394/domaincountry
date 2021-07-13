@@ -49,7 +49,7 @@ export default {
 @import "src/assets/variables";
 
 .box {
-    padding: .5em 2em;
+    padding: .5em .8em;
     border-radius: .6em;
     background-color: rgba($primaryColor, .1);
 
@@ -72,6 +72,11 @@ export default {
         text-align: left;
 
         margin: 0 0 .5em 1.5em;
+    }
+}
+@media (min-device-width: $desktopExtensionWidth) {
+    .box {
+        padding: .5em 2em;
     }
 }
 </style>

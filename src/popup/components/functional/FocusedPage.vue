@@ -43,7 +43,7 @@ $iconSize: 8rem;
 }
 
 .subText {
-    margin: 0 auto 2em auto;
+    margin: 2em auto;
 
     font-size: 1.3rem;
     text-align: center;

@@ -3,9 +3,9 @@ import { Store } from "./types";
 import { isLocalHostAddress, isOnionAddress } from "@/utils";
 
 const getters: GetterTree<Store, Store> = {
-    isReady: (state) =>
-        state.api.domain.data &&
-        !state.currentTab.isLoading,
+    isLoading: (state) =>
+        state.api.domain.isLoading ||
+        state.currentTab.isLoading,
     isError: state =>
         state.api.domain.isError ||
         state.currentTab.isError,

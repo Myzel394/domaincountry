@@ -1,22 +1,31 @@
 import Tab = browser.tabs.Tab;
 
+const METHODS = [
+    async () => (await browser.tabs.query({
+        active: true,
+        windowId: browser.windows.WINDOW_ID_CURRENT,
+    }))[0],
+    async () => (await browser.tabs.query({
+        active: true,
+    }))[0],
+    browser.tabs.getCurrent,
+    async () => (await browser.tabs.query({}))[0],
+]
+
 const getCurrentTab = async (): Promise<Tab> => {
-    let currentTab: Tab;
+    for (const getTab of METHODS) {
+        try {
+            const tab = await getTab();
 
-    try {
-        currentTab = (await browser.tabs.query({
-            active: true,
-            windowId: browser.windows.WINDOW_ID_CURRENT,
-        }))[0];
-    } catch {
-        currentTab = await browser.tabs.getCurrent();
+            return tab;
+            // eslint-disable-next-line no-empty
+        } catch (err) {
+            console.log("ES GAB EINEN FÄILA", err)
+            continue
+        }
     }
 
-    if (!currentTab) {
-        throw new Error("Tab undefined");
-    }
-
-    return currentTab;
+    throw new Error("Couldn't get current tab");
 }
 
 export default getCurrentTab;

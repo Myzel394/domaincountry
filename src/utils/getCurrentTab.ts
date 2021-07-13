@@ -8,7 +8,7 @@ const METHODS = [
     async () => (await browser.tabs.query({
         active: true,
     }))[0],
-    browser.tabs.getCurrent,
+    async () => await browser.tabs.getCurrent(),
     async () => (await browser.tabs.query({}))[0],
 ]
 
@@ -19,10 +19,7 @@ const getCurrentTab = async (): Promise<Tab> => {
 
             return tab;
             // eslint-disable-next-line no-empty
-        } catch (err) {
-            console.log("ES GAB EINEN FÄILA", err)
-            continue
-        }
+        } catch (err) {}
     }
 
     throw new Error("Couldn't get current tab");

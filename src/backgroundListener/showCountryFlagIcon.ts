@@ -5,7 +5,6 @@ import { getFlagPath, showBadgeIfAllowed } from "@/utils";
 /*
 @TODO: Wrong flag sometimes in toolbar
 @TODO: Data stays on tab switch in Firefox
-@TODO: Too big
  */
 
 const showCountryFlagIcon = async (url: string) => {

@@ -28,6 +28,15 @@ const onUrlChange = (
         }
     }));
 
+    // Listen for window changes
+    browser.windows.onFocusChanged.addListener(async () => {
+        const tab = await getCurrentTab();
+
+        ensureTabUrl(tab);
+
+        callback(tab.url as string);
+    });
+
     // Initial load
     getCurrentTab().then(tab => {
         ensureTabUrl(tab);

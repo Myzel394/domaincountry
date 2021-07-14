@@ -32,7 +32,7 @@ html, body, #app {
 @media (min-device-width: $desktopExtensionWidth) {
     html, body, #app {
         min-width: 450px;
-        max-width: 500px;
+        max-width: 550px;
     }
 }
 </style>

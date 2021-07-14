@@ -1,35 +1,38 @@
 import { getCurrentTab } from "@/utils";
+import Tab = browser.tabs.Tab;
+
+const ensureTabUrl = (tab?: Tab) => {
+    if (!tab?.url) {
+        throw new Error("Url not defined");
+    }
+}
 
 const onUrlChange = (
     callback: (newUrl: string) => any,
 ): void => {
     // Listen for new tabs
     browser.tabs.onActivated.addListener(async ({ tabId }) => {
-        const tab = await browser.tabs.get(tabId);
+        const tab: Tab = await browser.tabs.get(tabId);
 
-        if (!tab?.url) {
-            throw new Error("Url not defined");
-        }
+        ensureTabUrl(tab);
 
-        callback(tab.url);
+        callback(tab.url as string);
     });
 
     // Listen for tab changes
     browser.tabs.onUpdated.addListener(((tabId, changeInfo, tab) => {
         if (changeInfo.url) {
-            if (!tab?.url) {
-                throw new Error("Url not defined");
-            }
+            ensureTabUrl(tab);
 
-            callback(tab.url);
+            callback(tab.url as string);
         }
     }));
 
     // Initial load
     getCurrentTab().then(tab => {
-        if (tab.url) {
-            callback(tab.url);
-        }
+        ensureTabUrl(tab);
+
+        callback(tab.url as string);
     });
 }
 

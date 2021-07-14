@@ -64,10 +64,7 @@ const fetchDomainInformation = async (domain: string): Promise<FetchDomainInform
         lang: language,
     });
 
-    const { data } = await instance({
-        url,
-        method: "GET",
-    });
+    const { data } = await instance.get(url);
 
     const validatedData = await SCHEMA.validate(data, SCHEMA_OPTION);
     const cleanedData: FetchDomainInformationResult = {

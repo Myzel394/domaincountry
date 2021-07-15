@@ -27,27 +27,27 @@ export default {
             return [
                 {
                     title: this.translate("popup_information_ipAddress"),
-                    value: this.$store.state.api.domain.data.ipAddress,
+                    value: this.$store.getters.data.ipAddress,
                     icon: "globe",
                 },
                 {
                     title: this.translate("popup_information_organisation"),
-                    value: this.$store.state.api.domain.data.organisationName,
+                    value: this.$store.getters.data.organisationName,
                     icon: "wifi",
                 },
                 {
                     title: this.translate("popup_information_isp"),
-                    value: this.$store.state.api.domain.data.ispName,
+                    value: this.$store.getters.data.ispName,
                     icon: "broadcast-tower",
                 },
                 {
                     title: this.translate("popup_information_timezone"),
-                    value: this.$store.state.api.domain.data.timezone.name,
+                    value: this.$store.getters.data.timezone.name,
                     icon: "clock",
                 },
                 {
                     title: this.translate("popup_information_currency"),
-                    value: this.$store.state.api.domain.data.currency,
+                    value: this.$store.getters.data.currency,
                     icon: "exchange-alt",
                 },
             ]

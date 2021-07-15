@@ -1,7 +1,7 @@
 import { ActionTree } from "vuex";
-import { fetchDomainInformation } from "@/apis";
 import { Store } from "./types";
 import { getCurrentTab } from "@/utils";
+import { domainData } from "@/utils";
 
 const actions: ActionTree<Store, Store> = {
     fetchDomainInformation: async (
@@ -14,7 +14,7 @@ const actions: ActionTree<Store, Store> = {
         });
 
         try {
-            const data = await fetchDomainInformation(domain);
+            const data = await domainData.fetchData(domain);
 
             context.commit("SET_API_DATA", {
                 apiName: "domain",

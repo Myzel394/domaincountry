@@ -1,6 +1,7 @@
 import { GetterTree } from "vuex";
 import { Store } from "./types";
 import { isLocalHostAddress, isOnionAddress } from "@/utils";
+import { FetchDomainInformationResult } from "@/apis";
 
 const getters: GetterTree<Store, Store> = {
     isLoading: (state) =>
@@ -23,6 +24,18 @@ const getters: GetterTree<Store, Store> = {
 
         return isOnionAddress(state.currentTab.tab.url);
     },
+    data: (state): FetchDomainInformationResult | null => {
+        const data = state.api.domain.data;
+
+        if (!data) {
+            return null;
+        }
+
+        // @ts-ignore
+        return data.isFromBackground ? data.data : data;
+    },
+    // @ts-ignore
+    isDataFromBackground: state => state.api.domain.data?.isFromBackground,
 }
 
 export default getters;

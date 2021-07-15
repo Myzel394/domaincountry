@@ -21,7 +21,11 @@ type CurrentTab = {
     tab?: Tab;
 }
 
-export type DomainAPI = BaseAPI<FetchDomainInformationResult>
+export type DomainAPI = BaseAPI<FetchDomainInformationResult> | BaseAPI<{
+    isFromBackground: true;
+    date: Date;
+    data: FetchDomainInformationResult;
+}>;
 
 export interface Store {
     api: {

@@ -20,7 +20,7 @@ export default {
     components: { Clock },
     computed: {
         offsetHours() {
-            return this.$store.state.api.domain.data.timezone.offset / (60 * 60);
+            return this.$store.getters.data.timezone.offset / (60 * 60);
         },
     },
 }

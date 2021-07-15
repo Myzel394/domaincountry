@@ -1,12 +1,12 @@
 <template>
     <CountryFlag
         v-bind="$attrs"
-        :code="$store.state.api.domain.data.country.code"
+        :code="$store.getters.data.country.code"
     />
     <DomainCaption :url="$store.state.currentTab.tab.url" />
     <LocationTitle
-        :country="$store.state.api.domain.data.country.name"
-        :city="$store.state.api.domain.data.cityName"
+        :country="$store.getters.data.country.name"
+        :city="$store.getters.data.cityName"
     />
     <StateButtons />
 </template>

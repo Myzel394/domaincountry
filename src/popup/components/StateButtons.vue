@@ -26,15 +26,15 @@ export default {
             return [
                 {
                     name: this.translate("popup_state_isProxy"),
-                    active: this.$store.state.api.domain.data.isProxy,
+                    active: this.$store.getters.data.isProxy,
                 },
                 {
                     name: this.translate("popup_state_isHosting"),
-                    active: this.$store.state.api.domain.data.isHosting,
+                    active: this.$store.getters.data.isHosting,
                 },
                 {
                     name: this.translate("popup_state_isMobile"),
-                    active: this.$store.state.api.domain.data.isMobile,
+                    active: this.$store.getters.data.isMobile,
                 },
             ]
         },

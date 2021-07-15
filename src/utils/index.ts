@@ -17,4 +17,6 @@ export { default as translate } from "./translate";
 export { default as showBadgeIfAllowed } from "./showBadgeIfAllowed";
 export { default as removeBadge } from "./removeBadge";
 export { default as setIconsForAllSizes } from "./setIconsForAllSizes";
+export { default as getStorageMethod } from "./getStorageMethod";
 export * as options from "./options";
+export * as domainData from "./domainData";

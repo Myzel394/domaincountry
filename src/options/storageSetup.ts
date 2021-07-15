@@ -1,5 +1,6 @@
 import { reactive } from "vue";
-import { getStorage, Options, loadOptions, saveOptions } from "@/utils/options";
+import { getStorageMethod, options } from "@/utils";
+import { Options } from "@/utils/options";
 
 interface Data {
     isEnabled: boolean;
@@ -14,7 +15,7 @@ export interface Result {
 }
 
 const storageSetup = (): Result => {
-    const storage = getStorage();
+    const storage = getStorageMethod();
 
     const data = reactive({
         isEnabled: Boolean(storage),
@@ -27,7 +28,7 @@ const storageSetup = (): Result => {
         data.isLoading = true;
 
         try {
-            data.data = await loadOptions();
+            data.data = await options.loadOptions();
             data.isError = false;
         } catch {
             data.isError = true;
@@ -36,12 +37,12 @@ const storageSetup = (): Result => {
         }
     }
 
-    const saveData = async (options: Options) => {
+    const saveData = async (newOptions: Options) => {
         data.isLoading = true;
 
         try {
-            await saveOptions(options);
-            data.data = options;
+            await options.saveOptions(newOptions);
+            data.data = newOptions;
             data.isError = false;
         } catch {
             data.isError = false;

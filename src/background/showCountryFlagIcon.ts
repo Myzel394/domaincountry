@@ -1,13 +1,11 @@
 import { fetchDomainInformation } from "@/apis";
 import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
-import { getFlagPath, showBadgeIfAllowed } from "@/utils";
-
-/*
-@TODO: Wrong flag sometimes in toolbar
- */
+import { getFlagPath, showBadgeIfAllowed, domainData } from "@/utils";
 
 const showCountryFlagIcon = async (url: string) => {
     const domain = (new URL(url)).hostname;
+
+    const data = await fetchDomainInformation(domain);
 
     const {
         country: {
@@ -15,8 +13,7 @@ const showCountryFlagIcon = async (url: string) => {
             name,
         },
         cityName,
-    } = await fetchDomainInformation(domain);
-
+    } = data;
     const title = `${name}, ${cityName}`;
 
     browser.browserAction.setTitle({
@@ -24,6 +21,7 @@ const showCountryFlagIcon = async (url: string) => {
     });
 
     await Promise.all([
+        domainData.saveData(domain, data),
         showBadgeIfAllowed(code),
         setIconsForAllSizes(size => getFlagPath(code, {
             format: "PNG",

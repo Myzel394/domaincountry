@@ -1,7 +1,7 @@
 import * as yup from "yup";
 import variables from "@/assets/variables.scss";
 
-import StorageArea = browser.storage.StorageArea;
+import getStorageMethod from "./getStorageMethod";
 
 export interface Options {
     allowBadge: boolean;
@@ -31,18 +31,8 @@ const SCHEMA_WITH_DEFAULT = yup.object().shape({
         .default(DEFAULT_VALUE.badgeColor),
 });
 
-export const getStorage = (): StorageArea => {
-    const storage = browser.storage && (browser.storage.sync || browser.storage.local);
-
-    if (!storage) {
-        throw new Error("Storage not available.");
-    }
-
-    return storage;
-}
-
 export const loadOptions = async (): Promise<Options> => {
-    const storage = getStorage();
+    const storage = getStorageMethod();
 
     const rawData = (await storage.get([KEY]))[KEY];
     try {
@@ -54,7 +44,7 @@ export const loadOptions = async (): Promise<Options> => {
 }
 
 export const saveOptions = async (options: Options): Promise<void> => {
-    const storage = getStorage();
+    const storage = getStorageMethod();
     const validatedOptions = await SCHEMA.validate(options);
 
     return storage.set({

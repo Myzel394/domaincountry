@@ -3,7 +3,7 @@
         <h1 :class="$style.title">
             <font-awesome-icon icon="cog" />
             <span>
-                {{ translate("options_settingsTitle") }}
+                {{ $translate("options_settingsTitle") }}
             </span>
         </h1>
         <div :class="$style.container">

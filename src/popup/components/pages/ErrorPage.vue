@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        :sub-text="translate('errorText')"
+        :sub-text="$translate('errorText')"
         icon="sad-tear"
     />
 </template>

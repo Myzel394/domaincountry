@@ -26,27 +26,27 @@ export default {
         boxes() {
             return [
                 {
-                    title: this.translate("popup_information_ipAddress"),
+                    title: this.$translate("popup_information_ipAddress"),
                     value: this.$store.getters.data.ipAddress,
                     icon: "globe",
                 },
                 {
-                    title: this.translate("popup_information_organisation"),
+                    title: this.$translate("popup_information_organisation"),
                     value: this.$store.getters.data.organisationName,
                     icon: "wifi",
                 },
                 {
-                    title: this.translate("popup_information_isp"),
+                    title: this.$translate("popup_information_isp"),
                     value: this.$store.getters.data.ispName,
                     icon: "broadcast-tower",
                 },
                 {
-                    title: this.translate("popup_information_timezone"),
+                    title: this.$translate("popup_information_timezone"),
                     value: this.$store.getters.data.timezone.name,
                     icon: "clock",
                 },
                 {
-                    title: this.translate("popup_information_currency"),
+                    title: this.$translate("popup_information_currency"),
                     value: this.$store.getters.data.currency,
                     icon: "exchange-alt",
                 },

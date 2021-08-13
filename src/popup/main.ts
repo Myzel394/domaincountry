@@ -6,7 +6,7 @@ import App from "./App.vue";
 import "./fontawesome";
 
 createApp(App)
-    .use(i18nPlugin)
     .use(store)
+    .use(i18nPlugin)
     .component("font-awesome-icon", FontAwesomeIcon)
     .mount("#app")

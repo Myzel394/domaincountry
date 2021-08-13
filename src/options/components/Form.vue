@@ -11,7 +11,7 @@
                 for="allowBadge"
                 :class="$style.label"
             >
-                {{ translate("options_form_allowBadge") }}
+                {{ $translate("options_form_allowBadge") }}
             </label>
             <input
                 id="allowBadge"
@@ -28,7 +28,7 @@
                 for="badgeColor"
                 :class="$style.label"
             >
-                {{ translate("options_form_badgeColor") }}
+                {{ $translate("options_form_badgeColor") }}
             </label>
             <input
                 id="badgeColor"

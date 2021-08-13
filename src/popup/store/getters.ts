@@ -6,7 +6,8 @@ import { FetchDomainInformationResult } from "@/apis";
 const getters: GetterTree<Store, Store> = {
     isLoading: (state) =>
         state.api.domain.isLoading ||
-        state.currentTab.isLoading,
+        state.currentTab.isLoading ||
+        !state.api.domain.data,
     isError: state =>
         state.api.domain.isError ||
         state.currentTab.isError,
@@ -26,6 +27,7 @@ const getters: GetterTree<Store, Store> = {
     },
     data: (state): FetchDomainInformationResult | null => {
         const data = state.api.domain.data;
+        console.log(data, JSON.parse(JSON.stringify(state)));
 
         if (!data) {
             return null;

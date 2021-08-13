@@ -3,7 +3,10 @@
         class="panel-section panel-section-formElements"
         @submit.prevent="submitForm"
     >
-        <div :class="$classNames(['panel-formElements-item', $style.item])">
+        <div
+            class="panel-formElements-item"
+            :class="$style.item"
+        >
             <label
                 for="allowBadge"
                 :class="$style.label"
@@ -17,7 +20,10 @@
                 name="allowBadge"
             />
         </div>
-        <div :class="$classNames(['panel-formElements-item', $style.item, !formAllowBadge && $style.disabledItem])">
+        <div
+            class="panel-formElements-item"
+            :class="[$style.item, !formAllowBadge && $style.disabledItem]"
+        >
             <label
                 for="badgeColor"
                 :class="$style.label"

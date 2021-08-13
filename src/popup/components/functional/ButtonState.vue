@@ -1,6 +1,6 @@
 <template>
     <span
-        :class="$classNames([$style.button, active ? $style.on : $style.off])"
+        :class="[$style.button, active ? $style.on : $style.off]"
     >
         {{ name }}
     </span>

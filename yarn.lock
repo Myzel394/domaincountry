@@ -1965,7 +1965,7 @@
   optionalDependencies:
     prettier "^1.18.2"
 
-"@vue/devtools-api@^6.0.0-beta.11", "@vue/devtools-api@^6.0.0-beta.14":
+"@vue/devtools-api@^6.0.0-beta.11":
   version "6.0.0-beta.15"
   resolved "https://registry.yarnpkg.com/@vue/devtools-api/-/devtools-api-6.0.0-beta.15.tgz#ad7cb384e062f165bcf9c83732125bffbc2ad83d"
   integrity sha512-quBx4Jjpexo6KDiNUGFr/zF/2A4srKM9S9v2uHgMXSU//hjgq1eGzqkIFql8T9gfX5ZaVOUzYBP3jIdIR3PKIA==
@@ -7304,11 +7304,6 @@ lodash.defaultsdeep@^4.6.1:
   resolved "https://registry.yarnpkg.com/lodash.defaultsdeep/-/lodash.defaultsdeep-4.6.1.tgz#512e9bd721d272d94e3d3a63653fa17516741ca6"
   integrity sha512-3j8wdDzYuWO3lM3Reg03MuQR957t287Rpcxp1njpEa8oDrikb+FwGdW3n+FELh/A6qib6yPit0j/pv9G/yeAqA==
 
-lodash.flattendeep@^4.4.0:
-  version "4.4.0"
-  resolved "https://registry.yarnpkg.com/lodash.flattendeep/-/lodash.flattendeep-4.4.0.tgz#fb030917f86a3134e5bc9bec0d69e0013ddfedb2"
-  integrity sha1-+wMJF/hqMTTlvJvsDWngAT3f7bI=
-
 lodash.kebabcase@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
@@ -10978,13 +10973,6 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-classnames@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/vue-classnames/-/vue-classnames-0.1.0.tgz#cdbe851e03e2acf72986a7e0dfd3cafb3aa56124"
-  integrity sha512-VS4LQxDz5DvLXifYsi7K6OCxWNL7wUgC5I6rx90hYaubiTyntY0I6f/yQWXJrY/uZBy2rPtwJa3VOQC56EXawQ==
-  dependencies:
-    lodash.flattendeep "^4.4.0"
-
 vue-cli-plugin-browser-extension@latest:
   version "0.25.2"
   resolved "https://registry.yarnpkg.com/vue-cli-plugin-browser-extension/-/vue-cli-plugin-browser-extension-0.25.2.tgz#e56b11f58a0a429885d766c27298a1bca7108aee"
@@ -11071,13 +11059,6 @@ vue-progress-circle@^1.1.2:
   integrity sha512-f4NTVPSpzG6zheNPBgCaGd4dThxpRIH+rYf9zlseuKFiJhs/Usz9KejGvBOpf10JzVOjHubYBJlocUUcqqhkXw==
   dependencies:
     vue "^2.6.12"
-
-vue-router@^4.0.11:
-  version "4.0.11"
-  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-4.0.11.tgz#cd649a0941c635281763a20965b599643ddc68ed"
-  integrity sha512-sha6I8fx9HWtvTrFZfxZkiQQBpqSeT+UCwauYjkdOQYRvwsGwimlQQE2ayqUwuuXGzquFpCPoXzYKWlzL4OuXg==
-  dependencies:
-    "@vue/devtools-api" "^6.0.0-beta.14"
 
 vue-style-loader@^4.1.0, vue-style-loader@^4.1.2:
   version "4.1.3"

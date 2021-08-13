@@ -11148,10 +11148,10 @@ vuex-persist@^3.1.3:
     deepmerge "^4.2.2"
     flatted "^3.0.5"
 
-vuex-webextensions@^1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/vuex-webextensions/-/vuex-webextensions-1.3.0.tgz#52a48490f61d65b0042f191201e848a47408b136"
-  integrity sha512-ij14iDGKUb9z3nLk7E2Z3Tbhm6g8MUCVoeKNRs6xwnaZEuOyY5B8TmIeyZa/QI2zJvNebQZrrEsTp6GbnRwGpw==
+vuex-webextensions@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/vuex-webextensions/-/vuex-webextensions-1.3.3.tgz#0ad8225c77ab88ca3bb5cd1555c23959169bf421"
+  integrity sha512-Qz+KmF4CYLfomAIuEjY4A9DYqzwXZo18TkvTyO84DkW/s274iI2IyuOSFZoLcVHMS5BjUhRbyFclqqAwz58zgw==
 
 vuex@^4.0.0-alpha.1:
   version "4.0.2"

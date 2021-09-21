@@ -54,7 +54,7 @@
     "lint-staged": "^11.1.2",
     "sass": "1.39",
     "sass-loader": "^10",
-    "typescript": "~4.4.2",
+    "typescript": "~4.4.3",
     "vue-cli-plugin-browser-extension": "latest",
     "vue-jest": "^5.0.0-0",
     "web-ext-types": "kelseasy/web-ext-types"

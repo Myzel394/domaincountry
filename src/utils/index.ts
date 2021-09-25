@@ -18,5 +18,6 @@ export { default as showBadgeIfAllowed } from "./showBadgeIfAllowed";
 export { default as removeBadge } from "./removeBadge";
 export { default as setIconsForAllSizes } from "./setIconsForAllSizes";
 export { default as getStorageMethod } from "./getStorageMethod";
+export { default as isResistingFingerprinting } from "./isResistingFingerprinting";
 export * as options from "./options";
 export * as domainData from "./domainData";

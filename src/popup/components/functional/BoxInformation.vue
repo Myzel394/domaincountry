@@ -35,12 +35,14 @@ export default {
         }
     },
     mounted() {
-        const wrapperLeft = this.$refs.wrapper.getBoundingClientRect().left;
-        const titleLeft = this.$refs.title.getBoundingClientRect().left;
-        const paddingLeft = parseInt(getComputedStyle(this.$refs.wrapper).paddingLeft);
-        const spacing = Math.abs(titleLeft - (wrapperLeft + paddingLeft));
+        this.$nextTick(() => {
+            const wrapperLeft = this.$refs.wrapper.getBoundingClientRect().left;
+            const titleLeft = this.$refs.title.getBoundingClientRect().left;
+            const paddingLeft = parseInt(getComputedStyle(this.$refs.wrapper).paddingLeft);
+            const spacing = Math.abs(titleLeft - (wrapperLeft + paddingLeft));
 
-        this.valueSpacing = spacing;
+            this.valueSpacing = spacing;
+        })
     },
 }
 </script>

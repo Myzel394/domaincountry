@@ -1,3 +1,4 @@
+// This folder contains utils that are only required by the background
 export * from "./onUrlChange";
 export * from "./removeBadge";
 export * from "./showExtensionIcon";

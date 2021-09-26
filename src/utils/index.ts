@@ -1,3 +1,4 @@
+// This folder contains utils that are required by all parties
 export * from "./isOnionAddress";
 export * from "./isLocalHostAddress";
 export * from "./getCurrentTab";

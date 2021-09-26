@@ -1,6 +1,6 @@
 import { loadOptions } from "../options";
 
-const showBadgeIfAllowed = async (
+const showBadge = async (
     text: string,
 ): Promise<void> => {
     const storage = browser.storage && (browser.storage.sync || browser.storage.local);
@@ -26,4 +26,4 @@ const showBadgeIfAllowed = async (
     });
 }
 
-export default showBadgeIfAllowed;
+export default showBadge;

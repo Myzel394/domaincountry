@@ -88,6 +88,10 @@
     "message": "Currency",
     "description": "Title of information box of the server's country currency."
   },
+  "popup_create_bug_report": {
+    "message": "Copy bug report",
+    "description": "Button which allows to copy a report which can be pasted in a bug report."
+  },
 
 
   "options_settingsTitle": {

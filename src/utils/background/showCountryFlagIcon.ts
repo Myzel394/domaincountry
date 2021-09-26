@@ -1,6 +1,8 @@
 import { fetchDomainInformation } from "@/apis";
-import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
-import { getFlagPath, showBadgeIfAllowed, domainData } from "@/utils";
+import setIconsForAllSizes from "./setIconsForAllSizes";
+import getFlagPath from "../getFlagPath";
+import showBadge from "./showBadge";
+import * as domainData from "../domainData";
 
 const showCountryFlagIcon = async (url: string) => {
     const domain = (new URL(url)).hostname;
@@ -22,7 +24,7 @@ const showCountryFlagIcon = async (url: string) => {
 
     await Promise.all([
         domainData.saveData(domain, data),
-        showBadgeIfAllowed(code),
+        showBadge(code),
         setIconsForAllSizes(size => getFlagPath(code, {
             format: "PNG",
             size,

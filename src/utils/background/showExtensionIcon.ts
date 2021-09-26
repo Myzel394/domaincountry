@@ -1,4 +1,7 @@
-import { getExtensionIconPath, removeBadge, translate, setIconsForAllSizes } from "@/utils";
+import getExtensionIconPath from "./getExtensionIconPath";
+import removeBadge from "./removeBadge";
+import translate from "../translate";
+import setIconsForAllSizes from "./setIconsForAllSizes";
 
 const showExtensionIcon = () => {
     browser.browserAction.setTitle({

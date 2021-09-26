@@ -1,7 +1,5 @@
-import { isLocalHostAddress, isOnionAddress, onUrlChange } from "@/utils";
-import showExtensionIcon from "./showExtensionIcon";
-import showOnionAddressIcon from "./showOnionAddressIcon";
-import showCountryFlagIcon from "./showCountryFlagIcon";
+import { onUrlChange, showExtensionIcon, showOnionAddressIcon, showCountryFlagIcon } from "@/utils/background";
+import { isLocalHostAddress, isOnionAddress } from "@/utils";
 
 onUrlChange(async url => {
     if (isLocalHostAddress(url)) {

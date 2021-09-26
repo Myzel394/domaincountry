@@ -41,7 +41,7 @@
             type="submit"
             :class="$style.button"
         >
-            {{ translate('saveText') }}
+            {{ $translate('saveText') }}
         </button>
     </form>
 </template>

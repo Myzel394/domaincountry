@@ -1,4 +1,4 @@
-import { GetFlagPathDataPNG } from "./getFlagPath";
+import { GetFlagPathDataPNG } from "../getFlagPath";
 import getCurrentTab from "../getCurrentTab";
 
 const SIZES = [16, 32, 64] as GetFlagPathDataPNG["size"][];

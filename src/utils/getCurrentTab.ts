@@ -1,15 +1,15 @@
 import Tab = browser.tabs.Tab;
 
 const METHODS = [
-    async () => (await browser.tabs.query({
+    async () => (await extension.tabs.query({
         active: true,
-        windowId: browser.windows.WINDOW_ID_CURRENT,
+        windowId: extension.windows.WINDOW_ID_CURRENT,
     }))[0],
-    async () => (await browser.tabs.query({
+    async () => (await extension.tabs.query({
         active: true,
     }))[0],
-    async () => await browser.tabs.getCurrent(),
-    async () => (await browser.tabs.query({}))[0],
+    async () => await extension.tabs.getCurrent(),
+    async () => (await extension.tabs.query({}))[0],
 ]
 
 const getCurrentTab = async (): Promise<Tab> => {

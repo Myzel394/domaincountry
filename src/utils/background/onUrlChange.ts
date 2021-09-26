@@ -11,8 +11,8 @@ const onUrlChange = (
     callback: (newUrl: string) => any,
 ): void => {
     // Listen for new tabs
-    browser.tabs.onActivated.addListener(async ({ tabId }) => {
-        const tab: Tab = await browser.tabs.get(tabId);
+    extension.tabs.onActivated.addListener(async ({ tabId }) => {
+        const tab: Tab = await extension.tabs.get(tabId);
 
         ensureTabUrl(tab);
 
@@ -20,7 +20,7 @@ const onUrlChange = (
     });
 
     // Listen for tab changes
-    browser.tabs.onUpdated.addListener(((tabId, changeInfo, tab) => {
+    extension.tabs.onUpdated.addListener(((tabId, changeInfo, tab) => {
         if (changeInfo.url) {
             ensureTabUrl(tab);
 
@@ -29,7 +29,7 @@ const onUrlChange = (
     }));
 
     // Listen for window changes
-    browser.windows.onFocusChanged.addListener(async () => {
+    extension.windows.onFocusChanged.addListener(async () => {
         const tab = await getCurrentTab();
 
         ensureTabUrl(tab);

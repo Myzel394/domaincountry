@@ -3,7 +3,7 @@ import { loadOptions } from "../options";
 const showBadge = async (
     text: string,
 ): Promise<void> => {
-    const storage = browser.storage && (browser.storage.sync || browser.storage.local);
+    const storage = extension.storage && (extension.storage.sync || extension.storage.local);
 
     if (!storage) {
         return;
@@ -18,10 +18,10 @@ const showBadge = async (
         return;
     }
 
-    browser.browserAction.setBadgeBackgroundColor({
+    extension.browserAction.setBadgeBackgroundColor({
         color: badgeColor,
     });
-    browser.browserAction.setBadgeText({
+    extension.browserAction.setBadgeText({
         text,
     });
 }

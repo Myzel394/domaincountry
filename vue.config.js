@@ -31,4 +31,10 @@ module.exports = {
             }),
         ],
     },
+
+    chainWebpack(config) {
+        // Manually inject polyfills to enable access to native `browser`.
+        config.plugins.delete("provide-webextension-polyfill");
+        config.module.rules.delete("provide-webextension-polyfill");
+    },
 }

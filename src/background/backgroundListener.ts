@@ -1,3 +1,4 @@
+import "@/utils/importWebextensionPolyfill";
 import { onUrlChange, showExtensionIcon, showOnionAddressIcon, showCountryFlagIcon } from "@/utils/background";
 import { isLocalHostAddress, isOnionAddress } from "@/utils";
 

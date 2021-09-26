@@ -16,7 +16,8 @@
 
 <script>
 import Clock from "@/popup/components/functional/Clock";
-import { isResistingFingerprinting } from "@/utils";
+import { getIsResistingFingerprinting } from "@/utils/popup";
+
 export default {
     name: "Times",
     components: { Clock },
@@ -31,7 +32,7 @@ export default {
         },
     },
     mounted() {
-        isResistingFingerprinting()
+        getIsResistingFingerprinting()
             .then(value => {
                 this.isUsingFakeTime = value;
             });

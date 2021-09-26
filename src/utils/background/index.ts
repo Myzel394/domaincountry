@@ -9,6 +9,7 @@ export * from "./showCountryFlagIcon";
 export * from "./getExtensionIconPath";
 export * from "./showOnionAddressIcon";
 export * from "./getPreferredColorScheme";
+export * from "./isResistingFingerprinting";
 
 export { default as onUrlChange } from "./onUrlChange";
 export { default as removeBadge } from "./removeBadge";
@@ -20,3 +21,4 @@ export { default as showCountryFlagIcon } from "./showCountryFlagIcon";
 export { default as getExtensionIconPath } from "./getExtensionIconPath";
 export { default as showOnionAddressIcon } from "./showOnionAddressIcon";
 export { default as getPreferredColorScheme } from "./getPreferredColorScheme";
+export { default as isResistingFingerprinting } from "./isResistingFingerprinting";

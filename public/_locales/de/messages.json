@@ -54,6 +54,10 @@
     "message": "Zeit des Servers",
     "description": "Text of clock of server's time"
   },
+  "popup_clock_user_uses_fake_time": {
+    "message": "Tipp: Du hast 'privacy.resistFingerprinting' in den 'about:config'-Einstellungen aktiviert. Firefox gibt uns daher nicht deine echte Zeitzone. Die Zeit könnte daher versetzt sein.",
+    "description": "User has enabled fingerprinting resisting and this should make them aware of it."
+  },
 
   "popup_state_isProxy": {
     "message": "Proxy",

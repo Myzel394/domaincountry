@@ -5,7 +5,8 @@ const KEY = "options";
 
 describe("loadOptions", () => {
     it("returns defaults when data is none", async () => {
-        global.browser = {
+        // @ts-ignore
+        global.extension = {
             storage: {
                 // @ts-ignore
                 sync: {
@@ -24,7 +25,8 @@ describe("loadOptions", () => {
     });
 
     it("returns correct values when data is partly given", async () => {
-        global.browser = {
+        // @ts-ignore
+        global.extension = {
             storage: {
                 // @ts-ignore
                 sync: {
@@ -47,7 +49,8 @@ describe("loadOptions", () => {
     });
 
     it("returns defaults when data is partly wrong", async () => {
-        global.browser = {
+        // @ts-ignore
+        global.extension = {
             storage: {
                 // @ts-ignore
                 sync: {

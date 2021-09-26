@@ -3,7 +3,8 @@ import { getBrowserLanguageCode } from "@/utils";
 describe("getBrowserLanguageCode", () => {
     it("returns correct code", () => {
         const mockedGetUILanguage = jest.fn(() => "en-US");
-        global.browser = {
+        // @ts-ignore
+        global.extension = {
             // @ts-ignore
             i18n: {
                 getUILanguage: mockedGetUILanguage,

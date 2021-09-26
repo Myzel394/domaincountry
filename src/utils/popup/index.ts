@@ -1,3 +1,3 @@
-export * from "./getIsResistingFingerprinting";
+export * from "./createBugReport";
 
-export { default as getIsResistingFingerprinting } from "./getIsResistingFingerprinting";
+export { default as createBugReport } from "./createBugReport";

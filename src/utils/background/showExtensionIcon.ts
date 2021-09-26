@@ -4,7 +4,7 @@ import translate from "../translate";
 import setIconsForAllSizes from "./setIconsForAllSizes";
 
 const showExtensionIcon = () => {
-    browser.browserAction.setTitle({
+    extension.browserAction.setTitle({
         title: translate("popup_extName"),
     });
     removeBadge();

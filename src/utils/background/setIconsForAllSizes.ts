@@ -17,7 +17,7 @@ const setIconsForAllSizes = async (
     const { id: currentTabId } = await getCurrentTab();
     const paths = mapSizes(callback);
 
-    await browser.browserAction.setIcon({
+    await extension.browserAction.setIcon({
         path: paths,
         tabId: currentTabId,
     });

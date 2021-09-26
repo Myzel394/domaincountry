@@ -3,6 +3,7 @@
         <LocationInfo />
         <InformationBoxes />
         <Times />
+        <CreateBugReportButton />
     </Container>
 </template>
 
@@ -11,8 +12,9 @@ import LocationInfo from "@/popup/components/LocationInfo";
 import InformationBoxes from "@/popup/components/InformationBoxes";
 import Container from "@/popup/components/functional/Container";
 import Times from "@/popup/components/Times";
+import CreateBugReportButton from "../CreateBugReportButton";
 export default {
     name: "InformationPage",
-    components: { Times, Container, InformationBoxes, LocationInfo },
+    components: { CreateBugReportButton, Times, Container, InformationBoxes, LocationInfo },
 }
 </script>

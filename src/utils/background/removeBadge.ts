@@ -1,5 +1,5 @@
 const removeBadge = (): void => {
-    browser.browserAction.setBadgeText({
+    extension.browserAction.setBadgeText({
         text: "",
     });
 }

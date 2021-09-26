@@ -4,7 +4,7 @@ import removeBadge from "./removeBadge";
 import translate from "../translate"
 
 const showOnionAddressIcon = () => {
-    browser.browserAction.setTitle({
+    extension.browserAction.setTitle({
         title: translate("popup_hoverTitle_onionService"),
     });
     removeBadge();

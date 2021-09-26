@@ -48,10 +48,7 @@ If applicable, add screenshots to help explain your problem.
 
 # Information**
 
-(please complete the following information)
+Please open the extension, scroll down, click on "Copy bug report" and 
+paste the content
 
-- OS: [e.g. Windows 11, Android, Ubuntu 20.04]
-- Browser [e.g. Chrome, Firefox, Firefox for Android]
-
-**Additional context**
-Add any other context about the problem here.
+HERE

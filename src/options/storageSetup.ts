@@ -1,6 +1,6 @@
 import { reactive } from "vue";
 import { getStorageMethod, options } from "@/utils";
-import { Options } from "@/utils/options";
+import { Options } from "@/utils";
 
 interface Data {
     isEnabled: boolean;

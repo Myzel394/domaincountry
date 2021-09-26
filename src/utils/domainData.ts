@@ -28,6 +28,7 @@ export const saveData = async (domain: string, data: any): Promise<void> => {
 }
 
 export const fetchData = async (domain: string, forceNewFetch = false): Promise<any> => {
+    // Tries to load data from cache - otherwise fetches new data and saves it.
     const savedData = (await loadData())[domain];
 
     if (!forceNewFetch && savedData) {

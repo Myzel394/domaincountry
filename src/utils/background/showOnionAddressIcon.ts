@@ -1,5 +1,7 @@
-import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
-import { getSpecialIconPath, removeBadge, translate } from "@/utils";
+import setIconsForAllSizes from "./setIconsForAllSizes";
+import getSpecialIconPath from "./getSpecialIconPath";
+import removeBadge from "./removeBadge";
+import translate from "../translate"
 
 const showOnionAddressIcon = () => {
     browser.browserAction.setTitle({

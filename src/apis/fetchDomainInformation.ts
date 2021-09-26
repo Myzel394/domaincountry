@@ -1,7 +1,6 @@
 import * as yup from "yup";
-import { buildUrl, getBrowserLanguageCode } from "@/utils";
 import { ValidateOptions } from "yup/lib/types";
-import { instance } from "@/utils";
+import { buildUrl, getBrowserLanguageCode, instance } from "@/utils";
 
 export interface FetchDomainInformationResult {
     country: {

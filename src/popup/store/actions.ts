@@ -1,7 +1,6 @@
 import { ActionTree } from "vuex";
 import { Store } from "./types";
-import { getCurrentTab } from "@/utils";
-import { domainData } from "@/utils";
+import { getCurrentTab, domainData } from "@/utils";
 
 const actions: ActionTree<Store, Store> = {
     fetchDomainInformation: async (

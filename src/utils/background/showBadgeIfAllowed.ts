@@ -1,4 +1,4 @@
-import { loadOptions } from "./options";
+import { loadOptions } from "../options";
 
 const showBadgeIfAllowed = async (
     text: string,

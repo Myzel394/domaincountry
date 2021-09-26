@@ -1,6 +1,8 @@
 import { fetchDomainInformation } from "@/apis";
-import setIconsForAllSizes from "@/utils/setIconsForAllSizes";
-import { getFlagPath, showBadgeIfAllowed, domainData } from "@/utils";
+import setIconsForAllSizes from "./setIconsForAllSizes";
+import getFlagPath from "../getFlagPath";
+import showBadgeIfAllowed from "./showBadgeIfAllowed";
+import * as domainData from "../domainData";
 
 const showCountryFlagIcon = async (url: string) => {
     const domain = (new URL(url)).hostname;

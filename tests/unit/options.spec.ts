@@ -1,4 +1,4 @@
-import { loadOptions } from "@/utils/options";
+import { loadOptions } from "@/utils/popup/options";
 import variables from "@/assets/variables.scss";
 
 const KEY = "options";

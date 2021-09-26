@@ -1,4 +1,4 @@
-import { getCurrentTab } from "@/utils";
+import getCurrentTab from "../getCurrentTab";
 import Tab = browser.tabs.Tab;
 
 const ensureTabUrl = (tab?: Tab) => {

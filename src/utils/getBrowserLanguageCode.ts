@@ -1,5 +1,5 @@
 const getBrowserLanguageCode = (): string =>
-    browser.i18n
+    extension.i18n
         .getUILanguage()
         .split("-")[0];
 

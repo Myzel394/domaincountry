@@ -18,7 +18,7 @@ const showCountryFlagIcon = async (url: string) => {
     } = data;
     const title = `${name}, ${cityName}`;
 
-    browser.browserAction.setTitle({
+    extension.browserAction.setTitle({
         title,
     });
 

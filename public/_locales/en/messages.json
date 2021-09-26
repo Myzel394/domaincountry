@@ -99,7 +99,7 @@
     "description": "Title of settings page."
   },
   "options_storageNotAllowed": {
-    "message": "You didn't grant the <storage> permisssion. Please enable it to use settings.",
+    "message": "You didn't grant the <storage> permission. Please enable it to use settings.",
     "description": ""
   },
 

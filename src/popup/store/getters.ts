@@ -27,7 +27,6 @@ const getters: GetterTree<Store, Store> = {
     },
     data: (state): FetchDomainInformationResult | null => {
         const data = state.api.domain.data;
-        console.log(data, JSON.parse(JSON.stringify(state)));
 
         if (!data) {
             return null;

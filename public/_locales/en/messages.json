@@ -8,6 +8,11 @@
     "description": "Description of this extension"
   },
 
+  "only_supported_by_firefox": {
+    "message": "Only supported by Firefox",
+    "description": "Feature is only supported by Firefox."
+  },
+
   "errorText": {
     "message": "There was an error. We are sorry.",
     "description": "Error text when data couldn't be loaded."
@@ -88,6 +93,15 @@
     "message": "Currency",
     "description": "Title of information box of the server's country currency."
   },
+  "popup_information_canonicalName": {
+    "message": "Canonical Name",
+    "description": "Static url of a website."
+  },
+  "popup_information_canonicalName_not_granted": {
+    "message": "Please grant the <dns> permission to use this feature.",
+    "description": "Permission is missing."
+  },
+
   "popup_create_bug_report": {
     "message": "Copy bug report",
     "description": "Button which allows to copy a report which can be pasted in a bug report."

@@ -9,7 +9,19 @@
                 {{ title }}
             </span>
         </h2>
-        <p :style="`margin-left: ${valueSpacing}px`">
+        <a
+            v-if="link"
+            :href="link"
+            :style="style"
+            :class="$style.link"
+            rel="noopener noreferrer"
+        >
+            {{ value }}
+        </a>
+        <p
+            v-else
+            :style="style"
+        >
             {{ value }}
         </p>
         <slot name="extra" />
@@ -28,11 +40,20 @@ export default {
             type: String,
             required: true,
         },
+        link: {
+            type: String,
+            default: "",
+        },
     },
     data() {
         return {
             valueSpacing: 0,
         }
+    },
+    computed: {
+        style() {
+            return `margin-left: ${this.valueSpacing}px`;
+        },
     },
     mounted() {
         this.$nextTick(() => {
@@ -80,5 +101,9 @@ export default {
     .box {
         padding: .5em 2em;
     }
+}
+
+.link {
+    color: $linkColor;
 }
 </style>

@@ -1,12 +1,13 @@
 <template>
     <ul :class="$style.list">
         <li
-            v-for="({ title, value, icon }) of boxes"
+            v-for="({ title, value, icon, link }) of boxes"
             :key="title"
         >
             <BoxInformation
                 :title="title"
                 :value="value"
+                :link="link"
             >
                 <template v-slot:icon>
                     <font-awesome-icon :icon="icon" />
@@ -44,6 +45,7 @@ export default {
                     title: this.$translate("popup_information_ipAddress"),
                     value: this.$store.getters.data.ipAddress,
                     icon: "globe",
+                    link: `http://${this.$store.getters.data.ipAddress}`,
                 },
                 {
                     title: this.$translate("popup_information_organisation"),
@@ -78,6 +80,7 @@ export default {
                         return this.canonicalName.value;
                     })(),
                     icon: "meteor",
+                    link: this.canonicalName.value ? `https://${this.canonicalName.value}` : "",
                 },
             ]
         },

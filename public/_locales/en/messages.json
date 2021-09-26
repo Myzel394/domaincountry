@@ -59,6 +59,10 @@
     "message": "Server's time",
     "description": "Text of clock of server's time"
   },
+  "popup_clock_user_uses_fake_time": {
+    "message": "Hint: You have enabled 'privacy.resistFingerprinting' in the 'about:config' settings. Firefox won't give us your real timezone, so time might be offset.",
+    "description": "User has enabled fingerprinting resisting and this should make them aware of it."
+  },
 
   "popup_state_isProxy": {
     "message": "Proxy",

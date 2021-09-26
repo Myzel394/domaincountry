@@ -20,13 +20,21 @@ import { isResistingFingerprinting } from "@/utils";
 export default {
     name: "Times",
     components: { Clock },
+    data() {
+        return {
+            isUsingFakeTime: false,
+        }
+    },
     computed: {
         offsetHours() {
             return this.$store.getters.data.timezone.offset / (60 * 60);
         },
-        isUsingFakeTime() {
-            return isResistingFingerprinting();
-        },
+    },
+    mounted() {
+        isResistingFingerprinting()
+            .then(value => {
+                this.isUsingFakeTime = value;
+            });
     },
 }
 </script>

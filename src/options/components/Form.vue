@@ -37,6 +37,28 @@
                 name="badgeColor"
             />
         </div>
+        <div
+            class="panel-formElements-item"
+            :class="$style.item"
+        >
+            <label
+                for="queryAPIUrl"
+                :class="$style.label"
+            >
+                {{ $translate("options_form_queryApiUrl") }}
+            </label>
+            <div :class="$style.vertical">
+                <input
+                    id="queryAPIUrl"
+                    v-model="formQueryApiUrl"
+                    type="url"
+                    name="queryAPIUrl"
+                />
+                <p :class="$style.description">
+                    {{ $translate("options_form_queryApiUrl_description") }}
+                </p>
+            </div>
+        </div>
         <button
             type="submit"
             :class="$style.button"
@@ -58,12 +80,17 @@ export default {
             type: String,
             required: true,
         },
+        queryApiUrl: {
+            type: String,
+            required: true,
+        },
     },
     methods: {
         submitForm() {
             this.$emit("update", {
                 allowBadge: this.formAllowBadge,
                 badgeColor: this.formBadgeColor,
+                queryApiUrl: this.formQueryApiUrl,
             });
         },
     },
@@ -71,6 +98,7 @@ export default {
         return {
             formAllowBadge: this.allowBadge,
             formBadgeColor: this.badgeColor,
+            formQueryApiUrl: this.queryApiUrl,
         }
     },
 }
@@ -116,5 +144,15 @@ export default {
 
 .button:hover {
     background-color: rgba($primaryColor, .5);
+}
+
+.description {
+    font-size: .8rem;
+    color: $secondaryColor;
+}
+
+.vertical {
+    display: flex;
+    flex-direction: column;
 }
 </style>

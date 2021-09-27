@@ -2,15 +2,13 @@ import getStorageMethod from "./getStorageMethod";
 import { fetchDomainInformation } from "@/apis";
 
 const KEY = "domain-data";
-const DEFAULT_VALUE = {
-    fallbackQueryAPIUrl: "https://domaincountry-query-api.tolledomain.com",
-};
+const DEFAULT_VALUE = {};
 
 export const loadData = async (): Promise<Record<string, any>> => {
     const storage = getStorageMethod();
     const data = (await storage.get([KEY]))[KEY];
 
-    return Object.assign(DEFAULT_VALUE, data) as Record<string, any>;
+    return (data || DEFAULT_VALUE) as Record<string, any>;
 };
 
 export const saveData = async (domain: string, data: any): Promise<void> => {

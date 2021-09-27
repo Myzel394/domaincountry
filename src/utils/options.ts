@@ -13,6 +13,7 @@ const KEY = "options";
 const DEFAULT_VALUE: Options = {
     allowBadge: false,
     badgeColor: variables.backgroundColor,
+    fallbackQueryAPIUrl: "https://domaincountry-query-api.tolledomain.com",
 }
 
 const SCHEMA = yup.object().shape({
@@ -20,6 +21,9 @@ const SCHEMA = yup.object().shape({
         .required(),
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
+        .required(),
+    fallbackQueryAPIUrl: yup.string()
+        .url()
         .required(),
 })
 
@@ -29,6 +33,9 @@ const SCHEMA_WITH_DEFAULT = yup.object().shape({
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
         .default(DEFAULT_VALUE.badgeColor),
+    fallbackQueryAPIUrl: yup.string()
+        .url()
+        .default(),
 });
 
 export const loadOptions = async (): Promise<Options> => {

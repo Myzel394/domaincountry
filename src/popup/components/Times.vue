@@ -5,17 +5,17 @@
         >
             <Clock
                 :offset-hours="0"
-                :description="$translate('popup_clock_yourTime')"
+                :description="$translate('pages@popup@clock@your_time')"
             />
             <Clock
                 :offset-hours="offsetHours"
-                :description="$translate('popup_clock_serverTime')"
+                :description="$translate('pages@popup@clock@server_time')"
             />
         </div>
         <p
             v-if="isUsingFakeTime"
             :class="$style.description"
-        >{{ $translate("popup_clock_user_uses_fake_time") }}</p>
+        >{{ $translate("pages@popup@clock@user_uses_fake_time") }}</p>
     </div>
 </template>
 

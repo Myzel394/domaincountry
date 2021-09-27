@@ -42,33 +42,33 @@ export default {
         boxes() {
             return [
                 {
-                    title: this.$translate("popup_information_ipAddress"),
+                    title: this.$translate("pages@popup@information@ip_address@label"),
                     value: this.$store.getters.data.ipAddress,
                     icon: "globe",
                     link: `http://${this.$store.getters.data.ipAddress}`,
                 },
                 {
-                    title: this.$translate("popup_information_organisation"),
+                    title: this.$translate("pages@popup@information@organisation@label"),
                     value: this.$store.getters.data.organisationName,
                     icon: "wifi",
                 },
                 {
-                    title: this.$translate("popup_information_isp"),
+                    title: this.$translate("pages@popup@information@isp@label"),
                     value: this.$store.getters.data.ispName,
                     icon: "broadcast-tower",
                 },
                 {
-                    title: this.$translate("popup_information_timezone"),
+                    title: this.$translate("pages@popup@information@timezone@label"),
                     value: this.$store.getters.data.timezone.name,
                     icon: "clock",
                 },
                 {
-                    title: this.$translate("popup_information_currency"),
+                    title: this.$translate("pages@popup@information@currency@label"),
                     value: this.$store.getters.data.currency,
                     icon: "exchange-alt",
                 },
                 {
-                    title: this.$translate("popup_information_canonicalName"),
+                    title: this.$translate("pages@popup@information@canonical_name@label"),
                     value: (() => {
                         if (this.canonicalName.isLoading) {
                             return this.$translate("loadingText");
@@ -99,7 +99,7 @@ export default {
                 return;
             }
             if (!browser.dns) {
-                this.canonicalName.errorMessage = this.$translate("popup_information_canonicalName_not_granted");
+                this.canonicalName.errorMessage = this.$translate("pages@popup@information@canonical_name@not_granted");
                 this.canonicalName.isLoading = false;
                 return;
             }

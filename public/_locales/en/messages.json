@@ -51,62 +51,62 @@
     }
   },
 
-  "popup_clock_yourTime": {
+  "pages@popup@clock@your_time": {
     "message": "Your time",
     "description": "Text of clock of user's time"
   },
-  "popup_clock_serverTime": {
+  "pages@popup@clock@server_time": {
     "message": "Server's time",
     "description": "Text of clock of server's time"
   },
-  "popup_clock_user_uses_fake_time": {
+  "pages@popup@clock@user_uses_fake_time": {
     "message": "Hint: You have enabled 'privacy.resistFingerprinting' in the 'about:config' settings. Firefox won't give us your real timezone, so time might be offset.",
     "description": "User has enabled fingerprinting resisting and this should make them aware of it."
   },
 
-  "popup_state_isProxy": {
+  "pages@popup@state@is_proxy": {
     "message": "Proxy",
     "description": ""
   },
-  "popup_state_isHosting": {
+  "pages@popup@state@is_hosting": {
     "message": "Hosting",
     "description": ""
   },
-  "popup_state_isMobile": {
+  "pages@popup@state@is_mobile": {
     "message": "Mobile",
     "description": ""
   },
 
-  "popup_information_ipAddress": {
+  "pages@popup@information@ip_address@label": {
     "message": "IP Address",
     "description": "Title of information box of server's ip address."
   },
-  "popup_information_organisation": {
+  "pages@popup@information@organisation@label": {
     "message": "Organisation",
     "description": "Title of information box of the server's internet organisation."
   },
-  "popup_information_isp": {
+  "pages@popup@information@isp@label": {
     "message": "Internet Service Provider",
     "description": "Title of information box of the server's internet service provider."
   },
-  "popup_information_timezone": {
+  "pages@popup@information@timezone@label": {
     "message": "Timezone",
     "description": "Title of information box of the server's country timezone."
   },
-  "popup_information_currency": {
+  "pages@popup@information@currency@label": {
     "message": "Currency",
     "description": "Title of information box of the server's country currency."
   },
-  "popup_information_canonicalName": {
+  "pages@popup@information@canonical_name@label": {
     "message": "Canonical Name",
     "description": "Static url of a website."
   },
-  "popup_information_canonicalName_not_granted": {
+  "pages@popup@information@canonical_name@not_granted": {
     "message": "Please grant the <dns> permission to use this feature.",
     "description": "Permission is missing."
   },
 
-  "popup_create_bug_report": {
+  "pages@popup@extra@create_bug_report": {
     "message": "Copy bug report",
     "description": "Button which allows to copy a report which can be pasted in a bug report."
   },

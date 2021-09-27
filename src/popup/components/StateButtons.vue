@@ -25,15 +25,15 @@ export default {
         buttons() {
             return [
                 {
-                    name: this.$translate("popup_state_isProxy"),
+                    name: this.$translate("pages@popup@state@is_proxy"),
                     active: this.$store.getters.data.isProxy,
                 },
                 {
-                    name: this.$translate("popup_state_isHosting"),
+                    name: this.$translate("pages@popup@state@is_hosting"),
                     active: this.$store.getters.data.isHosting,
                 },
                 {
-                    name: this.$translate("popup_state_isMobile"),
+                    name: this.$translate("pages@popup@state@is_mobile"),
                     active: this.$store.getters.data.isMobile,
                 },
             ]

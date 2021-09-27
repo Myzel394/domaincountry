@@ -15,7 +15,7 @@
         <p
             v-if="isUsingFakeTime"
             :class="$style.description"
-        >{{ $translate("pages@popup@clock@user_uses_fake_time") }}</p>
+        >{{ $translate("pages@popup@clock@user_uses_resist_fingerprinting") }}</p>
     </div>
 </template>
 

@@ -8,6 +8,17 @@
     "description": "Description of this extension"
   },
 
+  "extra@permission_missing": {
+    "message": "You didn't grant the <$PERMISSION$> permission. Please enable it to use this feature.",
+    "description": "A permission is missing.",
+    "placeholders": {
+      "permission": {
+        "content": "$1",
+        "example": "storage"
+      }
+    }
+  },
+
   "only_supported_by_firefox": {
     "message": "Only supported by Firefox",
     "description": "Feature is only supported by Firefox."
@@ -112,20 +123,16 @@
   },
 
 
-  "options_settingsTitle": {
+  "pages@options@title": {
     "message": "Settings",
     "description": "Title of settings page."
   },
-  "options_storageNotAllowed": {
-    "message": "You didn't grant the <storage> permission. Please enable it to use settings.",
-    "description": ""
-  },
 
-  "options_form_allowBadge": {
+  "pages@options@form@allow_badge@label": {
     "message": "Allow Badge",
     "description": "Form label of badge allow."
   },
-  "options_form_badgeColor": {
+  "pages@options@form@badge_color@label": {
     "message": "Badge Color",
     "description": "Form label of badge color."
   }

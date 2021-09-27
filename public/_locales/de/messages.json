@@ -8,6 +8,18 @@
     "description": "Description of this extension"
   },
 
+  "extra@permission_missing": {
+    "message": "Du hast die <$PERMISSION$>-Berechtigung nicht erteilt. Bitte erteile sie um dieses Feature nutzen zu können.",
+    "description": "A permission is missing.",
+    "placeholders": {
+      "permission": {
+        "content": "$1",
+        "example": "storage"
+      }
+    }
+  },
+
+
   "only_supported_by_firefox": {
     "message": "Nur von Firefox unterstützt.",
     "description": "Feature is only supported by Firefox."
@@ -112,20 +124,16 @@
   },
 
 
-  "options_settingsTitle": {
+  "pages@options@title": {
     "message": "Einstellungen",
     "description": "Title of settings page."
   },
-  "options_storageNotAllowed": {
-    "message": "Du hast die <storage>-Berechtigung nicht erteilt. Bitte erteile sie, um Einstellungen vorzunehmen.",
-    "description": ""
-  },
 
-  "options_form_allowBadge": {
+  "pages@options@form@allow_badge@label": {
     "message": "Badge erlauben",
     "description": "Form label of badge allow."
   },
-  "options_form_badgeColor": {
+  "pages@options@form@badge_color@label": {
     "message": "Badge-Farbe",
     "description": "Form label of badge color."
   }

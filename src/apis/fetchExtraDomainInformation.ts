@@ -7,7 +7,7 @@ export interface FetchExtraInformationResult {
 
 const fetchUsingExtensionDNSResolver = async (domain: string): Promise<FetchExtraInformationResult> => {
     // Fetches data using the browser's extension `dns` api - only supported by Firefox currently
-    const result = await extension.dns.resolve(domain, ["canonical_name"]);
+    const result = await extension!.dns.resolve(domain, ["canonical_name"]);
 
     return {
         canonicalName: result.canonicalName,
@@ -30,7 +30,7 @@ const fetchUsingAPI = async (domain: string): Promise<FetchExtraInformationResul
 
 }
 
-const fetchExtraInformation = async (domain: string): FetchExtraInformationResult => {
+const fetchExtraInformation = async (domain: string): Promise<FetchExtraInformationResult> => {
     try {
         return await fetchUsingExtensionDNSResolver(domain);
     } catch (error) {

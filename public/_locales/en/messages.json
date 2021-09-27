@@ -37,21 +37,21 @@
     "description": "Text when a form can be saved."
   },
 
-  "popup_hoverTitle_onionService": {
+  "extension@hover_title@is_onion_service": {
     "message": "Onion service. Location unavailable",
     "description": "User hovers over icon on an onion service."
   },
 
-  "popup_localHostPage_text": {
+  "pages@popup@is_local_host@text": {
     "message": "This is your PC. Welcome home.",
     "description": "User is on an offline-browser site."
   },
-  "popup_onionPage_text": {
+  "pages@popup@is_onion_address@text": {
     "message": "This is an onion service. You can't find out it's location.",
     "description": "User is on an Onion service. These are server, whose location can't be determined."
   },
 
-  "popup_countryFlag_image_alt": {
+  "pages@popup@flag_image@alt_text": {
     "message": "Flag of country with code \"$code$\"",
     "description": "Alternative image description text for country flag",
     "placeholders": {

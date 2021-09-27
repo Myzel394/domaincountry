@@ -104,9 +104,9 @@ const fetchDomainInformation = async (domain: string): Promise<FetchDomainInform
             name: validatedData.timezone,
             offset: validatedData.offset,
         },
-    }
+    };
 
-    return cleanedData
+    return cleanedData;
 }
 
 export default fetchDomainInformation;

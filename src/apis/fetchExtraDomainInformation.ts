@@ -12,7 +12,7 @@ const fetchUsingExtensionDNSResolver = async (domain: string): Promise<FetchExtr
 
     return {
         canonicalName: result.canonicalName,
-        ipAddresses: result.ipAddresses,
+        ipAddresses: result.addresses,
     }
 }
 

@@ -1,5 +1,28 @@
 <template>
     <ul :class="$style.list">
+        <li>
+            <BoxInformation
+                :title="$translate('popup_information_ipAddress')"
+                :value="$store.getters.data.ipAddresses[0]"
+            >
+                <template #content>
+                    <ul :class="$style.ipAddresses">
+                        <li
+                            v-for="ipAddress of $store.getters.data.ipAddresses"
+                            :key="ipAddress"
+                        >
+                            <Link :href="`http://${ipAddress}`">
+                                {{ ipAddress }}
+                            </Link>
+                        </li>
+                    </ul>
+                </template>
+
+                <template #icon>
+                    <font-awesome-icon icon="globe" />
+                </template>
+            </BoxInformation>
+        </li>
         <li
             v-for="({ title, value, icon, link }) of boxes"
             :key="title"
@@ -9,7 +32,7 @@
                 :value="value"
                 :link="link"
             >
-                <template v-slot:icon>
+                <template #icon>
                     <font-awesome-icon :icon="icon" />
                 </template>
             </BoxInformation>
@@ -19,10 +42,11 @@
 
 <script>
 import BoxInformation from "@/popup/components/functional/BoxInformation";
+import Link from "./functional/Link";
 
 export default {
     name: "InformationBoxes",
-    components: { BoxInformation },
+    components: { Link, BoxInformation },
     data() {
         return {
             canonicalName: {
@@ -40,12 +64,6 @@ export default {
         },
         boxes() {
             return [
-                {
-                    title: this.$translate("popup_information_ipAddress"),
-                    value: this.$store.getters.data.ipAddress,
-                    icon: "globe",
-                    link: `http://${this.$store.getters.data.ipAddress}`,
-                },
                 {
                     title: this.$translate("popup_information_organisation"),
                     value: this.$store.getters.data.organisationName,
@@ -115,6 +133,14 @@ export default {
 
     > li:nth-of-type(5) {
         animation-delay: .4s;
+    }
+}
+
+.ipAddresses {
+    padding-left: 0;
+
+    li {
+        list-style: none;
     }
 }
 

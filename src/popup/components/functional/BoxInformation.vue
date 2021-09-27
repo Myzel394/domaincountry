@@ -9,28 +9,29 @@
                 {{ title }}
             </span>
         </h2>
-        <a
-            v-if="link"
-            :href="link"
-            :style="style"
-            :class="$style.link"
-            rel="noopener noreferrer"
-        >
-            {{ value }}
-        </a>
-        <p
-            v-else
-            :style="style"
-        >
-            {{ value }}
-        </p>
+        <div :style="style">
+            <slot name="content">
+                <Link
+                    v-if="link"
+                    :href="link"
+                >
+                    {{ value }}
+                </Link>
+                <p v-else>
+                    {{ value }}
+                </p>
+            </slot>
+        </div>
         <slot name="extra" />
     </section>
 </template>
 
 <script>
+import Link from "./Link";
+
 export default {
     name: "BoxInformation",
+    components: { Link },
     props: {
         title: {
             type: String,
@@ -101,9 +102,5 @@ export default {
     .box {
         padding: .5em 2em;
     }
-}
-
-.link {
-    color: $linkColor;
 }
 </style>

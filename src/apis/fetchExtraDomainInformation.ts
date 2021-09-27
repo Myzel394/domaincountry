@@ -1,4 +1,4 @@
-import { instance } from "@/utils";
+import {instance, loadData} from "@/utils";
 
 export interface FetchExtraInformationResult {
     ipAddresses: string[];
@@ -16,11 +16,11 @@ const fetchUsingExtensionDNSResolver = async (domain: string): Promise<FetchExtr
     }
 }
 
-const URL = "https://example.com"
-
 const fetchUsingAPI = async (domain: string): Promise<FetchExtraInformationResult> => {
-    // TODO: Fetch using url from saved setting
-    const url = `${URL}/?domain=${domain}`;
+    const options = await loadData();
+    const baseUrl = options.fallbackQueryAPIUrl;
+
+    const url = `${baseUrl}/?domain=${domain}`;
 
     const { data } = await instance.get(url);
 

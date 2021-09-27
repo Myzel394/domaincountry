@@ -1,6 +1,7 @@
 import * as yup from "yup";
 import { ValidateOptions } from "yup/lib/types";
 import { buildUrl, getBrowserLanguageCode, instance } from "@/utils";
+import fetchExtraDomainInformation, { FetchExtraInformationResult } from "./fetchExtraDomainInformation";
 
 export interface FetchDomainInformationResult {
     country: {
@@ -15,7 +16,8 @@ export interface FetchDomainInformationResult {
         name: string;
         offset: number;
     };
-    ipAddress: string;
+    ipAddresses: string[];
+    canonicalName: string;
 
     currency: string;
 
@@ -56,6 +58,22 @@ const SCHEMA_OPTION: ValidateOptions = {
     stripUnknown: true,
 }
 
+const getExtraInformation = async (
+    domain: string,
+    ipAddress: string,
+): Promise<FetchExtraInformationResult> => {
+    try {
+        return await fetchExtraDomainInformation(domain);
+    } catch (error) {
+        return {
+            canonicalName: domain,
+            ipAddresses: [
+                ipAddress,
+            ],
+        }
+    }
+};
+
 const fetchDomainInformation = async (domain: string): Promise<FetchDomainInformationResult> => {
     const language = getBrowserLanguageCode();
     const url = buildUrl(`${URL}/${domain}`, {
@@ -66,12 +84,15 @@ const fetchDomainInformation = async (domain: string): Promise<FetchDomainInform
     const { data } = await instance.get(url);
 
     const validatedData = await SCHEMA.validate(data, SCHEMA_OPTION);
+    const ipAddress = validatedData.query;
+    const extraData = await getExtraInformation(domain, ipAddress);
     const cleanedData: FetchDomainInformationResult = {
         country: {
             name: validatedData.country,
             code: validatedData.countryCode,
         },
-        ipAddress: validatedData.query,
+        ipAddresses: extraData.ipAddresses,
+        canonicalName: extraData.canonicalName,
         cityName: validatedData.city,
         currency: validatedData.currency,
         isHosting: validatedData.hosting,

@@ -71,7 +71,7 @@ export default {
                     title: this.$translate("pages@popup@information@canonical_name@label"),
                     value: (() => {
                         if (this.canonicalName.isLoading) {
-                            return this.$translate("loadingText");
+                            return this.$translate("extra@text@is_loading");
                         }
                         if (this.canonicalName.errorMessage) {
                             return this.canonicalName.errorMessage;
@@ -107,7 +107,7 @@ export default {
             try {
                 this.canonicalName.value = await getCanonicalName(this.domain);
             } catch (error) {
-                this.canonicalName.errorMessage = this.$translate("errorText");
+                this.canonicalName.errorMessage = this.$translate("extra@text@error_occurred");
             } finally {
                 this.canonicalName.isLoading = false;
             }

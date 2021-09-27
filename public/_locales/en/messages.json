@@ -24,15 +24,15 @@
     "description": "Feature is only supported by Firefox."
   },
 
-  "errorText": {
+  "extra@text@error_occurred": {
     "message": "There was an error. We are sorry.",
     "description": "Error text when data couldn't be loaded."
   },
-  "loadingText": {
+  "extra@text@is_loading": {
     "message": "Loading...",
     "description": "Text when data is being loaded."
   },
-  "saveText": {
+  "extra@text@save_now": {
     "message": "Save",
     "description": "Text when a form can be saved."
   },

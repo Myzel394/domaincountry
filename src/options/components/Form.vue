@@ -125,13 +125,14 @@ export default {
 
 .button {
     font-weight: 900;
-    font-size: .8rem;
+    font-size: 1.1rem;
+    text-align: center;
 
     color: $primaryColor;
     background-color: rgba($primaryColor, .2);
 
     width: 100%;
-    padding: 1em 2em;
+    padding: .8em 1em;
 
     border-radius: 10em;
     border: none;

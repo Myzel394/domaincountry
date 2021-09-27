@@ -19,7 +19,6 @@
 
 <script>
 import BoxInformation from "@/popup/components/functional/BoxInformation";
-import { getCanonicalName } from "../../utils/popup";
 
 export default {
     name: "InformationBoxes",
@@ -69,48 +68,11 @@ export default {
                 },
                 {
                     title: this.$translate("popup_information_canonicalName"),
-                    value: (() => {
-                        if (this.canonicalName.isLoading) {
-                            return this.$translate("loadingText");
-                        }
-                        if (this.canonicalName.errorMessage) {
-                            return this.canonicalName.errorMessage;
-                        }
-
-                        return this.canonicalName.value;
-                    })(),
+                    value: this.$store.getters.data.canonicalName,
                     icon: "meteor",
-                    link: this.canonicalName.value ? `https://${this.canonicalName.value}` : "",
+                    link: `https://${this.$store.getters.data.canonicalName}`,
                 },
             ]
-        },
-    },
-    mounted() {
-        this.loadCanonicalName();
-    },
-    methods: {
-        async loadCanonicalName() {
-            this.canonicalName.errorMessage = null;
-            this.canonicalName.isLoading = true;
-
-            if (!browser) {
-                this.canonicalName.errorMessage = this.$translate("only_supported_by_firefox");
-                this.canonicalName.isLoading = false;
-                return;
-            }
-            if (!browser.dns) {
-                this.canonicalName.errorMessage = this.$translate("popup_information_canonicalName_not_granted");
-                this.canonicalName.isLoading = false;
-                return;
-            }
-
-            try {
-                this.canonicalName.value = await getCanonicalName(this.domain);
-            } catch (error) {
-                this.canonicalName.errorMessage = this.$translate("errorText");
-            } finally {
-                this.canonicalName.isLoading = false;
-            }
         },
     },
 }

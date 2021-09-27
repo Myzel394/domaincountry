@@ -101,10 +101,6 @@
     "message": "Kanonischer Name",
     "description": "Static url of a website."
   },
-  "popup_information_canonicalName_not_granted": {
-    "message": "Bitte erteile die <dns>-Berechtigung um dieses Feature nutzen zu können.",
-    "description": "Permission is missing."
-  },
 
   "popup_create_bug_report": {
     "message": "Bug-Report kopieren",

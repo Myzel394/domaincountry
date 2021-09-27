@@ -101,10 +101,6 @@
     "message": "Canonical Name",
     "description": "Static url of a website."
   },
-  "popup_information_canonicalName_not_granted": {
-    "message": "Please grant the <dns> permission to use this feature.",
-    "description": "Permission is missing."
-  },
 
   "popup_create_bug_report": {
     "message": "Copy bug report",

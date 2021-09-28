@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        :sub-text="$translate('popup_onionPage_text')"
+        :sub-text="$translate('pages@popup@is_onion_address@text')"
         icon="mask"
     />
 </template>

@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        :text="$translate('options_storageNotAllowed')"
+        :text="$translate('extra@permission_missing', ['storage'])"
         icon="database"
     />
 </template>

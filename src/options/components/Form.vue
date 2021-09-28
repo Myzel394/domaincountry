@@ -11,7 +11,7 @@
                 for="allowBadge"
                 :class="$style.label"
             >
-                {{ $translate("options_form_allowBadge") }}
+                {{ $translate("pages@options@form@allow_badge@label") }}
             </label>
             <input
                 id="allowBadge"
@@ -28,7 +28,7 @@
                 for="badgeColor"
                 :class="$style.label"
             >
-                {{ $translate("options_form_badgeColor") }}
+                {{ $translate("pages@options@form@badge_color@label") }}
             </label>
             <input
                 id="badgeColor"
@@ -41,7 +41,7 @@
             type="submit"
             :class="$style.button"
         >
-            {{ $translate('saveText') }}
+            {{ $translate('extra@text@save_now') }}
         </button>
     </form>
 </template>

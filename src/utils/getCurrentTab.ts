@@ -15,14 +15,10 @@ const METHODS = [
 const getCurrentTab = async (): Promise<Tab> => {
     for (const getTab of METHODS) {
         try {
-            const tab = await getTab();
-
-            return tab;
+            return await getTab();
             // eslint-disable-next-line no-empty
         } catch (err) {}
     }
-
-    throw new Error("Couldn't get current tab");
 }
 
 export default getCurrentTab;

@@ -4,7 +4,7 @@
         :class="$style.box"
     >
         <h2>
-            <slot name="icon" />
+            <font-awesome-icon :icon="icon" />
             <span ref="title">
                 {{ title }}
             </span>
@@ -22,7 +22,6 @@
                 </p>
             </slot>
         </div>
-        <slot name="extra" />
     </section>
 </template>
 
@@ -38,6 +37,10 @@ export default {
             required: true,
         },
         value: {
+            type: String,
+            required: true,
+        },
+        icon: {
             type: String,
             required: true,
         },

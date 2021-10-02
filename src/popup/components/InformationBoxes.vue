@@ -4,6 +4,7 @@
             <BoxInformation
                 :title="$translate('pages@popup@information@ip_address@label')"
                 :value="$store.getters.data.ipAddresses[0]"
+                icon="globe"
             >
                 <template #content>
                     <ul :class="$style.ipAddresses">
@@ -17,10 +18,6 @@
                         </li>
                     </ul>
                 </template>
-
-                <template #icon>
-                    <font-awesome-icon icon="globe" />
-                </template>
             </BoxInformation>
         </li>
         <li
@@ -31,11 +28,8 @@
                 :title="title"
                 :value="value"
                 :link="link"
-            >
-                <template #icon>
-                    <font-awesome-icon :icon="icon" />
-                </template>
-            </BoxInformation>
+                :icon="icon"
+            />
         </li>
     </ul>
 </template>

@@ -14,7 +14,6 @@
 </template>
 
 <script>
-
 import storageSetup from "@/options/storageSetup";
 import ErrorPage from "@/options/components/pages/ErrorPage";
 import NotAllowedPage from "@/options/components/pages/NotAllowedPage";

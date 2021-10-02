@@ -2,6 +2,7 @@ import * as yup from "yup";
 import variables from "@/assets/variables.scss";
 
 import getStorageMethod from "./getStorageMethod";
+import StorageValue = browser.storage.StorageValue;
 
 export interface Options {
     allowBadge: boolean;
@@ -26,7 +27,7 @@ const SCHEMA = yup.object().shape({
     fallbackQueryAPIUrl: yup.string()
         .url()
         .required(),
-})
+});
 
 const SCHEMA_WITH_DEFAULT = yup.object().shape({
     allowBadge: yup.boolean()
@@ -39,10 +40,23 @@ const SCHEMA_WITH_DEFAULT = yup.object().shape({
         .default(DEFAULT_VALUE.fallbackQueryAPIUrl),
 });
 
-export const loadOptions = async (): Promise<Options> => {
+const getRawData = async (key: string) => {
     const storage = getStorageMethod();
 
-    const rawData = (await storage.get([KEY]))[KEY];
+    return (await storage.get([key]))[key];
+}
+
+const saveData = async (key: string, data: StorageValue) => {
+    const storage = getStorageMethod();
+
+    return await storage.set({
+        [key]: data,
+    });
+}
+
+export const loadOptions = async (): Promise<Options> => {
+    const rawData = await getRawData(KEY);
+
     try {
         const cleanedData = await SCHEMA_WITH_DEFAULT.validate(rawData);
         return Object.assign(DEFAULT_VALUE, cleanedData);
@@ -52,10 +66,7 @@ export const loadOptions = async (): Promise<Options> => {
 }
 
 export const saveOptions = async (options: Options): Promise<void> => {
-    const storage = getStorageMethod();
     const validatedOptions = await SCHEMA.validate(options);
 
-    return storage.set({
-        [KEY]: validatedOptions,
-    });
+    await saveData(KEY, validatedOptions);
 }

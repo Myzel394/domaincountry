@@ -3,50 +3,33 @@
         class="panel-section panel-section-formElements"
         @submit.prevent="submitForm"
     >
-        <div
-            class="panel-formElements-item"
-            :class="$style.item"
+        <form-element
+            id="allowBadge"
+            :label='$translate("pages@options@form@allow_badge@label")'
         >
-            <label
-                for="allowBadge"
-                :class="$style.label"
-            >
-                {{ $translate("pages@options@form@allow_badge@label") }}
-            </label>
             <input
                 id="allowBadge"
                 v-model="formAllowBadge"
                 type="checkbox"
                 name="allowBadge"
             />
-        </div>
-        <div
-            class="panel-formElements-item"
-            :class="[$style.item, !formAllowBadge && $style.disabledItem]"
+        </form-element>
+        <form-element
+            id="badgeColor"
+            :class="!formAllowBadge && $style.disabledItem"
+            :label='$translate("pages@options@form@badge_color@label")'
         >
-            <label
-                for="badgeColor"
-                :class="$style.label"
-            >
-                {{ $translate("pages@options@form@badge_color@label") }}
-            </label>
             <input
                 id="badgeColor"
                 v-model="formBadgeColor"
                 type="color"
                 name="badgeColor"
             />
-        </div>
-        <div
-            class="panel-formElements-item"
-            :class="$style.item"
+        </form-element>
+        <form-element
+            id="queryAPIUrl"
+            :label='$translate("pages@options@form@query_api_url@label")'
         >
-            <label
-                for="queryAPIUrl"
-                :class="$style.label"
-            >
-                {{ $translate("pages@options@form@query_api_url@label") }}
-            </label>
             <div :class="$style.vertical">
                 <input
                     id="queryAPIUrl"
@@ -58,19 +41,21 @@
                     {{ $translate("pages@options@form@query_api_url@description") }}
                 </p>
             </div>
-        </div>
+        </form-element>
         <button
             type="submit"
             :class="$style.button"
         >
-            {{ $translate('extra@text@save_now') }}
+            {{ $translate("extra@text@save_now") }}
         </button>
     </form>
 </template>
 
 <script>
+import FormElement from "./functional/FormElement";
 export default {
     name: "Form",
+    components: { FormElement },
     props: {
         allowBadge: {
             type: Boolean,
@@ -109,18 +94,8 @@ export default {
 
 .disabledItem {
     filter: grayscale(1);
+    opacity: .6;
     pointer-events: none;
-}
-
-.label {
-    color: $primaryColor;
-    font-size: 1rem;
-    margin-right: 1em;
-    font-weight: 700;
-}
-
-.item {
-    margin-bottom: 2em;
 }
 
 .button {

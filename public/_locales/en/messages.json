@@ -137,11 +137,11 @@
     "description": "Form label of badge color."
   },
 
-  "options_form_queryApiUrl": {
+  "pages@options@form@query_api_url@label": {
     "message": "Query API URL",
     "description": "Form label of the query api url."
   },
-  "options_form_queryApiUrl_description": {
+  "pages@options@form@query_api_url@description": {
     "message": "If you are hosting your own API, enter your base domain here. If you don't know what this is, don't change this field.",
     "description": "Form label of the query api url."
   }

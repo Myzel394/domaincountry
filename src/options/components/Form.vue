@@ -45,7 +45,7 @@
                 for="queryAPIUrl"
                 :class="$style.label"
             >
-                {{ $translate("options_form_queryApiUrl") }}
+                {{ $translate("pages@options@form@query_api_url@label") }}
             </label>
             <div :class="$style.vertical">
                 <input
@@ -55,7 +55,7 @@
                     name="queryAPIUrl"
                 />
                 <p :class="$style.description">
-                    {{ $translate("options_form_queryApiUrl_description") }}
+                    {{ $translate("pages@options@form@query_api_url@description") }}
                 </p>
             </div>
         </div>

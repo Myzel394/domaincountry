@@ -19,6 +19,10 @@ const getCurrentTab = async (): Promise<Tab> => {
             // eslint-disable-next-line no-empty
         } catch (err) {}
     }
+
+    // A tab will always be returned, this line is only required for Typescript to work.
+    // @ts-ignore
+    return undefined as Tab;
 }
 
 export default getCurrentTab;

@@ -7,6 +7,7 @@
             v-else
             :allow-badge="storage.data.allowBadge"
             :badge-color="storage.data.badgeColor"
+            :query-api-url="storage.data.fallbackQueryAPIUrl"
             @update="updateStorage"
         />
     </Container>

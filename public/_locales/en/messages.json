@@ -135,5 +135,14 @@
   "pages@options@form@badge_color@label": {
     "message": "Badge Color",
     "description": "Form label of badge color."
+  },
+
+  "pages@options@form@query_api_url@label": {
+    "message": "Query API URL",
+    "description": "Form label of the query api url."
+  },
+  "pages@options@form@query_api_url@description": {
+    "message": "If you are hosting your own API, enter your base domain here. If you don't know what this is, don't change this field.",
+    "description": "Form label of the query api url."
   }
 }

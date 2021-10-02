@@ -6,13 +6,15 @@ import getStorageMethod from "./getStorageMethod";
 export interface Options {
     allowBadge: boolean;
     badgeColor: string;
+    fallbackQueryAPIUrl: string;
 }
 
 const KEY = "options";
 
-const DEFAULT_VALUE: Options = {
+export const DEFAULT_VALUE: Options = {
     allowBadge: false,
     badgeColor: variables.backgroundColor,
+    fallbackQueryAPIUrl: "https://domaincountry-query-api.tolledomain.com",
 }
 
 const SCHEMA = yup.object().shape({
@@ -20,6 +22,9 @@ const SCHEMA = yup.object().shape({
         .required(),
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
+        .required(),
+    fallbackQueryAPIUrl: yup.string()
+        .url()
         .required(),
 })
 
@@ -29,6 +34,9 @@ const SCHEMA_WITH_DEFAULT = yup.object().shape({
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
         .default(DEFAULT_VALUE.badgeColor),
+    fallbackQueryAPIUrl: yup.string()
+        .url()
+        .default(DEFAULT_VALUE.fallbackQueryAPIUrl),
 });
 
 export const loadOptions = async (): Promise<Options> => {

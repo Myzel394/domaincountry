@@ -1,5 +1,25 @@
 <template>
     <ul :class="$style.list">
+        <li>
+            <BoxInformation
+                :title="$translate('pages@popup@information@ip_address@label')"
+                :value="$store.getters.data.ipAddresses[0]"
+                icon="globe"
+            >
+                <template #content>
+                    <ul :class="$style.ipAddresses">
+                        <li
+                            v-for="ipAddress of $store.getters.data.ipAddresses"
+                            :key="ipAddress"
+                        >
+                            <Link :href="`http://${ipAddress}`">
+                                {{ ipAddress }}
+                            </Link>
+                        </li>
+                    </ul>
+                </template>
+            </BoxInformation>
+        </li>
         <li
             v-for="({ title, value, icon, link }) of boxes"
             :key="title"
@@ -8,22 +28,19 @@
                 :title="title"
                 :value="value"
                 :link="link"
-            >
-                <template v-slot:icon>
-                    <font-awesome-icon :icon="icon" />
-                </template>
-            </BoxInformation>
+                :icon="icon"
+            />
         </li>
     </ul>
 </template>
 
 <script>
 import BoxInformation from "@/popup/components/functional/BoxInformation";
-import { getCanonicalName } from "../../utils/popup";
+import Link from "./functional/Link";
 
 export default {
     name: "InformationBoxes",
-    components: { BoxInformation },
+    components: { Link, BoxInformation },
     data() {
         return {
             canonicalName: {
@@ -41,12 +58,6 @@ export default {
         },
         boxes() {
             return [
-                {
-                    title: this.$translate("pages@popup@information@ip_address@label"),
-                    value: this.$store.getters.data.ipAddress,
-                    icon: "globe",
-                    link: `http://${this.$store.getters.data.ipAddress}`,
-                },
                 {
                     title: this.$translate("pages@popup@information@organisation@label"),
                     value: this.$store.getters.data.organisationName,
@@ -69,48 +80,11 @@ export default {
                 },
                 {
                     title: this.$translate("pages@popup@information@canonical_name@label"),
-                    value: (() => {
-                        if (this.canonicalName.isLoading) {
-                            return this.$translate("extra@text@is_loading");
-                        }
-                        if (this.canonicalName.errorMessage) {
-                            return this.canonicalName.errorMessage;
-                        }
-
-                        return this.canonicalName.value;
-                    })(),
+                    value: this.$store.getters.data.canonicalName,
                     icon: "meteor",
-                    link: this.canonicalName.value ? `https://${this.canonicalName.value}` : "",
+                    link: `https://${this.$store.getters.data.canonicalName}`,
                 },
             ]
-        },
-    },
-    mounted() {
-        this.loadCanonicalName();
-    },
-    methods: {
-        async loadCanonicalName() {
-            this.canonicalName.errorMessage = null;
-            this.canonicalName.isLoading = true;
-
-            if (!browser) {
-                this.canonicalName.errorMessage = this.$translate("only_supported_by_firefox");
-                this.canonicalName.isLoading = false;
-                return;
-            }
-            if (!browser.dns) {
-                this.canonicalName.errorMessage = this.$translate("pages@popup@information@canonical_name@not_granted");
-                this.canonicalName.isLoading = false;
-                return;
-            }
-
-            try {
-                this.canonicalName.value = await getCanonicalName(this.domain);
-            } catch (error) {
-                this.canonicalName.errorMessage = this.$translate("extra@text@error_occurred");
-            } finally {
-                this.canonicalName.isLoading = false;
-            }
         },
     },
 }
@@ -153,6 +127,15 @@ export default {
 
     > li:nth-of-type(5) {
         animation-delay: .4s;
+    }
+}
+
+.ipAddresses {
+    padding-left: 0;
+
+    li {
+        list-style: none;
+        padding: .2em 0;
     }
 }
 

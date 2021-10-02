@@ -2,7 +2,7 @@
     <ul :class="$style.list">
         <li>
             <BoxInformation
-                :title="$translate('popup_information_ipAddress')"
+                :title="$translate('pages@popup@information@ip_address@label')"
                 :value="$store.getters.data.ipAddresses[0]"
             >
                 <template #content>
@@ -65,7 +65,7 @@ export default {
         boxes() {
             return [
                 {
-                    title: this.$translate("pages@popup@information@ip_address@label"),
+                    title: this.$translate("pages@popup@information@organisation@label"),
                     value: this.$store.getters.data.organisationName,
                     icon: "wifi",
                 },

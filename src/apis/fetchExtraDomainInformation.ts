@@ -25,8 +25,8 @@ const fetchUsingAPI = async (domain: string): Promise<FetchExtraInformationResul
     const { data } = await instance.get(url);
 
     return {
-        canonicalName: data.canonicalName,
-        ipAddresses: data.ipAddresses,
+        canonicalName: data.canonical_name,
+        ipAddresses: data.ip_addresses,
     }
 
 }

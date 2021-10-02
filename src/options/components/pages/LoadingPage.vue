@@ -1,6 +1,6 @@
 <template>
     <FocusedPage
-        :text="$translate('loadingText')"
+        :text="$translate('extra@text@is_loading')"
     />
 </template>
 

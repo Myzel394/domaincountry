@@ -3,7 +3,7 @@
         :class="$style.button"
         @click="createReport"
     >
-        {{ $translate('popup_create_bug_report') }}
+        {{ $translate('pages@popup@extra@create_bug_report') }}
     </button>
 </template>
 

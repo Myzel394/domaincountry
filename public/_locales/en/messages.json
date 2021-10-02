@@ -8,39 +8,50 @@
     "description": "Description of this extension"
   },
 
+  "extra@permission_missing": {
+    "message": "You didn't grant the <$PERMISSION$> permission. Please enable it to use this feature.",
+    "description": "A permission is missing.",
+    "placeholders": {
+      "permission": {
+        "content": "$1",
+        "example": "storage"
+      }
+    }
+  },
+
   "only_supported_by_firefox": {
     "message": "Only supported by Firefox",
     "description": "Feature is only supported by Firefox."
   },
 
-  "errorText": {
+  "extra@text@error_occurred": {
     "message": "There was an error. We are sorry.",
     "description": "Error text when data couldn't be loaded."
   },
-  "loadingText": {
+  "extra@text@is_loading": {
     "message": "Loading...",
     "description": "Text when data is being loaded."
   },
-  "saveText": {
+  "extra@text@save_now": {
     "message": "Save",
     "description": "Text when a form can be saved."
   },
 
-  "popup_hoverTitle_onionService": {
+  "extension@hover_title@is_onion_service": {
     "message": "Onion service. Location unavailable",
     "description": "User hovers over icon on an onion service."
   },
 
-  "popup_localHostPage_text": {
+  "pages@popup@is_local_host@text": {
     "message": "This is your PC. Welcome home.",
     "description": "User is on an offline-browser site."
   },
-  "popup_onionPage_text": {
+  "pages@popup@is_onion_address@text": {
     "message": "This is an onion service. You can't find out it's location.",
     "description": "User is on an Onion service. These are server, whose location can't be determined."
   },
 
-  "popup_countryFlag_image_alt": {
+  "pages@popup@flag_image@alt_text": {
     "message": "Flag of country with code \"$code$\"",
     "description": "Alternative image description text for country flag",
     "placeholders": {
@@ -51,77 +62,77 @@
     }
   },
 
-  "popup_clock_yourTime": {
+  "pages@popup@clock@your_time": {
     "message": "Your time",
     "description": "Text of clock of user's time"
   },
-  "popup_clock_serverTime": {
+  "pages@popup@clock@server_time": {
     "message": "Server's time",
     "description": "Text of clock of server's time"
   },
-  "popup_clock_user_uses_fake_time": {
+  "pages@popup@clock@user_uses_resist_fingerprinting": {
     "message": "Hint: You have enabled 'privacy.resistFingerprinting' in the 'about:config' settings. Firefox won't give us your real timezone, so time might be offset.",
     "description": "User has enabled fingerprinting resisting and this should make them aware of it."
   },
 
-  "popup_state_isProxy": {
+  "pages@popup@state@is_proxy": {
     "message": "Proxy",
     "description": ""
   },
-  "popup_state_isHosting": {
+  "pages@popup@state@is_hosting": {
     "message": "Hosting",
     "description": ""
   },
-  "popup_state_isMobile": {
+  "pages@popup@state@is_mobile": {
     "message": "Mobile",
     "description": ""
   },
 
-  "popup_information_ipAddress": {
+  "pages@popup@information@ip_address@label": {
     "message": "IP Address",
     "description": "Title of information box of server's ip address."
   },
-  "popup_information_organisation": {
+  "pages@popup@information@organisation@label": {
     "message": "Organisation",
     "description": "Title of information box of the server's internet organisation."
   },
-  "popup_information_isp": {
+  "pages@popup@information@isp@label": {
     "message": "Internet Service Provider",
     "description": "Title of information box of the server's internet service provider."
   },
-  "popup_information_timezone": {
+  "pages@popup@information@timezone@label": {
     "message": "Timezone",
     "description": "Title of information box of the server's country timezone."
   },
-  "popup_information_currency": {
+  "pages@popup@information@currency@label": {
     "message": "Currency",
     "description": "Title of information box of the server's country currency."
   },
-  "popup_information_canonicalName": {
+  "pages@popup@information@canonical_name@label": {
     "message": "Canonical Name",
     "description": "Static url of a website."
   },
+  "pages@popup@information@canonical_name@not_granted": {
+    "message": "Please grant the <dns> permission to use this feature.",
+    "description": "Permission is missing."
+  },
 
-  "popup_create_bug_report": {
+  "pages@popup@extra@create_bug_report": {
     "message": "Copy bug report",
     "description": "Button which allows to copy a report which can be pasted in a bug report."
   },
 
 
-  "options_settingsTitle": {
+  "pages@options@title": {
     "message": "Settings",
     "description": "Title of settings page."
   },
-  "options_storageNotAllowed": {
-    "message": "You didn't grant the <storage> permission. Please enable it to use settings.",
-    "description": ""
-  },
 
-  "options_form_allowBadge": {
+  "pages@options@form@allow_badge@label": {
     "message": "Allow Badge",
     "description": "Form label of badge allow."
   },
-  "options_form_badgeColor": {
+  "pages@options@form@badge_color@label": {
     "message": "Badge Color",
     "description": "Form label of badge color."
   },

@@ -12,7 +12,7 @@ const METHODS = [
     async () => (await extension.tabs.query({}))[0],
 ]
 
-const getCurrentTab = async (): Promise<Tab> => {
+const getCurrentTab = async (): Promise<Tab | undefined> => {
     for (const getTab of METHODS) {
         try {
             return await getTab();

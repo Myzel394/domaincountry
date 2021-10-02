@@ -1,5 +1,4 @@
-import { loadOptions } from "@/utils/options";
-import variables from "@/assets/variables.scss";
+import { DEFAULT_VALUE, loadOptions } from "@/utils/options";
 
 const KEY = "options";
 
@@ -16,12 +15,8 @@ describe("loadOptions", () => {
         }
 
         const actual = await loadOptions();
-        const expected = {
-            allowBadge: false,
-            badgeColor: variables.backgroundColor as string,
-        }
 
-        expect(actual).toStrictEqual(expected);
+        expect(actual).toStrictEqual(DEFAULT_VALUE);
     });
 
     it("returns correct values when data is partly given", async () => {
@@ -42,7 +37,8 @@ describe("loadOptions", () => {
         const actual = await loadOptions();
         const expected = {
             allowBadge: true,
-            badgeColor: variables.backgroundColor as string,
+            badgeColor: DEFAULT_VALUE.badgeColor,
+            fallbackQueryAPIUrl: DEFAULT_VALUE.fallbackQueryAPIUrl,
         }
 
         expect(actual).toStrictEqual(expected);
@@ -65,12 +61,7 @@ describe("loadOptions", () => {
         }
 
         const actual = await loadOptions();
-        const expected = {
-            // @todo: run Tests using `runInBand`
-            allowBadge: true,
-            badgeColor: variables.backgroundColor as string,
-        }
 
-        expect(actual).toStrictEqual(expected);
+        expect(actual).toStrictEqual(DEFAULT_VALUE);
     });
 })

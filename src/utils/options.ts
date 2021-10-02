@@ -11,7 +11,7 @@ export interface Options {
 
 const KEY = "options";
 
-const DEFAULT_VALUE: Options = {
+export const DEFAULT_VALUE: Options = {
     allowBadge: false,
     badgeColor: variables.backgroundColor,
     fallbackQueryAPIUrl: "https://domaincountry-query-api.tolledomain.com",

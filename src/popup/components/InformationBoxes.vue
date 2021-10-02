@@ -3,12 +3,12 @@
         <li>
             <BoxInformation
                 :title="$translate('popup_information_ipAddress')"
-                :value="$store.getters.data.ipAddresses?.[0]"
+                :value="$store.getters.data.ipAddresses[0]"
             >
                 <template #content>
                     <ul :class="$style.ipAddresses">
                         <li
-                            v-for="ipAddress of ($store.getters.data.ipAddresses || [])"
+                            v-for="ipAddress of $store.getters.data.ipAddresses"
                             :key="ipAddress"
                         >
                             <Link :href="`http://${ipAddress}`">

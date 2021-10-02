@@ -9,7 +9,7 @@
                 {{ title }}
             </span>
         </h2>
-        <div :style="style">
+        <div :class="$style.container">
             <slot name="content">
                 <Link
                     v-if="link"
@@ -46,26 +46,6 @@ export default {
             default: "",
         },
     },
-    data() {
-        return {
-            valueSpacing: 0,
-        }
-    },
-    computed: {
-        style() {
-            return `margin-left: ${this.valueSpacing}px`;
-        },
-    },
-    mounted() {
-        this.$nextTick(() => {
-            const wrapperLeft = this.$refs.wrapper.getBoundingClientRect().left;
-            const titleLeft = this.$refs.title.getBoundingClientRect().left;
-            const paddingLeft = parseInt(getComputedStyle(this.$refs.wrapper).paddingLeft);
-            const spacing = Math.abs(titleLeft - (wrapperLeft + paddingLeft));
-
-            this.valueSpacing = spacing;
-        })
-    },
 }
 </script>
 
@@ -73,9 +53,13 @@ export default {
 @import "src/assets/variables";
 
 .box {
-    padding: .5em .8em;
+    padding: .2em 1em;
     border-radius: .6em;
     background-color: rgba($primaryColor, .1);
+
+    .container {
+        padding: .5em 2em;
+    }
 
     h2 {
         font-size: 1.4rem;
@@ -95,7 +79,7 @@ export default {
         color: $secondaryColor;
         text-align: left;
 
-        margin: 0 0 .5em 1.5em;
+        margin: 0;
     }
 }
 @media (min-device-width: $desktopExtensionWidth) {

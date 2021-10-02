@@ -141,6 +141,7 @@ export default {
 
     li {
         list-style: none;
+        padding: .2em 0;
     }
 }
 

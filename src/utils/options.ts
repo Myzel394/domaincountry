@@ -6,6 +6,7 @@ import getStorageMethod from "./getStorageMethod";
 export interface Options {
     allowBadge: boolean;
     badgeColor: string;
+    fallbackQueryAPIUrl: string;
 }
 
 const KEY = "options";
@@ -35,7 +36,7 @@ const SCHEMA_WITH_DEFAULT = yup.object().shape({
         .default(DEFAULT_VALUE.badgeColor),
     fallbackQueryAPIUrl: yup.string()
         .url()
-        .default(),
+        .default(DEFAULT_VALUE.fallbackQueryAPIUrl),
 });
 
 export const loadOptions = async (): Promise<Options> => {

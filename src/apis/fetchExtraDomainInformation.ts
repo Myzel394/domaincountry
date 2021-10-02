@@ -1,4 +1,4 @@
-import {instance, loadData, loadOptions} from "@/utils";
+import { instance, loadOptions } from "@/utils";
 
 export interface FetchExtraInformationResult {
     ipAddresses: string[];

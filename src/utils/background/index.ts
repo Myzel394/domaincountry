@@ -10,6 +10,8 @@ export * from "./showOnionAddressIcon";
 export * from "./getPreferredColorScheme";
 export * from "./handleTab";
 export * from "./showIcon";
+export * from "./isSearchBarIconShown";
+export * from "./setToolbarIconVisibility";
 
 export { default as onTabChange } from "./onTabChange";
 export { default as removeBadge } from "./removeBadge";
@@ -22,3 +24,5 @@ export { default as showOnionAddressIcon } from "./showOnionAddressIcon";
 export { default as getPreferredColorScheme } from "./getPreferredColorScheme";
 export { default as handleTab } from "./handleTab";
 export { default as showIcon } from "./showIcon";
+export { default as isSearchBarIconShown } from "./isSearchBarIconShown";
+export { default as setToolbarIconVisibility } from "./setToolbarIconVisibility";

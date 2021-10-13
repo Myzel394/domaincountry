@@ -2,7 +2,7 @@
     <ul :class="$style.list">
         <li>
             <BoxInformation
-                :title="$translate('pages@popup@information@ip_address@label')"
+                :title="ipAddressTitle"
                 :value="$store.getters.data.ipAddresses[0]"
                 icon="globe"
             >
@@ -51,6 +51,13 @@ export default {
         }
     },
     computed: {
+        ipAddressTitle() {
+            if (this.$store.getters.data.ipAddresses.length === 1) {
+                return this.$translate("pages@popup@information@ip_address@label")
+            } else {
+                return this.$translate("pages@popup@information@ip_address@label@plural")
+            }
+        },
         domain() {
             const url = this.$store.state.currentTab.tab.url;
 

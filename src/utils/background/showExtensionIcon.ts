@@ -1,15 +1,12 @@
 import getExtensionIconPath from "./getExtensionIconPath";
-import removeBadge from "./removeBadge";
 import translate from "../translate";
-import setIconsForAllSizes from "./setIconsForAllSizes";
+import showIcon from "@/utils/background/showIcon";
 
 const showExtensionIcon = () => {
-    extension.browserAction.setTitle({
+    return showIcon({
         title: translate("popup_extName"),
-    });
-    removeBadge();
-
-    return setIconsForAllSizes(size => getExtensionIconPath(size));
+        getIcon: size => getExtensionIconPath(size),
+    })
 }
 
 export default showExtensionIcon;

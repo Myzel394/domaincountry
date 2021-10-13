@@ -4,12 +4,6 @@ import getCurrentTab from "../getCurrentTab";
 const showBadge = async (
     text: string,
 ): Promise<void> => {
-    const storage = extension.storage && (extension.storage.sync || extension.storage.local);
-
-    if (!storage) {
-        return;
-    }
-
     const {
         allowBadge,
         badgeColor,

@@ -7,11 +7,8 @@ const SIZES = [16, 32, 64] as GetFlagPathDataPNG["size"][];
 
 const mapSizes = (
     callback: ((size: GetFlagPathDataPNG["size"]) => string),
-): Record<string, string> =>
-    SIZES.reduce((acc, size) => {
-        acc[size] = callback(size)
-        return acc;
-    }, {} as Record<string, string>);
+): string[] =>
+    SIZES.map(callback);
 
 const showIcon = async ({
     title,

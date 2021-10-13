@@ -1,18 +1,3 @@
-import { domainData, loadOptions } from "@/utils";
-import getCurrentTab from "../utils/getCurrentTab";
-import { showExtensionIcon } from "@/utils/background";
+import { domainData } from "@/utils";
 
-extension.runtime.onStartup.addListener(async () => {
-    await domainData.clearData();
-
-    const {
-        allowSearchBarIcon,
-    } = await loadOptions();
-
-    if (allowSearchBarIcon) {
-        const { id: currentTabId } = await getCurrentTab();
-
-        extension.pageAction.show(currentTabId);
-        await showExtensionIcon();
-    }
-});
+extension.runtime.onStartup.addListener(domainData.clearData);

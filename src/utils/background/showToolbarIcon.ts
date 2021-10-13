@@ -13,7 +13,7 @@ const showToolbarIcon = async (
         return;
     }
 
-    const { id: currentTabId } = await getCurrentTab();
+    const { id: currentTabId } = await getCurrentTab() as {id: number};
 
     extension.pageAction.setTitle({
         tabId: currentTabId,

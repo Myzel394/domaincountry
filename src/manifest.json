@@ -52,7 +52,7 @@
       "64": "icons/extension/64.png",
       "128": "icons/extension/128.png"
     },
-    "default_title": "Domain Country",
+    "default_title": "Domain Country"
   },
   "browser_specific_settings": {
     "gecko": {

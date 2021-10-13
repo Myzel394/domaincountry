@@ -3,7 +3,7 @@ import getCurrentTab from "../getCurrentTab";
 
 const showToolbarIcon = async (
     title: string,
-    sizePaths: string[],
+    sizePaths: Record<string, string>,
 ) => {
     const {
         allowSearchBarIcon,

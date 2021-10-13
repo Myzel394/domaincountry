@@ -8,9 +8,9 @@ const setToolbarIconVisibility = async () => {
     } = await loadOptions();
 
     if (allowSearchBarIcon) {
-        extension.pageAction.show(currentTabId);
+        await extension.pageAction.show(currentTabId);
     } else {
-        extension.pageAction.hide(currentTabId);
+        await extension.pageAction.hide(currentTabId);
     }
 }
 

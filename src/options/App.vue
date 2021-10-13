@@ -8,6 +8,7 @@
             :allow-badge="storage.data.allowBadge"
             :badge-color="storage.data.badgeColor"
             :query-api-url="storage.data.fallbackQueryAPIUrl"
+            :allow-search-bar-icon="storage.data.allowSearchBarIcon"
             @update="updateStorage"
         />
     </Container>

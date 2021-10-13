@@ -137,6 +137,11 @@
     "description": "Form label of badge color."
   },
 
+  "pages@options@form@allow_search_bar_icon@label": {
+    "message": "Show icon in search bar",
+    "description": "Form label of the show icon in search bar field."
+  },
+
   "pages@options@form@query_api_url@label": {
     "message": "Query API URL",
     "description": "Form label of the query api url."

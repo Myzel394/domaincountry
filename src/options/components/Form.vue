@@ -27,6 +27,17 @@
             />
         </form-element>
         <form-element
+            id="allowSearchBarIcon"
+            :label='$translate("pages@options@form@allow_search_bar_icon@label")'
+        >
+            <input
+                id="allowSearchBarIcon"
+                v-model="formAllowSearchBarIcon"
+                type="checkbox"
+                name="allowSearchBarIcon"
+            />
+        </form-element>
+        <form-element
             id="queryAPIUrl"
             :label='$translate("pages@options@form@query_api_url@label")'
         >
@@ -65,6 +76,10 @@ export default {
             type: String,
             required: true,
         },
+        allowSearchBarIcon: {
+            type: Boolean,
+            required: true,
+        },
         queryApiUrl: {
             type: String,
             required: true,
@@ -75,6 +90,7 @@ export default {
             this.$emit("update", {
                 allowBadge: this.formAllowBadge,
                 badgeColor: this.formBadgeColor,
+                allowSearchBarIcon: this.formAllowSearchBarIcon,
                 queryApiUrl: this.formQueryApiUrl,
             });
         },
@@ -83,6 +99,7 @@ export default {
         return {
             formAllowBadge: this.allowBadge,
             formBadgeColor: this.badgeColor,
+            formAllowSearchBarIcon: this.allowSearchBarIcon,
             formQueryApiUrl: this.queryApiUrl,
         }
     },

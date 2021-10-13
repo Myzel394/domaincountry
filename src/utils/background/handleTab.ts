@@ -12,18 +12,17 @@ const handleTab = async (tab: Tab) => {
     }
 
     if (isLocalHostAddress(url)) {
-        await showExtensionIcon();
+        await showExtensionIcon(tab.id as number);
         return;
     }
 
     if (isOnionAddress(url)) {
-        await showOnionAddressIcon();
+        await showOnionAddressIcon(tab.id as number);
         return;
     }
 
-    await showCountryFlagIcon(url);
-
-    await setToolbarIconVisibility();
+    await showCountryFlagIcon(tab.id as number, url);
+    await setToolbarIconVisibility(tab.id as number);
 }
 
 export default handleTab;

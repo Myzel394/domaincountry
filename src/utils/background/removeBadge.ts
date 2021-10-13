@@ -1,6 +1,7 @@
-const removeBadge = (): void => {
+const removeBadge = (tabId: number): void => {
     extension.browserAction.setBadgeText({
         text: "",
+        tabId,
     });
 }
 

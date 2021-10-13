@@ -1,7 +1,7 @@
 import { loadOptions } from "@/utils";
-import getCurrentTab from "../getCurrentTab";
 
 const showToolbarIcon = async (
+    tabId: number,
     title: string,
     sizePaths: Record<string, string>,
 ) => {
@@ -13,15 +13,13 @@ const showToolbarIcon = async (
         return;
     }
 
-    const { id: currentTabId } = await getCurrentTab() as {id: number};
-
     extension.pageAction.setTitle({
-        tabId: currentTabId,
+        tabId,
         title,
     });
     await extension.pageAction.setIcon({
         path: sizePaths,
-        tabId: currentTabId,
+        tabId,
     });
 }
 

@@ -3,7 +3,7 @@ import getFlagPath from "../getFlagPath";
 import * as domainData from "../domainData";
 import showIcon from "@/utils/background/showIcon";
 
-const showCountryFlagIcon = async (url: string) => {
+const showCountryFlagIcon = async (tabId: number, url: string) => {
     const domain = (new URL(url)).hostname;
 
     const data = await fetchDomainInformation(domain);
@@ -26,6 +26,7 @@ const showCountryFlagIcon = async (url: string) => {
             }),
             title: code,
             toolbar: title,
+            tabId,
         }),
     ]);
 }

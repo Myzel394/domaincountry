@@ -12,6 +12,8 @@ export * from "./handleTab";
 export * from "./showIcon";
 export * from "./isSearchBarIconShown";
 export * from "./setToolbarIconVisibility";
+export * from "./handleStorageChange";
+export * from "./handleActiveTabs";
 
 export { default as onTabChange } from "./onTabChange";
 export { default as removeBadge } from "./removeBadge";
@@ -26,3 +28,5 @@ export { default as handleTab } from "./handleTab";
 export { default as showIcon } from "./showIcon";
 export { default as isSearchBarIconShown } from "./isSearchBarIconShown";
 export { default as setToolbarIconVisibility } from "./setToolbarIconVisibility";
+export { default as handleStorageChange } from "./handleStorageChange";
+export { default as handleActiveTabs } from "./handleActiveTabs";

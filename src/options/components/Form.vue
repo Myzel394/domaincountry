@@ -44,7 +44,7 @@
             <div :class="$style.vertical">
                 <input
                     id="queryAPIUrl"
-                    v-model="formQueryApiUrl"
+                    v-model="formQueryAPIURL"
                     type="url"
                     name="queryAPIUrl"
                 />
@@ -91,7 +91,7 @@ export default {
                 allowBadge: this.formAllowBadge,
                 badgeColor: this.formBadgeColor,
                 allowSearchBarIcon: this.formAllowSearchBarIcon,
-                queryApiUrl: this.formQueryApiUrl,
+                queryAPIURL: this.formQueryAPIURL,
             });
         },
     },
@@ -100,7 +100,7 @@ export default {
             formAllowBadge: this.allowBadge,
             formBadgeColor: this.badgeColor,
             formAllowSearchBarIcon: this.allowSearchBarIcon,
-            formQueryApiUrl: this.queryApiUrl,
+            formQueryAPIURL: this.queryApiUrl,
         }
     },
 }

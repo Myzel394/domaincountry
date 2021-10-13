@@ -1,16 +1,16 @@
-import { getCurrentTab, loadOptions } from "@/utils";
+import { loadOptions } from "../options";
 
-const setToolbarIconVisibility = async () => {
-    const { id: currentTabId } = await getCurrentTab() as {id: number};
-
+const setToolbarIconVisibility = async (tabId: number) => {
     const {
         allowSearchBarIcon,
     } = await loadOptions();
 
     if (allowSearchBarIcon) {
-        await extension.pageAction.show(currentTabId);
+        await extension.pageAction.show(tabId);
+        return true;
     } else {
-        await extension.pageAction.hide(currentTabId);
+        await extension.pageAction.hide(tabId);
+        return false;
     }
 }
 

@@ -1,7 +1,8 @@
 import { loadOptions } from "../options";
-import getCurrentTab from "../getCurrentTab";
+import removeBadge from "./removeBadge";
 
 const showBadge = async (
+    tabId: number,
     text: string,
 ): Promise<void> => {
     const {
@@ -10,17 +11,16 @@ const showBadge = async (
     } = await loadOptions();
 
     if (!allowBadge) {
+        removeBadge(tabId);
         return;
     }
-
-    const { id: currentTabId } = await getCurrentTab();
 
     extension.browserAction.setBadgeBackgroundColor({
         color: badgeColor,
     });
     extension.browserAction.setBadgeText({
         text,
-        tabId: currentTabId,
+        tabId,
     });
 }
 

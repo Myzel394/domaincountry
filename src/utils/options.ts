@@ -7,7 +7,7 @@ import StorageValue = browser.storage.StorageValue;
 export interface Options {
     allowBadge: boolean;
     badgeColor: string;
-    fallbackQueryAPIUrl: string;
+    queryAPIURL: string;
     allowSearchBarIcon: boolean;
 }
 
@@ -16,20 +16,18 @@ const KEY = "options";
 export const DEFAULT_VALUE: Options = {
     allowBadge: false,
     badgeColor: variables.backgroundColor,
-    fallbackQueryAPIUrl: "https://domaincountry-query-api.tolledomain.com",
-    allowSearchBarIcon: true,
+    queryAPIURL: "https://domaincountry-query-api.tolledomain.com",
+    allowSearchBarIcon: false,
 }
 
 const SCHEMA = yup.object().shape({
-    allowBadge: yup.boolean()
-        .required(),
+    allowBadge: yup.boolean(),
+    allowSearchBarIcon: yup.boolean(),
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
         .required(),
-    fallbackQueryAPIUrl: yup.string()
+    queryAPIURL: yup.string()
         .url()
-        .required(),
-    allowSearchBarIcon: yup.boolean()
         .required(),
 });
 
@@ -39,9 +37,9 @@ const SCHEMA_WITH_DEFAULT = yup.object().shape({
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
         .default(DEFAULT_VALUE.badgeColor),
-    fallbackQueryAPIUrl: yup.string()
+    queryAPIURL: yup.string()
         .url()
-        .default(DEFAULT_VALUE.fallbackQueryAPIUrl),
+        .default(DEFAULT_VALUE.queryAPIURL),
     allowSearchBarIcon: yup.boolean()
         .default(DEFAULT_VALUE.allowSearchBarIcon),
 });
@@ -73,6 +71,5 @@ export const loadOptions = async (): Promise<Options> => {
 
 export const saveOptions = async (options: Options): Promise<void> => {
     const validatedOptions = await SCHEMA.validate(options);
-
     await saveData(KEY, validatedOptions);
 }

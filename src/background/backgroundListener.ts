@@ -1,11 +1,21 @@
-import { setToolbarIconVisibility, isSearchBarIconShown, handleTab, onTabChange, showExtensionIcon } from "@/utils/background";
+import {
+    setToolbarIconVisibility,
+    isSearchBarIconShown,
+    handleTab,
+    onTabChange,
+    showExtensionIcon,
+} from "@/utils/background";
 
 onTabChange(async tab => {
-    setToolbarIconVisibility();
-    const isIconShown = await isSearchBarIconShown();
+    const currentTabId = tab.id as number;
+    const isSearchBarIconEnabled = await setToolbarIconVisibility(currentTabId);
 
-    if (!isIconShown) {
-        await showExtensionIcon();
+    if (isSearchBarIconEnabled) {
+        const isIconShown = await isSearchBarIconShown(currentTabId);
+
+        if (!isIconShown) {
+            await showExtensionIcon(currentTabId);
+        }
     }
 
     await handleTab(tab);

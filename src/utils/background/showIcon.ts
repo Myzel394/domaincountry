@@ -1,5 +1,4 @@
 import { GetFlagPathDataPNG } from "@/utils";
-import getCurrentTab from "../getCurrentTab";
 import showBadge from "./showBadge";
 import showToolbarIcon from "@/utils/background/showToolbarIcon";
 
@@ -17,12 +16,13 @@ const showIcon = async ({
     title,
     getIcon,
     toolbar,
+    tabId,
 }: {
+    tabId: number,
     title: string,
     getIcon: ((size: GetFlagPathDataPNG["size"]) => string),
     toolbar?: string;
 }) => {
-    const { id: currentTabId } = await getCurrentTab();
     const paths = mapSizes(getIcon);
 
     extension.browserAction.setTitle({
@@ -30,11 +30,11 @@ const showIcon = async ({
     })
 
     return Promise.allSettled([
-        showBadge(title),
-        showToolbarIcon(toolbar || title, paths),
+        showBadge(tabId, title),
+        showToolbarIcon(tabId, toolbar || title, paths),
         extension.browserAction.setIcon({
             path: paths,
-            tabId: currentTabId,
+            tabId,
         }),
     ])
 };

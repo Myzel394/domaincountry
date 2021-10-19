@@ -3,7 +3,8 @@
   "version": "0.2.1",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service build --mode development --watch",
+    "serve:chrome": "preprocess --browser=chrome && vue-cli-service build --mode development",
+    "serve:firefox": "preprocess --browser=firefox && vue-cli-service build --mode development",
     "preprocess": "preprocess.mjs",
     "build:download-flags": "./downloadFlags.mjs",
     "build:extension": "vue-cli-service build",

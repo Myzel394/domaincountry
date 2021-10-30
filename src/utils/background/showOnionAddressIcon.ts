@@ -1,15 +1,13 @@
-import setIconsForAllSizes from "./setIconsForAllSizes";
 import getSpecialIconPath from "./getSpecialIconPath";
-import removeBadge from "./removeBadge";
 import translate from "../translate"
+import showIcon from "@/utils/background/showIcon";
 
-const showOnionAddressIcon = () => {
-    extension.browserAction.setTitle({
+const showOnionAddressIcon = (tabId: number) => {
+    return showIcon({
         title: translate("extension@hover_title@is_onion_service"),
+        getIcon: size => getSpecialIconPath("onion", size),
+        tabId,
     });
-    removeBadge();
-
-    return setIconsForAllSizes(size => getSpecialIconPath("onion", size));
 }
 
 export default showOnionAddressIcon;

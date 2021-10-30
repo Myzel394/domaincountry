@@ -1,5 +1,6 @@
 const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
 const getBrowser = require("./build-process/get-browser");
+const firefoxManifest = require("./src/manifest.firefox.json");
 
 module.exports = {
     pages: {
@@ -23,6 +24,10 @@ module.exports = {
             },
             manifestTransformer: (manifest) => {
                 const browser = getBrowser();
+
+                if (browser === "firefox") {
+                    manifest.page_action = firefoxManifest.page_action;
+                }
 
                 return manifest;
             },

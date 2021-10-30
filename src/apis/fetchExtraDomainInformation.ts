@@ -18,7 +18,7 @@ const fetchUsingExtensionDNSResolver = async (domain: string): Promise<FetchExtr
 
 const fetchUsingAPI = async (domain: string): Promise<FetchExtraInformationResult> => {
     const options = await loadOptions();
-    const baseUrl = options.fallbackQueryAPIUrl;
+    const baseUrl = options.queryAPIURL;
 
     const url = `${baseUrl}/?domain=${domain}`;
 

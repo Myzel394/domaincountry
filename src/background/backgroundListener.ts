@@ -1,16 +1,22 @@
-import { onUrlChange, showExtensionIcon, showOnionAddressIcon, showCountryFlagIcon } from "@/utils/background";
-import { isLocalHostAddress, isOnionAddress } from "@/utils";
+import {
+    setToolbarIconVisibility,
+    isSearchBarIconShown,
+    handleTab,
+    onTabChange,
+    showExtensionIcon,
+} from "@/utils/background";
 
-onUrlChange(async url => {
-    if (isLocalHostAddress(url)) {
-        await showExtensionIcon();
-        return;
+onTabChange(async tab => {
+    const currentTabId = tab.id as number;
+    const isSearchBarIconEnabled = await setToolbarIconVisibility(currentTabId);
+
+    if (isSearchBarIconEnabled) {
+        const isIconShown = await isSearchBarIconShown(currentTabId);
+
+        if (!isIconShown) {
+            await showExtensionIcon(currentTabId);
+        }
     }
 
-    if (isOnionAddress(url)) {
-        await showOnionAddressIcon();
-        return;
-    }
-
-    await showCountryFlagIcon(url);
+    await handleTab(tab);
 });

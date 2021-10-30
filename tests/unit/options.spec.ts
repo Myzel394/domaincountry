@@ -38,7 +38,8 @@ describe("loadOptions", () => {
         const expected = {
             allowBadge: true,
             badgeColor: DEFAULT_VALUE.badgeColor,
-            fallbackQueryAPIUrl: DEFAULT_VALUE.fallbackQueryAPIUrl,
+            allowSearchBarIcon: false,
+            queryAPIURL: DEFAULT_VALUE.queryAPIURL,
         }
 
         expect(actual).toStrictEqual(expected);

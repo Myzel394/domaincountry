@@ -22,7 +22,7 @@ class PreprocessPlugin extends CopyPlugin {
 
                 const pattern = {
                     from: filePath,
-                    to: newPath,
+                    to: path.relative("src", newPath),
                 };
                 patterns.push(pattern);
             }

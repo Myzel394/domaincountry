@@ -93,6 +93,10 @@
     "message": "IP-Adresse",
     "description": "Title of information box of server's ip address."
   },
+  "pages@popup@information@ip_address@label@plural": {
+    "message": "IP-Adressen",
+    "description": "Title of information box of server's ip address."
+  },
   "pages@popup@information@organisation@label": {
     "message": "Organisation",
     "description": "Title of information box of the server's internet organisation."

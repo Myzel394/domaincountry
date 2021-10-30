@@ -1,6 +1,6 @@
 #!/usr/bin/env zx
 
-const getBrowser = require("./getBrowser.js");
+const getBrowser = require("./get-browser.js");
 const packageJson = require("./package.json");
 
 const browser = getBrowser();

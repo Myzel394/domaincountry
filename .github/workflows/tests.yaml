@@ -24,15 +24,15 @@ jobs:
         run: yarn install
 
       - name: Chrome - Run tests 🧪
-        run: yarn test --browser=chrome
+        run: yarn run test --browser=chrome
       - name: Chrome - Run linter 👀
-        run: yarn lint --browser=chrome
+        run: yarn run lint --browser=chrome
       - name: Chrome - Test build 🚀
-        run: yarn build:extension --browser=chrome
+        run: yarn run build:extension --browser=chrome
 
       - name: Firefox - Run tests 🧪
-        run: yarn test --browser=firefox
+        run: yarn run test --browser=firefox
       - name: Firefox - Run linter 👀
-        run: yarn lint --browser=firefox
+        run: yarn run lint --browser=firefox
       - name: Firefox - Test build 🚀
-        run: yarn build:extension --browser=firefox
+        run: yarn run build:extension --browser=firefox

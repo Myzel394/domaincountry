@@ -3,22 +3,24 @@
   "version": "0.2.1",
   "private": true,
   "scripts": {
-    "serve:chrome": "preprocess --browser=chrome && vue-cli-service build --mode development",
-    "serve:firefox": "preprocess --browser=firefox && vue-cli-service build --mode development",
-    "preprocess": "preprocess.mjs",
+    "serve": "vue-cli-service build --mode development",
+    "serve:chrome": "yarn run serve --browser=chrome",
+    "serve:firefox": "yarn run serve --browser=firefox",
     "build:download-flags": "./downloadFlags.mjs",
     "build:extension": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit --runInBand",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint --browser=chrome"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/vue-fontawesome": "^3.0.0-4",
+    "@types/copy-webpack-plugin": "^8.0.1",
     "axios": "^0.21.4",
     "axios-extensions": "^3.1.3",
     "build-url": "^6.0.1",
     "copy-to-clipboard": "^3.3.1",
+    "copy-webpack-plugin": "6.0.0",
     "core-js": "^3.18.1",
     "date-fns": "^2.24.0",
     "in-milliseconds": "^1.2.0",
@@ -72,8 +74,8 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,vue}": [
-      "vue-cli-service lint",
+    "*.{js,jsx,ts,tsx,mjs,vue}": [
+      "vue-cli-service lint --browser=chrome",
       "git add"
     ]
   }

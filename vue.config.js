@@ -1,4 +1,6 @@
 const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
+const PreprocessPlugin = require("./preprocess-plugin");
+const getBrowser = require("./getBrowser");
 
 module.exports = {
     pages: {
@@ -29,6 +31,7 @@ module.exports = {
                     { family: "Roboto", variants: [ "300", "500", "700", "900" ] },
                 ],
             }),
+            new PreprocessPlugin(getBrowser()),
         ],
     },
 

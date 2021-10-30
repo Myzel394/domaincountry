@@ -38,6 +38,7 @@ describe("loadOptions", () => {
         const expected = {
             allowBadge: true,
             badgeColor: DEFAULT_VALUE.badgeColor,
+            allowSearchBarIcon: false,
             queryAPIURL: DEFAULT_VALUE.queryAPIURL,
         }
 

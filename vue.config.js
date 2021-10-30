@@ -1,6 +1,6 @@
 const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
-const PreprocessPlugin = require("./preprocess-plugin");
-const getBrowser = require("./getBrowser");
+const PreprocessPlugin = require("./build-process/preprocess-plugin");
+const getBrowser = require("./build-process/get-browser");
 
 module.exports = {
     pages: {

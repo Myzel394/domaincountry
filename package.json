@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service build --mode development",
-    "serve:chrome": "yarn run serve --browser=chrome",
-    "serve:firefox": "yarn run serve --browser=firefox",
-    "build:download-flags": "./downloadFlags.mjs",
+    "build:download-flags": "./build-process/download-flags.mjs",
     "build:extension": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit --runInBand",
     "lint": "vue-cli-service lint --browser=chrome"
@@ -74,7 +72,7 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx,mjs,vue}": [
+    "*.{js,jsx,ts,tsx,vue}": [
       "vue-cli-service lint --browser=chrome",
       "git add"
     ]

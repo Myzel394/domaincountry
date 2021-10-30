@@ -25,9 +25,6 @@ jobs:
       - name: Install requirements
         run: yarn
 
-      - name: Preprocess
-        run: yarn run preprocess --browser=chrome
-
       - name: Get name
         id: name
         run: echo "::set-output name=name::$(./build-process/get-filename.mjs --browser=chrome)"
@@ -65,9 +62,6 @@ jobs:
 
       - name: Install requirements
         run: yarn
-
-      - name: Preprocess
-        run: yarn run preprocess --browser=firefox
 
       - name: Get name
         id: name

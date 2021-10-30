@@ -9,7 +9,7 @@ permissions:
   contents: write
 
 jobs:
-  release:
+  chrome:
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,18 +25,23 @@ jobs:
       - name: Install requirements
         run: yarn
 
-      - name: Download flags
-        run: yarn run build:download-flags
+      - name: Preprocess
+        run: yarn run preprocess --browser=chrome
+
+      - name: Get name
+        id: name
+        run: echo "::set-output name=name::$(./build-process/get-filename.mjs --browser=chrome)"
 
       - name: Build extension
-        run: yarn run build:extension
+        run: yarn run build:extension --browser=chrome
 
-      - name: Build Extension for Firefox
+      - name: Zip Extension with web-ext
         id: web-ext-build
         uses: kewisch/action-web-ext@v1
         with:
           cmd: build
           source: dist
+          filename: ${{ steps.name.outputs.name }}
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
@@ -61,20 +66,32 @@ jobs:
       - name: Install requirements
         run: yarn
 
-      - name: Download flags
-        run: yarn run build:download-flags
+      - name: Preprocess
+        run: yarn run preprocess --browser=firefox
+
+      - name: Get name
+        id: name
+        run: echo "::set-output name=name::$(./build-process/get-filename.mjs --browser=firefox)"
 
       - name: Build extension
-        run: yarn run build:extension
+        run: yarn run build:extension --browser=firefox
 
-      - name: Build Extension for Firefox
+      - name: Zip Extension with web-ext
         id: web-ext-build
         uses: kewisch/action-web-ext@v1
         with:
           cmd: build
           source: dist
+          filename: ${{ steps.name.outputs.name }}
 
-      - name: Sign & publish
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.SECRET_GITHUB_TOKEN }}
+        with:
+          files: ${{ steps.web-ext-build.outputs.target }}
+
+      - name: Sign in & publish
         id: web-ext-sign
         uses: kewisch/action-web-ext@v1
         with:

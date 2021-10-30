@@ -22,7 +22,17 @@ jobs:
         run: npm install -g yarn
       - name: Install dependencies
         run: yarn install
-      - name: Run tests
-        run: yarn test:unit
-      - name: Test build
-        run: yarn build:extension
+
+      - name: Chrome - Run tests 🧪
+        run: yarn run test --browser=chrome
+      - name: Chrome - Run linter 👀
+        run: yarn run lint --browser=chrome
+      - name: Chrome - Test build 🚀
+        run: yarn run build:extension --browser=chrome
+
+      - name: Firefox - Run tests 🧪
+        run: yarn run test --browser=firefox
+      - name: Firefox - Run linter 👀
+        run: yarn run lint --browser=firefox
+      - name: Firefox - Test build 🚀
+        run: yarn run build:extension --browser=firefox

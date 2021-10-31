@@ -140,6 +140,14 @@
     "message": "Badge Color",
     "description": "Form label of badge color."
   },
+  "pages@options@form@prefetch_tabs@label": {
+    "message": "Prefetch tabs",
+    "description": "Form label of prefetch tabs."
+  },
+  "pages@options@form@prefetch_tabs@description": {
+    "message": "If enabled, all tabs will automatically be prefetched on startup and when settings change. This allows you to quickly see the flag icon of your already opened tabs.",
+    "description": "Form labell of prefetch tabs."
+  },
 
   "pages@options@form@allow_search_bar_icon@label": {
     "message": "Show icon in search bar",

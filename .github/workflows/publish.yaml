@@ -36,11 +36,12 @@ jobs:
         id: web-ext-build
         uses: kewisch/action-web-ext@v1
         with:
+          artifacts: .
           cmd: build
           source: dist
 
       - name: Rename file
-        run: mv ./web-ext-artifacts ${{ steps.name.outputs.name }}
+        run: mv ${{ steps.web-ext-build.outputs.target }} ${{ steps.name.outputs.name }}
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
@@ -76,11 +77,12 @@ jobs:
         id: web-ext-build
         uses: kewisch/action-web-ext@v1
         with:
+          artifacts: .
           cmd: build
           source: dist
 
       - name: Rename file
-        run: mv ./web-ext-artifacts ${{ steps.name.outputs.name }}
+        run: mv ${{ steps.web-ext-build.outputs.target }} ${{ steps.name.outputs.name }}
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1

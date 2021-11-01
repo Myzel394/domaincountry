@@ -28,6 +28,7 @@ module.exports = {
                 if (browser === "firefox") {
                     manifest.page_action = firefoxManifest.page_action;
                     manifest.sidebar_action = firefoxManifest.sidebar_action;
+                    manifest.browser_specific_settings = firefoxManifest.browser_specific_settings;
                 }
 
                 return manifest;

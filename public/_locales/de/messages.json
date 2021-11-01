@@ -88,6 +88,14 @@
     "message": "Mobil",
     "description": ""
   },
+  "pages@popup@state@is_mx": {
+    "message": "MX-Eintrag",
+    "description": ""
+  },
+  "pages@popup@state@is_disposable": {
+    "message": "Temporäre E-Mail",
+    "description": ""
+  },
 
   "pages@popup@information@ip_address@label": {
     "message": "IP-Adresse",

@@ -87,6 +87,14 @@
     "message": "Mobile",
     "description": ""
   },
+  "pages@popup@state@is_mx": {
+    "message": "MX-Record",
+    "description": ""
+  },
+  "pages@popup@state@is_disposable": {
+    "message": "Disposable E-Mail",
+    "description": ""
+  },
 
   "pages@popup@information@ip_address@label": {
     "message": "IP Address",

@@ -2,9 +2,10 @@
     <aside>
         <ul :class="$style.wrapper">
             <li
-                v-for="({name, active}) of buttons"
+                v-for="({name, active}, index) of buttons"
                 :key="name"
                 :class="$style.buttonAnimation"
+                :style="`animation-delay: ${index * 100}ms`"
             >
                 <ButtonState
                     :name="name"
@@ -35,6 +36,14 @@ export default {
                 {
                     name: this.$translate("pages@popup@state@is_mobile"),
                     active: this.$store.getters.data.isMobile,
+                },
+                {
+                    name: this.$translate("pages@popup@state@is_mx"),
+                    active: this.$store.getters.data.isMX,
+                },
+                {
+                    name: this.$translate("pages@popup@state@is_disposable"),
+                    active: this.$store.getters.data.isDisposable,
                 },
             ]
         },
@@ -75,18 +84,6 @@ export default {
     transform: scale(.9);
 
     animation: buttonIn .2s ease-out forwards;
-}
-
-.buttonAnimation:nth-of-type(1) {
-    animation-delay: .2s;
-}
-
-.buttonAnimation:nth-of-type(2) {
-    animation-delay: .3s;
-}
-
-.buttonAnimation:nth-of-type(3) {
-    animation-delay: .4s;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -2,6 +2,7 @@ import * as yup from "yup";
 import { ValidateOptions } from "yup/lib/types";
 import { buildUrl, getBrowserLanguageCode, instance } from "@/utils";
 import fetchExtraDomainInformation, { FetchExtraInformationResult } from "./fetchExtraDomainInformation";
+import fetchDisposableInformation from "@/apis/fetchDisposableInformation";
 
 export interface FetchDomainInformationResult {
     country: {
@@ -24,6 +25,8 @@ export interface FetchDomainInformationResult {
     isMobile: boolean;
     isProxy: boolean;
     isHosting: boolean;
+    isMX: boolean;
+    isDisposable: boolean;
 }
 
 const URL = "http://ip-api.com/json";
@@ -86,7 +89,8 @@ const fetchDomainInformation = async (domain: string): Promise<FetchDomainInform
     const validatedData = await SCHEMA.validate(data, SCHEMA_OPTION);
     const ipAddress = validatedData.query;
     const extraData = await getExtraInformation(domain, ipAddress);
-    const cleanedData: FetchDomainInformationResult = {
+    const disposableData = await fetchDisposableInformation(domain);
+    return {
         country: {
             name: validatedData.country,
             code: validatedData.countryCode,
@@ -99,14 +103,14 @@ const fetchDomainInformation = async (domain: string): Promise<FetchDomainInform
         isMobile: validatedData.mobile,
         ispName: validatedData.isp,
         isProxy: validatedData.proxy,
+        isMX: disposableData.isMX,
+        isDisposable: disposableData.isDisposable,
         organisationName: validatedData.org,
         timezone: {
             name: validatedData.timezone,
             offset: validatedData.offset,
         },
-    };
-
-    return cleanedData;
+    } as FetchDomainInformationResult;
 }
 
 export default fetchDomainInformation;

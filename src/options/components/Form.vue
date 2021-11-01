@@ -27,6 +27,22 @@
             />
         </form-element>
         <form-element
+            id="prefetchTabs"
+            :label='$translate("pages@options@form@prefetch_tabs@label")'
+        >
+            <div :class="$style.vertical">
+                <input
+                    id="prefetchTabs"
+                    v-model="formPrefetchTabs"
+                    type="checkbox"
+                    name="prefetchTabs"
+                />
+                <p :class="$style.description">
+                    {{ $translate("pages@options@form@prefetch_tabs@description") }}
+                </p>
+            </div>
+        </form-element>
+        <form-element
             id="allowSearchBarIcon"
             :label='$translate("pages@options@form@allow_search_bar_icon@label")'
         >
@@ -76,6 +92,10 @@ export default {
             type: String,
             required: true,
         },
+        prefetchTabs: {
+            type: Boolean,
+            required: true,
+        },
         allowSearchBarIcon: {
             type: Boolean,
             required: true,
@@ -90,6 +110,7 @@ export default {
             this.$emit("update", {
                 allowBadge: this.formAllowBadge,
                 badgeColor: this.formBadgeColor,
+                prefetchTabs: this.formPrefetchTabs,
                 allowSearchBarIcon: this.formAllowSearchBarIcon,
                 queryAPIURL: this.formQueryAPIURL,
             });
@@ -99,6 +120,7 @@ export default {
         return {
             formAllowBadge: this.allowBadge,
             formBadgeColor: this.badgeColor,
+            formPrefetchTabs: this.prefetchTabs,
             formAllowSearchBarIcon: this.allowSearchBarIcon,
             formQueryAPIURL: this.queryApiUrl,
         }

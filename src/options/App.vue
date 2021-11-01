@@ -9,6 +9,7 @@
             :badge-color="storage.data.badgeColor"
             :query-api-url="storage.data.queryAPIURL"
             :allow-search-bar-icon="storage.data.allowSearchBarIcon"
+            :prefetch-tabs="storage.data.prefetchTabs"
             @update="updateStorage"
         />
     </Container>

@@ -88,6 +88,14 @@
     "message": "Mobil",
     "description": ""
   },
+  "pages@popup@state@is_mx": {
+    "message": "MX-Eintrag",
+    "description": ""
+  },
+  "pages@popup@state@is_disposable": {
+    "message": "Temporäre E-Mail",
+    "description": ""
+  },
 
   "pages@popup@information@ip_address@label": {
     "message": "IP-Adresse",
@@ -140,6 +148,14 @@
   "pages@options@form@badge_color@label": {
     "message": "Badge-Farbe",
     "description": "Form label of badge color."
+  },
+  "pages@options@form@prefetch_tabs@label": {
+    "message": "Tabs automatisch laden",
+    "description": "Form label of prefetch tabs."
+  },
+  "pages@options@form@prefetch_tabs@description": {
+    "message": "Wenn aktiv werden offene Tabs automatisch geladen beim Start und beim Ändern einer Einstellung. Dies ermöglicht es dir, Flaggen-Icons von offenen Tabs direkt angezeigt zu bekommen.",
+    "description": "Form labell of prefetch tabs."
   },
 
   "pages@options@form@allow_search_bar_icon@label": {

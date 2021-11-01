@@ -7,6 +7,7 @@ import StorageValue = browser.storage.StorageValue;
 export interface Options {
     allowBadge: boolean;
     badgeColor: string;
+    prefetchTabs: boolean;
     queryAPIURL: string;
     allowSearchBarIcon: boolean;
 }
@@ -16,6 +17,7 @@ const KEY = "options";
 export const DEFAULT_VALUE: Options = {
     allowBadge: false,
     badgeColor: variables.backgroundColor,
+    prefetchTabs: true,
     queryAPIURL: "https://domaincountry-query-api.tolledomain.com",
     allowSearchBarIcon: false,
 }
@@ -23,6 +25,7 @@ export const DEFAULT_VALUE: Options = {
 const SCHEMA = yup.object().shape({
     allowBadge: yup.boolean(),
     allowSearchBarIcon: yup.boolean(),
+    prefetchTabs: yup.boolean(),
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
         .required(),
@@ -34,6 +37,7 @@ const SCHEMA = yup.object().shape({
 const SCHEMA_WITH_DEFAULT = yup.object().shape({
     allowBadge: yup.boolean()
         .default(DEFAULT_VALUE.allowBadge),
+    prefetchTabs: yup.boolean().default(true),
     badgeColor: yup.string()
         .matches(/^#([0-9a-f]{3}|[0-9a-f]{6})$/i)
         .default(DEFAULT_VALUE.badgeColor),

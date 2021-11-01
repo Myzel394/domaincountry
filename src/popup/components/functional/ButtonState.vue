@@ -27,6 +27,7 @@ export default {
 @import "src/assets/variables.scss";
 
 .button {
+    display: block;
     color: $primaryColor;
     padding: .6em 1.2em;
     border-radius: 100vw;

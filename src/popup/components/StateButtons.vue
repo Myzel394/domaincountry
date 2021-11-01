@@ -60,11 +60,13 @@ export default {
 .wrapper {
     display: flex;
     align-items: center;
-    padding-left: 0;
+    padding: 0;
+    flex-wrap: wrap;
 
     > li {
         list-style: none;
-        padding: 0 .6em;
+        padding: .2em .6em;
+        flex-shrink: 0;
     }
 }
 

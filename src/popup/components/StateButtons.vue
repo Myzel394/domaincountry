@@ -43,7 +43,7 @@ export default {
                 },
                 {
                     name: this.$translate("pages@popup@state@is_disposable"),
-                    active: this.$store.getters.data.isMX,
+                    active: this.$store.getters.data.isDisposable,
                 },
             ]
         },

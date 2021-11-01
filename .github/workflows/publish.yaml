@@ -38,14 +38,16 @@ jobs:
         with:
           cmd: build
           source: dist
-          filename: ${{ steps.name.outputs.name }}
+
+      - name: Rename file
+        run: mv ./web-ext-artifacts ${{ steps.name.outputs.name }}
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_GITHUB_TOKEN }}
         with:
-          files: ${{ steps.web-ext-build.outputs.target }}
+          files: ${{ steps.name.outputs.name }}
 
   firefox:
     runs-on: ubuntu-latest
@@ -76,14 +78,16 @@ jobs:
         with:
           cmd: build
           source: dist
-          filename: ${{ steps.name.outputs.name }}
+
+      - name: Rename file
+        run: mv ./web-ext-artifacts ${{ steps.name.outputs.name }}
 
       - name: Upload Release
         uses: softprops/action-gh-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.SECRET_GITHUB_TOKEN }}
         with:
-          files: ${{ steps.web-ext-build.outputs.target }}
+          files: ${{ steps.name.outputs.name }}
 
       - name: Sign in & publish
         id: web-ext-sign
@@ -91,6 +95,6 @@ jobs:
         with:
           cmd: sign
           channel: listed
-          source: ${{ steps.web-ext-build.outputs.target }}
+          source: ${{ steps.name.outputs.name }}
           apiKey: ${{ secrets.FIREFOX_API_KEY }}
           apiSecret: ${{ secrets.FIREFOX_CLIENT_SECRET }}

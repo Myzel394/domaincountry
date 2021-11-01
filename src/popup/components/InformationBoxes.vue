@@ -21,8 +21,9 @@
             </BoxInformation>
         </li>
         <li
-            v-for="({ title, value, icon, link }) of boxes"
+            v-for="({ title, value, icon, link }, index) of boxes"
             :key="title"
+            :style="`animation-delay: ${index * 100}ms`"
         >
             <BoxInformation
                 :title="title"
@@ -119,22 +120,6 @@ export default {
         transform: translateY(1em);
 
         animation: boxIn .2s ease-in forwards;
-    }
-
-    > li:nth-of-type(2) {
-        animation-delay: .1s;
-    }
-
-    > li:nth-of-type(3) {
-        animation-delay: .2s;
-    }
-
-    > li:nth-of-type(4) {
-        animation-delay: .3s;
-    }
-
-    > li:nth-of-type(5) {
-        animation-delay: .4s;
     }
 }
 

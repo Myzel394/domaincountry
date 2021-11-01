@@ -12,12 +12,32 @@ import OnionPage from "./components/pages/OnionPage";
 import ErrorPage from "./components/pages/ErrorPage";
 import InformationPage from "./components/pages/InformationPage";
 import LoadingPage from "./components/pages/LoadingPage";
+import { getCurrentTab } from "../utils";
 
 export default {
     name: "App",
     components: { LoadingPage, InformationPage, ErrorPage, OnionPage, LocalHostPage },
     created() {
-        this.$store.dispatch("fetchInitialData");
+        this.updateContent();
+
+        // Sidebar supported
+        if (browser?.sidebarAction) {
+            browser.tabs.onActivated.addListener(this.updateContent);
+            browser.tabs.onUpdated.addListener(this.updateContent);
+        }
+    },
+    methods: {
+        async updateContent() {
+            const oldTab = this.$store.state.currentTab.tab;
+            const newTab = await getCurrentTab();
+
+            if (
+                oldTab === null ||
+                ((new URL(oldTab.url)).hostname !== (new URL(newTab.url)).hostname)
+            ) {
+                this.$store.dispatch("fetchInitialData");
+            }
+        },
     },
 }
 </script>

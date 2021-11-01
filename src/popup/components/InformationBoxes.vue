@@ -35,8 +35,9 @@
 </template>
 
 <script>
-import BoxInformation from "@/popup/components/functional/BoxInformation";
+import BoxInformation from "./functional/BoxInformation";
 import Link from "./functional/Link";
+import { getDomain } from "@/utils";
 
 export default {
     name: "InformationBoxes",
@@ -61,7 +62,7 @@ export default {
         domain() {
             const url = this.$store.state.currentTab.tab.url;
 
-            return (new URL(url)).hostname;
+            return getDomain(url);
         },
         boxes() {
             return [

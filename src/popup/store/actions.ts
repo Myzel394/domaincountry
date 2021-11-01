@@ -1,6 +1,6 @@
 import { ActionTree } from "vuex";
 import { Store } from "./types";
-import { getCurrentTab, domainData } from "@/utils";
+import { getCurrentTab, domainData, getDomain } from "@/utils";
 
 const actions: ActionTree<Store, Store> = {
     fetchDomainInformation: async (
@@ -58,7 +58,7 @@ const actions: ActionTree<Store, Store> = {
     ) => {
         await context.dispatch("getCurrentTab");
 
-        const domain = (new URL(context.state.currentTab.tab!.url as string)).hostname;
+        const domain = getDomain(context.state.currentTab.tab!.url as string);
 
         await context.dispatch("fetchDomainInformation", domain)
     },

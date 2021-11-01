@@ -1,10 +1,11 @@
 import { fetchDomainInformation } from "@/apis";
+import { showIcon } from "@/utils/background";
+import { getDomain } from "@/utils";
 import getFlagPath from "../getFlagPath";
 import * as domainData from "../domainData";
-import showIcon from "@/utils/background/showIcon";
 
 const showCountryFlagIcon = async (tabId: number, url: string) => {
-    const domain = (new URL(url)).hostname;
+    const domain = getDomain(url);
 
     const data = await fetchDomainInformation(domain);
 

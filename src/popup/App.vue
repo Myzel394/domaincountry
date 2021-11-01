@@ -12,7 +12,7 @@ import OnionPage from "./components/pages/OnionPage";
 import ErrorPage from "./components/pages/ErrorPage";
 import InformationPage from "./components/pages/InformationPage";
 import LoadingPage from "./components/pages/LoadingPage";
-import { getCurrentTab } from "../utils";
+import { getCurrentTab, getDomain } from "@/utils";
 
 export default {
     name: "App",
@@ -33,7 +33,7 @@ export default {
 
             if (
                 oldTab === null ||
-                ((new URL(oldTab.url)).hostname !== (new URL(newTab.url)).hostname)
+                (getDomain(oldTab.url) !== getDomain(newTab.url))
             ) {
                 this.$store.dispatch("fetchInitialData");
             }

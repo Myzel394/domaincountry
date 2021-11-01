@@ -46,6 +46,7 @@ export default {
 @import "src/assets/global";
 
 html, body, #app {
+    font-size: 16px;
     min-height: 450px;
 }
 

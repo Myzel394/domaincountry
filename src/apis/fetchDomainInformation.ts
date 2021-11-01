@@ -77,6 +77,11 @@ const getExtraInformation = async (
     }
 };
 
+const fixTimezoneName = (timezone: string): string =>
+    timezone
+        .replaceAll("/", ": ")
+        .replaceAll("_", " ");
+
 const fetchDomainInformation = async (domain: string): Promise<FetchDomainInformationResult> => {
     const language = getBrowserLanguageCode();
     const url = buildUrl(`${URL}/${domain}`, {
@@ -107,7 +112,7 @@ const fetchDomainInformation = async (domain: string): Promise<FetchDomainInform
         isDisposable: disposableData.isDisposable,
         organisationName: validatedData.org,
         timezone: {
-            name: validatedData.timezone,
+            name: fixTimezoneName(validatedData.timezone),
             offset: validatedData.offset,
         },
     } as FetchDomainInformationResult;

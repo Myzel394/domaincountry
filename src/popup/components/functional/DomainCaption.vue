@@ -5,6 +5,8 @@
 </template>
 
 <script>
+import { getDomain } from "@/utils";
+
 export default {
     name: "DomainCaption",
     props: {
@@ -15,7 +17,7 @@ export default {
     },
     computed: {
         domain() {
-            return (new URL(this.url)).hostname;
+            return getDomain(this.url);
         },
     },
 }

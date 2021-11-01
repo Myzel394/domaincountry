@@ -10,6 +10,7 @@ export * from "./getFlagPath";
 export * from "./buildUrl";
 export * from "./instance";
 export * from "./getBrowserLanguageCode";
+export * from "./getDomain";
 
 export { default as buildUrl } from "./buildUrl";
 export { default as instance } from "./instance";
@@ -20,6 +21,7 @@ export { default as isLocalHostAddress } from "./isLocalHostAddress";
 export { default as translate } from "./translate";
 export { default as getStorageMethod } from "./getStorageMethod";
 export { default as getFlagPath } from "./getFlagPath";
+export { default as getDomain } from "./getDomain";
 
 export * as options from "./options";
 export * as domainData from "./domainData";

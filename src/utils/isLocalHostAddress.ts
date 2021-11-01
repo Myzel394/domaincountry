@@ -1,5 +1,7 @@
+import { getDomain } from "@/utils";
+
 const isLocalHostAddress = (url: string): boolean => {
-    const host = (new URL(url)).hostname;
+    const host = getDomain(url);
 
     return !host.includes(".") || (host === "127.0.0.1");
 }

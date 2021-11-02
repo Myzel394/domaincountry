@@ -21,7 +21,7 @@ export default {
         this.updateContent();
 
         // Sidebar supported
-        if (browser?.sidebarAction) {
+        if (typeof browser !== "undefined" && browser.sidebarAction) {
             browser.tabs.onActivated.addListener(this.updateContent);
             browser.tabs.onUpdated.addListener(this.updateContent);
         }

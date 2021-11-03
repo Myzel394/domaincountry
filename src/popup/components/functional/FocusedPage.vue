@@ -57,12 +57,13 @@ $iconSize: 8rem;
 
 .description {
     margin: 2em auto;
+    width: 100%;
 }
 
 .text {
     margin: .5em auto;
 
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     text-align: center;
     color: $primaryColor;
 
@@ -73,6 +74,8 @@ $iconSize: 8rem;
     margin: .5em auto;
 
     font-size: .9rem;
+    font-weight: 100;
+    line-height: 1.6;
     text-align: center;
     color: $secondaryColor;
 

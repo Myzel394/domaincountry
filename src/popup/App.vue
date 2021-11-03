@@ -3,7 +3,7 @@
     <OnionPage v-else-if="$store.getters.isOnionAddress" />
     <ThrottledPage
         v-else-if="$store.state.api.domain.isThrottled"
-        @retry="updateContent"
+        @retry="retryUpdate"
     />
     <LoadingPage v-else-if="$store.getters.isLoading" />
     <ErrorPage v-else-if="$store.getters.isError" />
@@ -18,6 +18,8 @@ import InformationPage from "./components/pages/InformationPage";
 import LoadingPage from "./components/pages/LoadingPage";
 import { getCurrentTab, getDomain } from "@/utils";
 import ThrottledPage from "./components/pages/ThrottledPage";
+
+const RETRY_WAIT_AMOUNT = 150;
 
 export default {
     name: "App",
@@ -42,6 +44,14 @@ export default {
             ) {
                 this.$store.dispatch("fetchInitialData");
             }
+        },
+        async retryUpdate() {
+            await this.$store.dispatch("setIsThrottled", false);
+
+            // Wait a little bit to show the user that we're trying to refetch the data
+            setTimeout(() => {
+                this.updateContent();
+            }, RETRY_WAIT_AMOUNT)
         },
     },
 }

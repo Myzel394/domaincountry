@@ -24,11 +24,17 @@ const actions: ActionTree<Store, Store> = {
                 apiName: "domain",
                 isError: false,
             });
-        } catch {
+        } catch (_error) {
+            const error = _error as AxiosError;
+
             context.commit("SET_API_IS_ERROR", {
                 apiName: "domain",
                 isError: true,
             });
+
+            if (error.response?.status === 429) {
+                await context.dispatch("setIsThrottled", true);
+            }
         } finally {
             context.commit("SET_API_IS_LOADING", {
                 apiName: "domain",
@@ -68,15 +74,7 @@ const actions: ActionTree<Store, Store> = {
 
         const domain = getDomain(context.state.currentTab.tab!.url as string);
 
-        try {
-            await context.dispatch("fetchDomainInformation", domain)
-        } catch (_error) {
-            const error = _error as AxiosError;
-
-            if (error.response?.status === 429) {
-                await context.dispatch("setIsThrottled", true);
-            }
-        }
+        await context.dispatch("fetchDomainInformation", domain)
     },
 }
 

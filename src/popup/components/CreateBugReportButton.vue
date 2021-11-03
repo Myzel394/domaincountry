@@ -1,18 +1,17 @@
 <template>
-    <button
-        :class="$style.button"
-        @click="createReport"
-    >
-        {{ $translate('pages@popup@extra@create_bug_report') }}
-    </button>
+    <Button @click="createReport">
+        {{ $translate("pages@popup@extra@create_bug_report") }}
+    </Button>
 </template>
 
 <script>
 import copy from "copy-to-clipboard";
 import { createBugReport } from "@/utils/popup";
+import Button from "./functional/Button";
 
 export default {
     name: "CreateBugReportButton",
+    components: { Button },
     methods: {
         createReport() {
             const result = createBugReport();
@@ -22,23 +21,3 @@ export default {
     },
 }
 </script>
-
-<style module lang="scss">
-@import "src/assets/variables.scss";
-
-.button {
-    background: transparent;
-    color: $primaryColor;
-    padding: .6em 1.2em;
-    border: .1em rgba($primaryColor, .2) solid;
-    border-radius: .5em;
-    cursor: pointer;
-
-    font-size: .8rem;
-    font-weight: 700;
-}
-
-.button:active {
-    background: rgba($primaryColor, .2);
-}
-</style>

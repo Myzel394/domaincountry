@@ -61,6 +61,13 @@ const mutations: MutationTree<Store> = {
     ) => {
         state.currentTab.tab = tab;
     },
+
+    SET_IS_THROTTLED: (
+        state,
+        isThrottled: boolean,
+    ) => {
+        state.api.domain.isThrottled = isThrottled;
+    },
 }
 
 export default mutations;

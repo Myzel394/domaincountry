@@ -4,6 +4,7 @@ import Tab = browser.tabs.Tab;
 interface BaseAPI<T> {
     isLoading: boolean;
     isError: boolean;
+    isThrottled: boolean;
     data?: T;
 }
 

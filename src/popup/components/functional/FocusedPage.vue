@@ -6,9 +6,18 @@
             :class="$style.icon"
             :icon="icon"
         />
-        <p :class="$style.subText">
-            {{ subText }}
-        </p>
+        <div :class="$style.description">
+            <p :class="$style.text">
+                {{ text }}
+            </p>
+            <p
+                v-if="subText"
+                :class="$style.subText"
+            >
+                {{ subText }}
+            </p>
+        </div>
+        <slot name="actions" />
     </div>
 </template>
 
@@ -16,6 +25,10 @@
 export default {
     name: "FocusedPage",
     props: {
+        text: {
+            type: String,
+            required: false,
+        },
         subText: {
             type: String,
             required: false,
@@ -42,10 +55,24 @@ $iconSize: 8rem;
     flex-direction: column;
 }
 
-.subText {
+.description {
     margin: 2em auto;
+}
+
+.text {
+    margin: .5em auto;
 
     font-size: 1.3rem;
+    text-align: center;
+    color: $primaryColor;
+
+    max-width: 80%;
+}
+
+.subText {
+    margin: .5em auto;
+
+    font-size: .9rem;
     text-align: center;
     color: $secondaryColor;
 

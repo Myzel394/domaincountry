@@ -1,8 +1,12 @@
 <template>
     <LocalHostPage v-if="$store.getters.isLocalHost" />
     <OnionPage v-else-if="$store.getters.isOnionAddress" />
-    <ErrorPage v-else-if="$store.getters.isError" />
+    <ThrottledPage
+        v-else-if="$store.state.api.domain.isThrottled"
+        @retry="updateContent"
+    />
     <LoadingPage v-else-if="$store.getters.isLoading" />
+    <ErrorPage v-else-if="$store.getters.isError" />
     <InformationPage v-else />
 </template>
 
@@ -13,10 +17,11 @@ import ErrorPage from "./components/pages/ErrorPage";
 import InformationPage from "./components/pages/InformationPage";
 import LoadingPage from "./components/pages/LoadingPage";
 import { getCurrentTab, getDomain } from "@/utils";
+import ThrottledPage from "./components/pages/ThrottledPage";
 
 export default {
     name: "App",
-    components: { LoadingPage, InformationPage, ErrorPage, OnionPage, LocalHostPage },
+    components: { ThrottledPage, LoadingPage, InformationPage, ErrorPage, OnionPage, LocalHostPage },
     created() {
         this.updateContent();
 

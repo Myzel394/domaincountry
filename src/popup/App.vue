@@ -37,7 +37,7 @@ export default {
             const newTab = await getCurrentTab();
 
             if (
-                oldTab === null ||
+                oldTab !== null ||
                 (getDomain(oldTab.url) !== getDomain(newTab.url))
             ) {
                 this.$store.dispatch("fetchInitialData");

@@ -19,8 +19,6 @@ import LoadingPage from "./components/pages/LoadingPage";
 import { getCurrentTab, getDomain } from "@/utils";
 import ThrottledPage from "./components/pages/ThrottledPage";
 
-const RETRY_WAIT_AMOUNT = 150;
-
 export default {
     name: "App",
     components: { ThrottledPage, LoadingPage, InformationPage, ErrorPage, OnionPage, LocalHostPage },
@@ -46,12 +44,7 @@ export default {
             }
         },
         async retryUpdate() {
-            await this.$store.dispatch("setIsThrottled", false);
-
-            // Wait a little bit to show the user that we're trying to refetch the data
-            setTimeout(() => {
-                this.updateContent();
-            }, RETRY_WAIT_AMOUNT)
+            await this.$store.dispatch("retryFetch");
         },
     },
 }

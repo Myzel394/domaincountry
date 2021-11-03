@@ -3,6 +3,8 @@ import { ActionTree } from "vuex";
 import { Store } from "./types";
 import { getCurrentTab, domainData, getDomain } from "@/utils";
 
+const RETRY_WAIT_AMOUNT = 150;
+
 const actions: ActionTree<Store, Store> = {
     fetchDomainInformation: async (
         context,
@@ -32,7 +34,7 @@ const actions: ActionTree<Store, Store> = {
                 isError: true,
             });
 
-            if (error.response?.status === 429) {
+            if (error.isAxiosError && error.response?.status === 429) {
                 await context.dispatch("setIsThrottled", true);
             }
         } finally {
@@ -59,11 +61,29 @@ const actions: ActionTree<Store, Store> = {
         }
     },
 
-    setIsThrottled: (
+    setIsThrottled: async (
         context,
         isThrottled: boolean,
     ) => {
         context.commit("SET_IS_THROTTLED", isThrottled)
+    },
+
+    retryFetch: async (
+        context,
+    ) => {
+        await context.dispatch("setIsThrottled", false);
+        await context.dispatch("getCurrentTab");
+        await context.commit("SET_API_IS_LOADING", {
+            apiName: "domain",
+            isLoading: true,
+        });
+
+        // Wait a little bit to show the user that we are in fact trying to refetch the data
+        setTimeout(() => {
+            const domain = getDomain(context.state.currentTab.tab!.url as string);
+
+            context.dispatch("fetchDomainInformation", domain)
+        }, RETRY_WAIT_AMOUNT);
     },
 
     fetchInitialData: async (

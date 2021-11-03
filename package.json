@@ -8,7 +8,7 @@
     "build:extension": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit --runInBand",
     "test": "yarn run test:unit",
-    "lint": "vue-cli-service lint --browser=chrome"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",

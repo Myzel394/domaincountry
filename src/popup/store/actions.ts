@@ -47,7 +47,6 @@ const actions: ActionTree<Store, Store> = {
             const tab = await getCurrentTab();
             context.commit("SET_CURRENT_TAB", tab);
         } catch (error) {
-            alert(error);
             context.commit("SET_CURRENT_TAB_ERROR", true);
         } finally {
             context.commit("SET_CURRENT_TAB_LOADING", false);
@@ -73,8 +72,6 @@ const actions: ActionTree<Store, Store> = {
             await context.dispatch("fetchDomainInformation", domain)
         } catch (_error) {
             const error = _error as AxiosError;
-
-            console.log("#ärrror", error);
 
             if (error.response?.status === 429) {
                 await context.dispatch("setIsThrottled", true);

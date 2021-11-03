@@ -4,6 +4,7 @@ import { BaseAPI, Store } from "./types";
 export const INITIAL_API_STATE: BaseAPI<any> = {
     isLoading: false,
     isError: false,
+    isThrottled: false,
     data: undefined,
 }
 

@@ -1,7 +1,7 @@
 import { library } from "@fortawesome/fontawesome-svg-core"
 import {
     faGlobe, faExchangeAlt, faWifi, faBroadcastTower, faClock, faSadTear, faPlus, faMinus, faSquare, faHome, faMask,
-    faMeteor,
+    faMeteor, faRunning,
 } from "@fortawesome/free-solid-svg-icons"
 
 library.add(faGlobe);
@@ -16,3 +16,4 @@ library.add(faSquare);
 library.add(faHome);
 library.add(faMask);
 library.add(faMeteor);
+library.add(faRunning)

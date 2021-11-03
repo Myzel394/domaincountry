@@ -51,6 +51,15 @@
     "message": "Das ist ein Onion-Serivce. Du kannst den Standort nicht herausfinden.",
     "description": "User is on an Onion service. These are server, whose location can't be determined."
   },
+  "pages@popup@is_throttled@text": {
+    "message": "Du schaust dir zu viele Seiten an. Diese Browser-Erweiterung nutzt externe Dienste um die Daten über Webseiten zu laden. Leider bist du jetzt von diesen Diensten für kurze Zeit gesperrt. Wir können dagegen leider noch nichts unternehmen.",
+    "description": "User is throttled and can now receive any information anymore."
+  },
+
+  "pages@popup@is_throttled@retry_button": {
+    "message": "Erneut versuchen",
+    "description": "Button to retry requests"
+  },
 
   "pages@popup@flag_image@alt_text": {
     "message": "Flagge des Landes mit Code \"$code$\"",

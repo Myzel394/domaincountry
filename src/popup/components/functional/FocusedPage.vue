@@ -9,6 +9,7 @@
         <p :class="$style.subText">
             {{ subText }}
         </p>
+        <slot name="actions" />
     </div>
 </template>
 

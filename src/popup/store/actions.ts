@@ -1,3 +1,4 @@
+import { AxiosError } from "axios";
 import { ActionTree } from "vuex";
 import { Store } from "./types";
 import { getCurrentTab, domainData, getDomain } from "@/utils";
@@ -53,14 +54,32 @@ const actions: ActionTree<Store, Store> = {
         }
     },
 
+    setIsThrottled: (
+        context,
+        isThrottled: boolean,
+    ) => {
+        context.commit("SET_IS_THROTTLED", isThrottled)
+    },
+
     fetchInitialData: async (
         context,
     ) => {
+        await context.dispatch("setIsThrottled", false);
         await context.dispatch("getCurrentTab");
 
         const domain = getDomain(context.state.currentTab.tab!.url as string);
 
-        await context.dispatch("fetchDomainInformation", domain)
+        try {
+            await context.dispatch("fetchDomainInformation", domain)
+        } catch (_error) {
+            const error = _error as AxiosError;
+
+            console.log("#ärrror", error);
+
+            if (error.response?.status === 429) {
+                await context.dispatch("setIsThrottled", true);
+            }
+        }
     },
 }
 

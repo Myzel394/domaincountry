@@ -51,6 +51,10 @@
     "description": "User is on an Onion service. These are server, whose location can't be determined."
   },
   "pages@popup@is_throttled@text": {
+    "message": "You have been blocked",
+    "description": "User is throttled and can now receive any information anymore."
+  },
+  "pages@popup@is_throttled@sub_text": {
     "message": "You're requesting too many pages. This extension uses external services to retrieve it's data. Unfortunately, you have now been blocked by these services for a short amount of time. We cannot do anything against this yet.",
     "description": "User is throttled and can now receive any information anymore."
   },

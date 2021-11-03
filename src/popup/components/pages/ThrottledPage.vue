@@ -1,6 +1,7 @@
 <template>
     <FocusedPage
-        :sub-text="$translate('pages@popup@is_throttled@text')"
+        :text="$translate('pages@popup@is_throttled@text')"
+        :sub-text="$translate('pages@popup@is_throttled@sub_text')"
         icon="running"
     >
         <template #actions>

@@ -10,7 +10,7 @@ const actions: ActionTree<Store, Store> = {
         context,
         domain: string,
     ) => {
-        context.commit("SET_API_IS_LOADING", {
+        await context.commit("SET_API_IS_LOADING", {
             apiName: "domain",
             isLoading: true,
         });
@@ -18,18 +18,18 @@ const actions: ActionTree<Store, Store> = {
         try {
             const data = await domainData.fetchData(domain);
 
-            context.commit("SET_API_DATA", {
+            await context.commit("SET_API_DATA", {
                 apiName: "domain",
                 data,
             });
-            context.commit("SET_API_IS_ERROR", {
+            await context.commit("SET_API_IS_ERROR", {
                 apiName: "domain",
                 isError: false,
             });
         } catch (_error) {
             const error = _error as AxiosError;
 
-            context.commit("SET_API_IS_ERROR", {
+            await context.commit("SET_API_IS_ERROR", {
                 apiName: "domain",
                 isError: true,
             });
@@ -38,7 +38,7 @@ const actions: ActionTree<Store, Store> = {
                 await context.dispatch("setIsThrottled", true);
             }
         } finally {
-            context.commit("SET_API_IS_LOADING", {
+            await context.commit("SET_API_IS_LOADING", {
                 apiName: "domain",
                 isLoading: false,
             });
@@ -48,16 +48,16 @@ const actions: ActionTree<Store, Store> = {
     getCurrentTab: async (
         context,
     ) => {
-        context.commit("SET_CURRENT_TAB_LOADING", true);
-        context.commit("SET_CURRENT_TAB_ERROR", false);
+        await context.commit("SET_CURRENT_TAB_LOADING", true);
+        await context.commit("SET_CURRENT_TAB_ERROR", false);
 
         try {
             const tab = await getCurrentTab();
-            context.commit("SET_CURRENT_TAB", tab);
+            await context.commit("SET_CURRENT_TAB", tab);
         } catch (error) {
-            context.commit("SET_CURRENT_TAB_ERROR", true);
+            await context.commit("SET_CURRENT_TAB_ERROR", true);
         } finally {
-            context.commit("SET_CURRENT_TAB_LOADING", false);
+            await context.commit("SET_CURRENT_TAB_LOADING", false);
         }
     },
 
@@ -65,7 +65,7 @@ const actions: ActionTree<Store, Store> = {
         context,
         isThrottled: boolean,
     ) => {
-        context.commit("SET_IS_THROTTLED", isThrottled)
+        await context.commit("SET_IS_THROTTLED", isThrottled)
     },
 
     retryFetch: async (

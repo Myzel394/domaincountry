@@ -1,12 +1,12 @@
 <template>
     <LocalHostPage v-if="$store.getters.isLocalHost" />
     <OnionPage v-else-if="$store.getters.isOnionAddress" />
-    <ErrorPage v-else-if="$store.getters.isError" />
-    <LoadingPage v-else-if="$store.getters.isLoading" />
     <ThrottledPage
         v-else-if="$store.state.api.domain.isThrottled"
         @retry="updateContent"
     />
+    <LoadingPage v-else-if="$store.getters.isLoading" />
+    <ErrorPage v-else-if="$store.getters.isError" />
     <InformationPage v-else />
 </template>
 

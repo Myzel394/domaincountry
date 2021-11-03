@@ -22,5 +22,8 @@
       "id": "{b6f395b4-ce7e-4de2-b81a-5ee1ba1b42bf}",
       "strict_min_version": "48.0"
     }
-  }
+  },
+  "permissions": [
+    "dns"
+  ]
 }

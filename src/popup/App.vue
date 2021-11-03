@@ -3,7 +3,7 @@
     <OnionPage v-else-if="$store.getters.isOnionAddress" />
     <ThrottledPage
         v-else-if="$store.state.api.domain.isThrottled"
-        @retry="updateContent"
+        @retry="retryUpdate"
     />
     <LoadingPage v-else-if="$store.getters.isLoading" />
     <ErrorPage v-else-if="$store.getters.isError" />
@@ -37,11 +37,14 @@ export default {
             const newTab = await getCurrentTab();
 
             if (
-                oldTab !== null ||
+                oldTab === null ||
                 (getDomain(oldTab.url) !== getDomain(newTab.url))
             ) {
                 this.$store.dispatch("fetchInitialData");
             }
+        },
+        async retryUpdate() {
+            await this.$store.dispatch("retryFetch");
         },
     },
 }

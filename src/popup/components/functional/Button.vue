@@ -26,6 +26,10 @@ export default {
 
     font-size: .8rem;
     font-weight: 700;
+
+    max-width: 15rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .button:active {

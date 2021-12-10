@@ -6,7 +6,7 @@
     >
         <template #actions>
             <Button @click="$emit('retry', $event)">
-                {{ $translate("pages@popup@is_throttled@retry_button") }}
+                {{ $translate("pages@popup@retry_button") }}
             </Button>
         </template>
     </FocusedPage>

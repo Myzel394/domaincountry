@@ -60,7 +60,7 @@
     "description": "User is throttled and can now receive any information anymore."
   },
 
-  "pages@popup@is_throttled@retry_button": {
+  "pages@popup@retry_button": {
     "message": "Erneut versuchen",
     "description": "Button to retry requests"
   },

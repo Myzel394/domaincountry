@@ -6,7 +6,10 @@
         @retry="retryUpdate"
     />
     <LoadingPage v-else-if="$store.getters.isLoading" />
-    <ErrorPage v-else-if="$store.getters.isError" />
+    <ErrorPage
+        v-else-if="$store.getters.isError"
+        @retry="retryUpdate"
+    />
     <InformationPage v-else />
 </template>
 

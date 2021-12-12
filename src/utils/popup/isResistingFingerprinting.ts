@@ -3,7 +3,7 @@
 const isResistingFingerprinting = async (): Promise<boolean> => {
     try {
         // @ts-ignore
-        const result = await browser.privacy.websites.resistFingerprinting.get({});
+        const result = await extension.privacy.websites.resistFingerprinting.get({});
 
         return result?.value ?? false;
     } catch (error) {

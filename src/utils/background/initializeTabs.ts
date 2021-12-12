@@ -1,7 +1,7 @@
 import { handleTab } from "@/utils/background/index";
 
 const initializeTabs = async () => {
-    const tabs = await browser.tabs.query({
+    const tabs = await extension.tabs.query({
         windowType: "normal",
     });
 

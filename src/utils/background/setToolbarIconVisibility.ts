@@ -1,6 +1,10 @@
 import { loadOptions } from "../options";
 
 const setToolbarIconVisibility = async (tabId: number) => {
+    if (!extension.pageAction) {
+        return
+    }
+
     const {
         allowSearchBarIcon,
     } = await loadOptions();

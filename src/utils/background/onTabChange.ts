@@ -8,24 +8,32 @@ const onTabChange = (
     extension.tabs.onActivated.addListener(async ({ tabId }) => {
         const tab: Tab = await extension.tabs.get(tabId);
 
-        callback(tab);
+        if (tab) {
+            callback(tab);
+        }
     });
 
     // Listen for tab changes
     extension.tabs.onUpdated.addListener(((tabId, changeInfo, tab) => {
-        callback(tab);
+        if (tab) {
+            callback(tab);
+        }
     }));
 
     // Listen for window changes
     extension.windows.onFocusChanged.addListener(async () => {
         const tab = await getCurrentTab();
 
-        callback(tab);
+        if (tab) {
+            callback(tab);
+        }
     });
 
     // Initial load
     getCurrentTab().then(tab => {
-        callback(tab);
+        if (tab) {
+            callback(tab);
+        }
     });
 }
 

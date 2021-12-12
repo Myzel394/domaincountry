@@ -19,7 +19,7 @@ export const DEFAULT_VALUE: Options = {
     badgeColor: variables.backgroundColor,
     prefetchTabs: true,
     queryAPIURL: "https://domaincountry-query-api.tolledomain.com",
-    allowSearchBarIcon: false,
+    allowSearchBarIcon: true,
 }
 
 const SCHEMA = yup.object().shape({

@@ -39,7 +39,7 @@ describe("loadOptions", () => {
             allowBadge: true,
             badgeColor: DEFAULT_VALUE.badgeColor,
             prefetchTabs: true,
-            allowSearchBarIcon: false,
+            allowSearchBarIcon: true,
             queryAPIURL: DEFAULT_VALUE.queryAPIURL,
         }
 

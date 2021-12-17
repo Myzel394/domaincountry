@@ -17,6 +17,11 @@
                 >
                     {{ value }}
                 </Link>
+                <p v-else-if="value === ''">
+                    <i>
+                        {{ $translate("pages@popup@empty_field") }}
+                    </i>
+                </p>
                 <p v-else>
                     {{ value }}
                 </p>

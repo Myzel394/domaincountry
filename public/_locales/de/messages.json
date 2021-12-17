@@ -64,6 +64,10 @@
     "message": "Erneut versuchen",
     "description": "Button to retry requests"
   },
+  "pages@popup@empty_field": {
+    "message": "Nicht verfügbar",
+    "description": "Field that is shown when a value is empty"
+  },
 
   "pages@popup@flag_image@alt_text": {
     "message": "Flagge des Landes mit Code \"$code$\"",

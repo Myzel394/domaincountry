@@ -48,7 +48,7 @@ const SCHEMA = yup.object().shape({
     currency: yup.string().required(),
 
     isp: yup.string().required(),
-    org: yup.string().required(),
+    org: yup.string(),
     query: yup.string().required(),
 
     mobile: yup.boolean().required(),

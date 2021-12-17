@@ -63,6 +63,10 @@
     "message": "Retry",
     "description": "Button to retry requests"
   },
+  "pages@popup@empty_field": {
+    "message": "Unknown",
+    "description": "Field that is shown when a value is empty"
+  },
 
   "pages@popup@flag_image@alt_text": {
     "message": "Flag of country with code \"$code$\"",

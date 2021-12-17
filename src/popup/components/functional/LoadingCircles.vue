@@ -33,6 +33,7 @@ $size: 3em;
 .wrapper {
     display: flex;
     margin: 0 auto;
+    padding: 0 1em;
 }
 
 .dot {

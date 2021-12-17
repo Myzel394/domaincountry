@@ -1,15 +1,17 @@
 <template>
-    <LocalHostPage v-if="$store.getters.isLocalHost" />
+    <ErrorPage
+        v-if="isRetryingAutomatically || $store.getters.isError"
+        :retry-attempts="retryAttempts"
+        :disable-retry="isRetryingAutomatically"
+        @retry="retryUpdate"
+    />
+    <LocalHostPage v-else-if="$store.getters.isLocalHost" />
     <OnionPage v-else-if="$store.getters.isOnionAddress" />
     <ThrottledPage
         v-else-if="$store.state.api.domain.isThrottled"
         @retry="retryUpdate"
     />
     <LoadingPage v-else-if="$store.getters.isLoading" />
-    <ErrorPage
-        v-else-if="$store.getters.isError"
-        @retry="retryUpdate"
-    />
     <InformationPage v-else />
 </template>
 
@@ -25,6 +27,12 @@ import ThrottledPage from "./components/pages/ThrottledPage";
 export default {
     name: "App",
     components: { ThrottledPage, LoadingPage, InformationPage, ErrorPage, OnionPage, LocalHostPage },
+    data() {
+        return {
+            retryAttempts: 0,
+            isRetryingAutomatically: false,
+        }
+    },
     created() {
         this.updateContent();
 
@@ -46,8 +54,11 @@ export default {
                 this.$store.dispatch("fetchInitialData");
             }
         },
-        async retryUpdate() {
+        async retryUpdate({ isAutomaticRetry }) {
+            this.retryAttempts += 1;
+            this.isRetryingAutomatically = isAutomaticRetry;
             await this.$store.dispatch("retryFetch");
+            this.isRetryingAutomatically = false;
         },
     },
 }

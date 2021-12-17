@@ -28,8 +28,13 @@ export const saveData = async (domain: string, data: any): Promise<void> => {
 }
 
 export const fetchData = async (domain: string, forceNewFetch = false): Promise<any> => {
-    // Tries to load data from cache - otherwise fetches new data and saves it.
-    const savedData = (await loadData())[domain];
+    let savedData = null;
+
+    try {
+        // Tries to load data from cache - otherwise fetches new data and saves it.
+        savedData = (await loadData())[domain];
+        // eslint-disable-next-line no-empty
+    } catch (error) {}
 
     if (!forceNewFetch && savedData) {
         return savedData;
@@ -38,8 +43,12 @@ export const fetchData = async (domain: string, forceNewFetch = false): Promise<
     // Fetch new data
     const newData = await fetchDomainInformation(domain);
 
-    // Save it
-    await saveData(domain, newData);
+    try {
+        // Save it
+        await saveData(domain, newData);
+    } catch (error) {
+        // Save quota exceeded, we won't save the data
+    }
 
     return newData;
 }

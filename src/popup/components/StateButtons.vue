@@ -71,6 +71,8 @@ export default {
     align-items: center;
     padding: 0;
     flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
 
     > li {
         list-style: none;

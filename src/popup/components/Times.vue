@@ -33,10 +33,6 @@ export default {
     },
     computed: {
         offsetHours() {
-            if (this.isUsingFakeTime) {
-                return 0;
-            }
-
             return this.$store.getters.data.timezone.offset / (60 * 60);
         },
     },

@@ -60,7 +60,7 @@
     "eslint-plugin-vue": "^7.20.0",
     "get-all-files": "^4.1.0",
     "lint-staged": "^12.1.7",
-    "sass": "1.45",
+    "sass": "1.48",
     "sass-loader": "^10",
     "svgexport": "^0.4.2",
     "typescript": "~4.5.4",

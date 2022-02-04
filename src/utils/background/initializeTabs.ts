@@ -1,5 +1,6 @@
 import handleTab from "./handleTab";
 import getDomain from "../getDomain";
+import getUrl from "../getUrl";
 
 const MAX_TABS_HANDLING_AT_ONCE = 40;
 
@@ -12,11 +13,13 @@ const getAllOpenedTabsWithoutDuplicates = async () => {
 
     // Remove tabs with duplicate domains
     return tabs.filter(tab => {
-        if (!tab.url) {
+        const url = getUrl(tab.url);
+
+        if (!url) {
             return false;
         }
 
-        const domain = getDomain(tab.url);
+        const domain = getDomain(url);
 
         if (!domains.has(domain)) {
             domains.add(domain);

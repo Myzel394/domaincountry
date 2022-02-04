@@ -21,7 +21,7 @@ import OnionPage from "./components/pages/OnionPage";
 import ErrorPage from "./components/pages/ErrorPage";
 import InformationPage from "./components/pages/InformationPage";
 import LoadingPage from "./components/pages/LoadingPage";
-import { getCurrentTab, getDomain } from "@/utils";
+import { getCurrentTab, getDomain, getUrl } from "@/utils";
 import ThrottledPage from "./components/pages/ThrottledPage";
 
 export default {
@@ -49,7 +49,7 @@ export default {
 
             if (
                 !oldTab ||
-                (getDomain(oldTab.url) !== getDomain(newTab.url))
+                (getDomain(getUrl(oldTab.url)) !== getDomain(getUrl(newTab.url)))
             ) {
                 this.$store.dispatch("fetchInitialData");
             }

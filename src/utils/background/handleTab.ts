@@ -1,10 +1,10 @@
 import Tab = browser.tabs.Tab;
-import { isLocalHostAddress, isOnionAddress } from "@/utils";
+import { isLocalHostAddress, isOnionAddress, getUrl } from "@/utils";
 import { showCountryFlagIcon, showExtensionIcon, showOnionAddressIcon } from "@/utils/background/index";
 import setToolbarIconVisibility from "@/utils/background/setToolbarIconVisibility";
 
 const handleTab = async (tab: Tab) => {
-    const { url } = tab;
+    const url = getUrl(tab.url);
 
     // Ensure tab url
     if (!url) {

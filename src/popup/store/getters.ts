@@ -1,6 +1,6 @@
 import { GetterTree } from "vuex";
 import { Store } from "./types";
-import { isLocalHostAddress, isOnionAddress } from "@/utils";
+import { isLocalHostAddress, isOnionAddress, getUrl } from "@/utils";
 import { FetchDomainInformationResult } from "@/apis";
 
 const getters: GetterTree<Store, Store> = {
@@ -12,18 +12,22 @@ const getters: GetterTree<Store, Store> = {
         state.api.domain.isError ||
         state.currentTab.isError,
     isLocalHost: state => {
-        if (!state.currentTab.tab?.url) {
+        const url = getUrl(state.currentTab.tab?.url)
+
+        if (!url) {
             return false;
         }
 
-        return isLocalHostAddress(state.currentTab.tab.url);
+        return isLocalHostAddress(url);
     },
     isOnionAddress: state => {
-        if (!state.currentTab.tab?.url) {
+        const url = getUrl(state.currentTab.tab?.url)
+
+        if (!url) {
             return false;
         }
 
-        return isOnionAddress(state.currentTab.tab.url);
+        return isOnionAddress(url);
     },
     data: (state): FetchDomainInformationResult | null => {
         const data = state.api.domain.data;

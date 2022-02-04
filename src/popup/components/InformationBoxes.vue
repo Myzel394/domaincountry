@@ -38,7 +38,7 @@
 <script>
 import BoxInformation from "./functional/BoxInformation";
 import Link from "./functional/Link";
-import { getDomain } from "@/utils";
+import { getDomain, getUrl } from "@/utils";
 
 export default {
     name: "InformationBoxes",
@@ -61,7 +61,7 @@ export default {
             }
         },
         domain() {
-            const url = this.$store.state.currentTab.tab.url;
+            const url = getUrl(this.$store.state.currentTab.tab.url);
 
             return getDomain(url);
         },

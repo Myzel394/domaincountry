@@ -11,6 +11,7 @@ export * from "./buildUrl";
 export * from "./instance";
 export * from "./getBrowserLanguageCode";
 export * from "./getDomain";
+export * from "./getUrl";
 
 export { default as buildUrl } from "./buildUrl";
 export { default as instance } from "./instance";
@@ -22,6 +23,7 @@ export { default as translate } from "./translate";
 export { default as getStorageMethod } from "./getStorageMethod";
 export { default as getFlagPath } from "./getFlagPath";
 export { default as getDomain } from "./getDomain";
+export { default as getUrl } from "./getUrl";
 
 export * as options from "./options";
 export * as domainData from "./domainData";

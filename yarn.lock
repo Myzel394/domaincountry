@@ -12578,10 +12578,10 @@ zip-webpack-plugin@^3.0.0:
     webpack-sources "^1.1.0"
     yazl "^2.4.3"
 
-zx@^6.0.1:
-  version "6.0.1"
-  resolved "https://registry.yarnpkg.com/zx/-/zx-6.0.1.tgz#2f88f3c96818a74270c06981a892d0579a65a79c"
-  integrity sha512-EOCZ7dB6a31ZnN48uTp80RamhAp8o71M1WmKXZ3sHKUojMlsH5VvLigubp4N76treuJM5Ar7pqMjHRTnu68qWw==
+zx@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/zx/-/zx-6.0.3.tgz#817ca921368e748233a171c55a55c990bacbbf39"
+  integrity sha512-CVVHbId7cudCnKJlofnDHUDsoD195wMNcOPRbsa74fY17XXdhP+WdEu4QDfNptx3FoDK+/trBOaPqp+JTwE4Cw==
   dependencies:
     "@types/fs-extra" "^9.0.13"
     "@types/minimist" "^1.2.2"

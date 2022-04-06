@@ -35,6 +35,7 @@ module.exports = {
             "singleline": 1,
             "multiline": 1,
         }],
+        "vue/multi-word-component-names": "off",
         "vue/attributes-order": ["error", {
             "order": [
                 "DEFINITION",

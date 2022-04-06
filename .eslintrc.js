@@ -32,14 +32,8 @@ module.exports = {
         "vue/script-indent": ["error", 4],
         "quotes": ["error", "double"],
         "vue/max-attributes-per-line": ["error", {
-            "singleline": {
-                "max": 1,
-                "allowFirstLine": true,
-            },
-            "multiline": {
-                "max": 1,
-                "allowFirstLine": false,
-            },
+            "singleline": 1,
+            "multiline": 1,
         }],
         "vue/attributes-order": ["error", {
             "order": [

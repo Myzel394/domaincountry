@@ -20,7 +20,7 @@
     "build-url": "^6.0.1",
     "copy-to-clipboard": "^3.3.1",
     "copy-webpack-plugin": "10.2.4",
-    "core-js": "^3.22.1",
+    "core-js": "^3.22.2",
     "date-fns": "^2.28.0",
     "in-milliseconds": "^1.2.0",
     "tinycolor2": "^1.4.2",

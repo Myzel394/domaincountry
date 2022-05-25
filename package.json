@@ -63,7 +63,7 @@
     "sass": "1.52",
     "sass-loader": "^10",
     "svgexport": "^0.4.2",
-    "typescript": "~4.6.4",
+    "typescript": "~4.7.2",
     "vue-cli-plugin-browser-extension": "latest",
     "vue-jest": "^5.0.0-0",
     "web-ext-types": "kelseasy/web-ext-types",

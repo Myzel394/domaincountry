@@ -8586,7 +8586,7 @@ node-fetch@^2.1.2, node-fetch@^2.6.7:
   dependencies:
     whatwg-url "^5.0.0"
 
-node-fetch@^3.2.4:
+node-fetch@^3.2.5:
   version "3.2.5"
   resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-3.2.5.tgz#7d31da657804db5185540ddac7ddd516a9a2bd26"
   integrity sha512-u7zCHdJp8JXBwF09mMfo2CL6kp37TslDl1KP3hRGTlCInBtag+UO3LGVy+NF0VzvnL3PVMpA2hXh1EtECFnyhQ==
@@ -12718,10 +12718,10 @@ zip-webpack-plugin@^3.0.0:
     webpack-sources "^1.1.0"
     yazl "^2.4.3"
 
-zx@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/zx/-/zx-6.2.0.tgz#9688d6ba361e436094487f315713eba1a647b2eb"
-  integrity sha512-g7M/j+Jgw0XVpuX0VyW5vHctU/G7Q2/xb0yysyaTS37Iv39s9Fxn1QvLePVt/QnQSkfNPqeYzsqST1+sRG5Jaw==
+zx@^6.2.3:
+  version "6.2.3"
+  resolved "https://registry.yarnpkg.com/zx/-/zx-6.2.3.tgz#3f8fdc392f4fa05eb94c5d6ea0a93a2520396154"
+  integrity sha512-KROw4oYCPBXDQn5N1XAaf9UmM5g6UBTjSOGv1JDvU+T0bxcKDlRR4KzLykyjnfRqy4VPX4wRYBO3A7TenDczsA==
   dependencies:
     "@types/fs-extra" "^9.0.13"
     "@types/minimist" "^1.2.2"
@@ -12733,7 +12733,7 @@ zx@^6.2.0:
     globby "^13.1.1"
     ignore "^5.2.0"
     minimist "^1.2.6"
-    node-fetch "^3.2.4"
+    node-fetch "^3.2.5"
     ps-tree "^1.2.0"
     which "^2.0.2"
     yaml "^2.1.1"

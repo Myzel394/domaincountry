@@ -67,7 +67,7 @@
     "vue-cli-plugin-browser-extension": "latest",
     "vue-jest": "^5.0.0-0",
     "web-ext-types": "kelseasy/web-ext-types",
-    "zx": "^7.0.1"
+    "zx": "^7.0.3"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"

@@ -2219,7 +2219,7 @@
     semver "^6.0.0"
     string.prototype.padstart "^3.0.0"
 
-"@vue/cli-shared-utils@^4.5.15", "@vue/cli-shared-utils@^4.5.18", "@vue/cli-shared-utils@^4.5.19":
+"@vue/cli-shared-utils@^4.5.15", "@vue/cli-shared-utils@^4.5.19":
   version "4.5.19"
   resolved "https://registry.yarnpkg.com/@vue/cli-shared-utils/-/cli-shared-utils-4.5.19.tgz#cc389b1de1b05073804c0fe9b4b083b928ef6130"
   integrity sha512-JYpdsrC/d9elerKxbEUtmSSU6QRM60rirVubOewECHkBHj+tLNznWq/EhCjswywtePyLaMUK25eTqnTSZlEE+g==
@@ -12696,10 +12696,10 @@ zip-webpack-plugin@^3.0.0:
     webpack-sources "^1.1.0"
     yazl "^2.4.3"
 
-zx@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/zx/-/zx-7.0.1.tgz#4a67a5daddc2564e0f6b78a5fb8d061ad49b0b8d"
-  integrity sha512-5jCux4+8EL7blqjQZDCV9KiV+TEY9Vn9dkddOYEqdrE79X0jsVDRMt0u2O6UsBkC8Da8flcr6Vx9EmcVX4S5vg==
+zx@^7.0.4:
+  version "7.0.4"
+  resolved "https://registry.yarnpkg.com/zx/-/zx-7.0.4.tgz#dea054523ef2a5d25fc2194739a1b02dbb45d24e"
+  integrity sha512-Z0uybYYLtL8ODx9ZOU88EKi6OLZ9ZTDRXX5igtcAsePUIseOWdACSaMxPjzgp0hqWkx0sZz/Lxs8bBSAHOsnNA==
   dependencies:
     "@types/fs-extra" "^9.0.13"
     "@types/minimist" "^1.2.2"

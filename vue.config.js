@@ -1,6 +1,7 @@
 const GoogleFontsPlugin = require("@beyonk/google-fonts-webpack-plugin");
 const getBrowser = require("./build-process/get-browser");
 const firefoxManifest = require("./src/manifest.firefox.json");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     pages: {
@@ -50,5 +51,11 @@ module.exports = {
         // Manually inject polyfills to enable access to native `browser`.
         config.plugins.delete("provide-webextension-polyfill");
         config.module.rules.delete("provide-webextension-polyfill");
+
+        config.plugins["mini-css-extract-plugin"] = new MiniCssExtractPlugin()
+        config.module.rules["css-loader"] = {
+            test: /\.css$/i,
+            use: [MiniCssExtractPlugin.loader, "css-loader"],
+        }
     },
 }

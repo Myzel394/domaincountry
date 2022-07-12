@@ -42,7 +42,7 @@
     "@types/tinycolor2": "^1.4.2",
     "@types/ua-parser-js": "^0.7.36",
     "@types/yup": "^0.29.14",
-    "@typescript-eslint/eslint-plugin": "^5.30.5",
+    "@typescript-eslint/eslint-plugin": "^5.30.6",
     "@typescript-eslint/parser": "^5.30.6",
     "@vue/cli-plugin-babel": "~5.0.8",
     "@vue/cli-plugin-eslint": "~4.5.19",

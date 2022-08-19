@@ -21,7 +21,7 @@
     "copy-to-clipboard": "^3.3.2",
     "copy-webpack-plugin": "^5.1.2",
     "core-js": "^3.24.1",
-    "date-fns": "^2.29.1",
+    "date-fns": "^2.29.2",
     "in-milliseconds": "^1.2.0",
     "tinycolor2": "^1.4.2",
     "tld-extract": "^2.0.1",

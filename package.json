@@ -25,7 +25,7 @@
     "in-milliseconds": "^1.2.0",
     "tinycolor2": "^1.4.2",
     "tld-extract": "^2.0.1",
-    "ua-parser-js": "^1.0.2",
+    "ua-parser-js": "^1.0.33",
     "vue": "^3.2.37",
     "vue-progress-circle": "^1.1.2",
     "vuex": "^4.0.0-alpha.1",
